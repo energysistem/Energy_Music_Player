@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 android_packages_apps_apolloMod
 ===============================
 
@@ -19,3 +20,7 @@ New Features:
 ![ScreenShot](http://i.imgur.com/9MwbZDn.png)
 ![ScreenShot](http://i.imgur.com/H8wPy7S.png)
 ![ScreenShot](http://i.imgur.com/y5QIymQ.png)
+=======
+bruce_wayne_energy
+==================
+>>>>>>> 1fc463077b1ae8d801595b75417de69dda5caea2
