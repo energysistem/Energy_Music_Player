@@ -1,3 +1,4 @@
+MASTER
 <<<<<<< HEAD
 android_packages_apps_apolloMod
 ===============================
@@ -14,6 +15,6 @@ New Features:
 - Extended notifications
 - Audio visualizations on now playing screen(experimental at this point)
 
-bruce_wayne_energy
+
 ==================
 >>>>>>> 1fc463077b1ae8d801595b75417de69dda5caea2
