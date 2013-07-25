@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
     <string name="cd_favorite">Marcar como favorita</string>
     <string name="cd_search">Buscar en tu música</string>
     <string name="cd_overflow">Ver más opciones</string>
