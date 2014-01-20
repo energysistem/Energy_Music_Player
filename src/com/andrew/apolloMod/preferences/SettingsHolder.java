@@ -61,7 +61,7 @@ public class SettingsHolder extends PreferenceActivity  implements ServiceConnec
         addPreferencesFromResource(preferencesResId);
         
         //Init widget style change option
-        initChangeWidgetTheme();
+        //initChangeWidgetTheme();
         
         // Init delete cache option
         initDeleteCache();
@@ -124,7 +124,7 @@ public class SettingsHolder extends PreferenceActivity  implements ServiceConnec
     /**
      * @param v
      */
-    public void applyTheme(View v) {
+    public void applyTheme(View v) {/*
         ThemePreview themePreview = (ThemePreview)findPreference(THEME_PREVIEW);
         String packageName = themePreview.getValue().toString();
         ThemeUtils.setThemePackageName(this, packageName);
@@ -132,24 +132,24 @@ public class SettingsHolder extends PreferenceActivity  implements ServiceConnec
         intent.setClass(this, MusicLibrary.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        finish();
+        finish();*/
     }
 
     /**
      * @param v
      */
-    public void getThemes(View v) {
+    public void getThemes(View v) {/*
         Uri marketUri = Uri
                 .parse("https://market.android.com/search?q=ApolloThemes&c=apps&featured=APP_STORE_SEARCH");
         Intent marketIntent = new Intent(Intent.ACTION_VIEW).setData(marketUri);
         startActivity(marketIntent);
-        finish();
+        finish();*/
     }
 
     /**
      * Set up the theme chooser
      */
-    public void initThemeChooser() {
+    public void initThemeChooser() {/*
         SharedPreferences sp = getPreferenceManager().getSharedPreferences();
         String themePackage = sp.getString(THEME_PACKAGE_NAME, APOLLO);
         ListPreference themeLp = (ListPreference)findPreference(THEME_PACKAGE_NAME);
@@ -179,7 +179,7 @@ public class SettingsHolder extends PreferenceActivity  implements ServiceConnec
         themeLp.setEntries(entries);
         themeLp.setEntryValues(values);
         ThemePreview themePreview = (ThemePreview)findPreference(THEME_PREVIEW);
-        themePreview.setTheme(themePackage);
+        themePreview.setTheme(themePackage);*/
     }
     
 
