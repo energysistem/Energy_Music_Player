@@ -54,9 +54,9 @@
     <string name="eqalizer">Equalizador</string>
     <string name="header_interface">Interface</string>
     <string name="themes">Temas</string>
-    <string name="apollo_themes">Selecionar tema para Apollo</string>
+    <string name="apollo_themes">Selecionar tema para Energy Music</string>
     <string name="select_theme">Selecionar seu tema</string>
-    <string name="version">Versão Apollo</string>
+    <string name="version">Versão Energy Music</string>
     <string name="apply_theme">Aplicar tema</string>
     <string name="get_more_themes">Obter mais temas</string>
     <string name="favorite">Favoritos</string>

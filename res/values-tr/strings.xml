@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">Bu şarkıyı beğenilenlere ekle</string>
@@ -81,21 +81,21 @@
     <string name="remove">Şarkı listesinden sil</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Bilinmeyen</string>
 
     <!-- Settings -->
-    <string name="about">Apollo Hakkında</string>
+    <string name="about">Energy Music Hakkında</string>
     <string name="eqalizer">Ekolayzer</string>
     <string name="header_interface">Arayüz</string>
     <string name="themes">Temalar</string>
-    <string name="apollo_themes">Apollo için tema seç</string>
+    <string name="apollo_themes">Energy Music için tema seç</string>
     <string name="select_theme">Temanızı seçin</string>
-    <string name="version">Apollo Sürümü</string>
+    <string name="version">Energy Music Sürümü</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Temayı uygula</string>

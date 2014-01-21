@@ -82,21 +82,21 @@
     <string name="remove">Suprimeix de la llista</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Desconegut</string>
 
     <!-- Settings -->
-    <string name="about">Quant a l\'Apollo</string>
+    <string name="about">Quant a l\'Energy Music</string>
     <string name="eqalizer">Equalitzador</string>
     <string name="header_interface">Interfície</string>
     <string name="themes">Temes</string>
-    <string name="apollo_themes">Seleccioneu el tema per a l\'Apollo</string>
+    <string name="apollo_themes">Seleccioneu el tema per a l\'Energy Music</string>
     <string name="select_theme">Selecciona el tema</string>
-    <string name="version">Versió de l\'Apollo</string>
+    <string name="version">Versió de l\'Energy Music</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Aplica el tema</string>

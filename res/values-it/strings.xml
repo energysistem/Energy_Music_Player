@@ -14,7 +14,7 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
     <string name="cd_favorite">Aggiungi questa canzone ai preferiti</string>
     <string name="cd_search">Cerca nella tua musica</string>
     <string name="cd_overflow">Visualizza più opzioni</string>
@@ -59,17 +59,17 @@
     <string name="delete_playlist">Cancella playlist</string>
     <string name="search">Cerca</string>
     <string name="remove">Rimuovi dalla playlist</string>
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
     <string name="unknown">Sconosciuto</string>
-    <string name="about">About Apollo</string>
+    <string name="about">About Energy Music</string>
     <string name="eqalizer">Equalizzatore</string>
     <string name="header_interface">Interfaccia</string>
     <string name="themes">Temi</string>
-    <string name="apollo_themes">Seleziona un tema per Apollo</string>
+    <string name="apollo_themes">Seleziona un tema per Energy Music</string>
     <string name="select_theme">Seleziona tema</string>
-    <string name="version">Versione Apollo</string>
+    <string name="version">Versione Energy Music</string>
     <string name="apply_theme">Applica tema</string>
     <string name="get_more_themes">Ottieni altri temi</string>
     <string name="favorite">Preferiti</string>

@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">Gjør dette til en favorittsang</string>
@@ -81,21 +81,21 @@
     <string name="remove">Fjern fra spilleliste</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Ukjent</string>
 
     <!-- Settings -->
-    <string name="about">Om Apollo</string>
+    <string name="about">Om Energy Music</string>
     <string name="eqalizer">Equalizer</string>
     <string name="header_interface">Grensesnitt</string>
     <string name="themes">Temaer</string>
-    <string name="apollo_themes">Velg tema for Apollo</string>
+    <string name="apollo_themes">Velg tema for Energy Music</string>
     <string name="select_theme">Velg ditt tema</string>
-    <string name="version">Apollo-versjon</string>
+    <string name="version">Energy Music-versjon</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Bruk tema</string>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name">"Apollo"</string>
+    <string name="app_name">"Energy Music"</string>
     <string name="cd_favorite">"Faceţi acestă melodie una favorită"</string>
     <string name="cd_search">"Căutaţi prin muzica dvs."</string>
     <string name="cd_overflow">"Mai multe opţiuni"</string>
@@ -46,13 +46,13 @@
     <string name="delete_playlist">"Ştergeţi lista de redare"</string>
     <string name="search">"Căutaţi"</string>
     <string name="unknown">"Necunoscut"</string>
-    <string name="about">"Despre Apollo"</string>
+    <string name="about">"Despre Energy Music"</string>
     <string name="eqalizer">"Egalizator"</string>
     <string name="header_interface">"Interfaţă"</string>
     <string name="themes">"Teme"</string>
-    <string name="apollo_themes">"Selectaţi tema pentru Apollo"</string>
+    <string name="apollo_themes">"Selectaţi tema pentru Energy Music"</string>
     <string name="select_theme">"Selectaţi tema"</string>
-    <string name="version">"Versiune Apollo"</string>
+    <string name="version">"Versiune Energy Music"</string>
     <string name="apply_theme">"Aplicaţi tema"</string>
     <string name="get_more_themes">"Mai multe teme"</string>
     <string name="favorite">"Favorite"</string>

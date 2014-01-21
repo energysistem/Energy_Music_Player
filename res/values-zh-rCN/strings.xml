@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">标记为喜爱的</string>
@@ -81,21 +81,21 @@
     <string name="remove">从播放列表中移除</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">未知</string>
 
     <!-- Settings -->
-    <string name="about">关于 Apollo</string>
+    <string name="about">关于 Energy Music</string>
     <string name="eqalizer">均衡器</string>
     <string name="header_interface">界面</string>
     <string name="themes">主题</string>
-    <string name="apollo_themes">选择 Apollo 的主题</string>
+    <string name="apollo_themes">选择 Energy Music 的主题</string>
     <string name="select_theme">选择您的主题</string>
-    <string name="version">Apollo 版本</string>
+    <string name="version">Energy Music 版本</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">应用主题</string>

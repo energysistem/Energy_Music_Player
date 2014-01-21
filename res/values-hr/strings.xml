@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">Dodaj pjesmu u favorite</string>
@@ -82,9 +82,9 @@
     <string name="remove">Izbriši iz popisa</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Nepoznato</string>
@@ -94,7 +94,7 @@
     <string name="eqalizer">Equalizer</string>
     <string name="header_interface">Sučelje</string>
     <string name="themes">Teme</string>
-    <string name="apollo_themes">Izaberite svoju temu za Apollo</string>
+    <string name="apollo_themes">Izaberite svoju temu za Energy Music</string>
     <string name="select_theme">Izaberite svoju temu</string>
     <string name="version">Verzija Apolla</string>
 

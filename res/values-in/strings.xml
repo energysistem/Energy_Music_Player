@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">Menjadi lagu ini sebagai favorit</string>
@@ -81,21 +81,21 @@
     <string name="remove">Ganti nama daftar putaran</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Tidak diketahui</string>
 
     <!-- Settings -->
-    <string name="about">Tentang Apollo</string>
+    <string name="about">Tentang Energy Music</string>
     <string name="eqalizer">Equalizer</string>
     <string name="header_interface">Interface</string>
     <string name="themes">Tema</string>
-    <string name="apollo_themes">Pilih tema untuk Apollo</string>
+    <string name="apollo_themes">Pilih tema untuk Energy Music</string>
     <string name="select_theme">Pilih tema Anda</string>
-    <string name="version">Versi Apollo</string>
+    <string name="version">Versi Energy Music</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Menerapkan tema</string>

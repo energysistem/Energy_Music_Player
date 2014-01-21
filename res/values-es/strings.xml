@@ -56,19 +56,38 @@
     <string name="search">Buscar</string>
     <string name="remove">Eliminar de la lista de reproducción</string>
 
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <string name="unknown">Desconocido</string>
 
-    <string name="about">Acerca de Apollo</string>
+    <string name="about">Acerca de Energy Music</string>
     <string name="eqalizer">Ecualizador</string>
     <string name="header_interface">Interfaz</string>
     <string name="themes">Temas</string>
-    <string name="apollo_themes">Seleccione un tema para Apollo</string>
+    <string name="apollo_themes">Seleccione un tema para Energy Music</string>
     <string name="select_theme">Seleccione su tema</string>
-    <string name="version">Versión de Apollo</string>
+    <string name="version">Versión de Energy Music</string>
+
+    <string name="settings_storage_category">Almacenamiento</string>
+    <string name="tab_visibility_title">Visibilidad de pestañas</string>
+    <string name="tab_visibility_summary">Elige que pestañas se van a mostrar</string>
+    <string name="settings_delete_cache_title">Borrar caché</string>
+    <string name="settings_delete_cache_summary">Borrar todas las imágenes en caché</string>
+    <string name="delete_warning">Esto borrará permanentemente las imágenes en caché</string>
+    <string name="visualizer_title">Visualizador de audio</string>
+    <string name="visualizer_summary">Elige que modo de visualización quieres mostrar durante la reproducción</string>
+    <string name="widget_style_title">Estilo de Widget</string>
+    <string name="widget_style_summary">Elige el diseño del Widget</string>
+    <string name="widget_style_dark">Holo Dark</string>
+    <string name="widget_style_light">Holo Light</string>
+
+    <!-- Visualizations -->
+    <string name="visual_none_entry">Ninguno</string>
+    <string name="visual_bargraph_entry">Gráfico de barras</string>
+    <string name="visual_solidbargraph_entry">Gráfico de barras sólido</string>
+    <string name="visual_waveform_entry">Onda</string>
 
     <string name="apply_theme">Aplicar tema</string>
     <string name="get_more_themes">Obtener más temas</string>

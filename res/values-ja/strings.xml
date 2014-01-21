@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">この曲をお気に入りに追加する</string>
@@ -82,21 +82,21 @@
     <string name="remove">プレイリストから削除</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">不明</string>
 
     <!-- Settings -->
-    <string name="about">Apolloについて</string>
+    <string name="about">Energy Musicについて</string>
     <string name="eqalizer">イコライザ</string>
     <string name="header_interface">インタフェース</string>
     <string name="themes">テーマ</string>
-    <string name="apollo_themes">Apolloのテーマを選択</string>
+    <string name="apollo_themes">Energy Musicのテーマを選択</string>
     <string name="select_theme">あなたのテーマを選択</string>
-    <string name="version">Apollo バージョン</string>
+    <string name="version">Energy Music バージョン</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">テーマを適用</string>

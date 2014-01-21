@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">Legyen kedvenc ez a dal</string>
@@ -82,9 +82,9 @@
     <string name="remove">Törlés a lejátszási listáról</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Ismeretlen</string>
@@ -94,9 +94,9 @@
     <string name="eqalizer">Hangszínszabályzó</string>
     <string name="header_interface">Felület</string>
     <string name="themes">Témák</string>
-    <string name="apollo_themes">Válasszon ki egy témát az Apollo számára</string>
+    <string name="apollo_themes">Válasszon ki egy témát az Energy Music számára</string>
     <string name="select_theme">Válasszon ki egy témát</string>
-    <string name="version">Apollo verzió</string>
+    <string name="version">Energy Music verzió</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Téma alkalmazása</string>

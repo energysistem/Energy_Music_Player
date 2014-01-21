@@ -81,21 +81,21 @@
     <string name="remove">Αφαίρεση από τη λίστα αναπαραγωγής</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Άγνωστο</string>
 
     <!-- Settings -->
-    <string name="about">Σχετικά με το Apollo</string>
+    <string name="about">Σχετικά με το Energy Music</string>
     <string name="eqalizer">Ισοσταθμιστής</string>
     <string name="header_interface">Διεπαφή</string>
     <string name="themes">Θέματα</string>
-    <string name="apollo_themes">Επιλέξτε θέμα για το Apollo</string>
+    <string name="apollo_themes">Επιλέξτε θέμα για το Energy Music</string>
     <string name="select_theme">Επιλέξτε θέμα</string>
-    <string name="version">Έκδοση Apollo</string>
+    <string name="version">Έκδοση Energy Music</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Εφαρμογή θέματος</string>

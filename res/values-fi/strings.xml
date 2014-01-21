@@ -82,21 +82,21 @@
     <string name="remove">Poista soittolistalta</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Tuntematon</string>
 
     <!-- Settings -->
-    <string name="about">Tietoja Apollosta</string>
+    <string name="about">Tietoja Energy Musicsta</string>
     <string name="eqalizer">Taajuuskorjain</string>
     <string name="header_interface">Käyttöliittymä</string>
     <string name="themes">Teemat</string>
-    <string name="apollo_themes">Valitse Apollon teema</string>
+    <string name="apollo_themes">Valitse Energy Musicn teema</string>
     <string name="select_theme">Valitse teema</string>
-    <string name="version">Apollon versio</string>
+    <string name="version">Energy Musicn versio</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Ota teema käyttöön</string>

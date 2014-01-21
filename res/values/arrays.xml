@@ -17,6 +17,13 @@
         <item>@string/visual_solidbargraph</item>
         <item>@string/visual_waveform</item>
     </string-array>
+
+    <string-array name="visualization_types_entries">
+        <item>@string/visual_none_entry</item>
+        <item>@string/visual_bargraph_entry</item>
+        <item>@string/visual_solidbargraph_entry</item>
+        <item>@string/visual_waveform_entry</item>
+    </string-array>
     
      
      <string-array name="widget_style_types">

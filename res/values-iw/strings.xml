@@ -44,13 +44,13 @@
     <string name="search">חפש</string>
     <string name="remove">הסר מרשימת השמעה</string>
     <string name="unknown">לא ידוע</string>
-    <string name="about">"אודות Apollo"</string>
+    <string name="about">"אודות Energy Music"</string>
     <string name="eqalizer">אקולייזר</string>
     <string name="header_interface">ממשק</string>
     <string name="themes">ערכות נושא</string>
-    <string name="apollo_themes">"בחר ערכת נושא עבור Apollo"</string>
+    <string name="apollo_themes">"בחר ערכת נושא עבור Energy Music"</string>
     <string name="select_theme">בחר את ערכת הנושא שלך</string>
-    <string name="version">"גירסת Apollo"</string>
+    <string name="version">"גירסת Energy Music"</string>
     <string name="apply_theme">החל ערכת נושא</string>
     <string name="get_more_themes">השג עוד ערכות נושא</string>
     <string name="favorite">מועדפים</string>

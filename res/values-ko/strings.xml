@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App name -->
-    <string name="app_name">Apollo</string>
+    <string name="app_name">Energy Music</string>
 
     <!-- Content descriptions for the Bottom Action Bar -->
     <string name="cd_favorite">이 곡을 즐겨찾기에 넣습니다</string>
@@ -81,21 +81,21 @@
     <string name="remove">재생목록에서 지우기</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">알 수 없는</string>
 
     <!-- Settings -->
-    <string name="about">Apollo에 대해서</string>
+    <string name="about">Energy Music에 대해서</string>
     <string name="eqalizer">이퀄라이저</string>
     <string name="header_interface">인터페이스</string>
     <string name="themes">테마</string>
-    <string name="apollo_themes">Apollo 테마를 고르세요</string>
+    <string name="apollo_themes">Energy Music 테마를 고르세요</string>
     <string name="select_theme">테마 선택</string>
-    <string name="version">Apollo 버전</string>
+    <string name="version">Energy Music 버전</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">테마 적용하기</string>

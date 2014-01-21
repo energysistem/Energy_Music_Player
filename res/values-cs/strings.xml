@@ -85,9 +85,9 @@
     <string name="remove">Odstranit z playlistu</string>
 
     <!-- App Widgets -->
-    <string name="apollo_1x1">Apollo (1x1)</string>
-    <string name="apollo_4x1">Apollo (4x1)</string>
-    <string name="apollo_4x2">Apollo (4x2)</string>
+    <string name="apollo_1x1">Energy Music (1x1)</string>
+    <string name="apollo_4x1">Energy Music (4x1)</string>
+    <string name="apollo_4x2">Energy Music (4x2)</string>
 
     <!-- Unknown genre name -->
     <string name="unknown">Neznámý</string>
@@ -97,7 +97,7 @@
     <string name="eqalizer">Equalizer</string>
     <string name="header_interface">Rozhraní</string>
     <string name="themes">Vzhled</string>
-    <string name="apollo_themes">Vyber téma pro Apollo</string>
+    <string name="apollo_themes">Vyber téma pro Energy Music</string>
     <string name="select_theme">Vyber tvoje téma</string>
     <string name="version">Verze Apolla</string>
 
