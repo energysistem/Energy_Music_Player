@@ -156,10 +156,14 @@
     
     <!-- Visualizations -->
     <string name="visual_none">None</string>
-    <string name="visual_none_entry">None</string>
     <string name="visual_bargraph">Bar Graph</string>
     <string name="visual_solidbargraph">Solid Bar Graph</string>
     <string name="visual_waveform">Waveform</string>
+
+    <string name="visual_none_entry">None</string>
+    <string name="visual_bargraph_entry">Bar Graph</string>
+    <string name="visual_solidbargraph_entry">Solid Bar Graph</string>
+    <string name="visual_waveform_entry">Waveform</string>
 
     <!-- External file dialog -->
     <string name="play_external_question_msg">Select the action to apply to: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>
