@@ -7,6 +7,7 @@ import com.andrew.apolloMod.ui.widgets.VisualizerView;
 
 import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
+import android.util.Log;
 
 public class VisualizerUtils {
 		
@@ -45,14 +46,15 @@ public class VisualizerUtils {
 	  public static void initVisualizer( MediaPlayer player ){
 		  VisualizerUtils.releaseVisualizer();
 		  try{
-			  mVisualizer =  new Visualizer(player.getAudioSessionId());
+			  //mVisualizer =  new Visualizer(player.getAudioSessionId());
+              mVisualizer =  new Visualizer(0);
 		  }
 		  catch(Exception e){
 			  mVisualizer = null;
 			  return;
 		  }
 
-		  mVisualizer.setEnabled(false);		  
+          mVisualizer.setEnabled(false);
 
 		  mVisualizer.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
 

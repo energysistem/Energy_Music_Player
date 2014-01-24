@@ -55,6 +55,10 @@
     <string name="delete_playlist">Eliminar lista de reproducción</string>
     <string name="search">Buscar</string>
     <string name="remove">Eliminar de la lista de reproducción</string>
+    <string name="image_edit_gallery">Nueva imagen de la galería</string>
+    <string name="image_edit_file">Imagen original del archivo</string>
+    <string name="image_edit_lastfm">Obtener imagen desde last.fm</string>
+    <string name="image_edit_web">Obtener imagen con el navegador</string>
 
     <string name="apollo_1x1">Energy Music (1x1)</string>
     <string name="apollo_4x1">Energy Music (4x1)</string>
