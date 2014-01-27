@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.media.AudioManager;
@@ -21,6 +22,7 @@ import android.os.RemoteException;
 import android.provider.BaseColumns;
 import android.provider.MediaStore.Audio;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -210,9 +212,13 @@ public class AudioPlayerHolder extends Activity implements ServiceConnection {
                 break;
             }
             case R.id.eq: {
+                SharedPreferences prefs = getSharedPreferences("MisPreferencias",this.getApplicationContext().MODE_PRIVATE);
+                String audioid = prefs.getString("audioid", "0");
+                //Log.d("audioid_cheto", audioid);
                 Intent i = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
-                i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, MusicUtils.getCurrentAudioId());
-                startActivityForResult(i, EFFECTS_PANEL);
+                i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, Integer.valueOf(audioid));
+                i.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC);
+                startActivityForResult(i, 0);
                 break;
             }
             case R.id.play_store: {

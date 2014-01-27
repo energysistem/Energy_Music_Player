@@ -230,8 +230,12 @@ public class MusicLibrary extends Activity implements ServiceConnection {
 	            break;
 
 	        case R.id.action_eqalizer:
+                SharedPreferences prefs = getSharedPreferences("MisPreferencias",this.getApplicationContext().MODE_PRIVATE);
+                String audioid = prefs.getString("audioid", "0");
+                //Log.d("audioid_cheto",audioid);
 	        	Intent i = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
-                i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, MusicUtils.getCurrentAudioId());
+                i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, Integer.valueOf(audioid));
+                i.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC);
                 startActivityForResult(i, 0);
 	            break;
 

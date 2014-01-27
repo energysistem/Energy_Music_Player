@@ -2227,7 +2227,12 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
             player.setOnErrorListener(errorListener);
             Intent i = new Intent(AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION);
             i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, getAudioSessionId());
+            //Log.d("audioid_2",String.valueOf(getAudioSessionId()));
             i.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, getPackageName());
+            SharedPreferences prefs =getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("audioid", String.valueOf(getAudioSessionId()));
+            editor.commit();
             sendBroadcast(i);
 
             VisualizerUtils.initVisualizer( player );
