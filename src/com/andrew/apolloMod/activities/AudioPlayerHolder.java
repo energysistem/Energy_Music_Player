@@ -27,6 +27,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -311,6 +312,7 @@ public class AudioPlayerHolder extends Activity implements ServiceConnection {
         // Theme chooser
         ThemeUtils.initThemeChooser(this, mViewPager, "viewpager", THEME_ITEM_BACKGROUND);
         ThemeUtils.setMarginDrawable(this, mViewPager, "viewpager_margin");
+
     }
 
     /**

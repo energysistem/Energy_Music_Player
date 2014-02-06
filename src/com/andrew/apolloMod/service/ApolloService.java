@@ -473,7 +473,17 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
         mPlayer = new MultiPlayer();
         mPlayer.setHandler(mMediaplayerHandler);
 
-        reloadQueue();
+        //TODO: resuelto?
+        try
+        {
+            reloadQueue();
+        }
+        catch (Exception e)
+        {
+            mPlayPos=0;
+            mCursor=null;
+        }
+
         notifyChange(QUEUE_CHANGED);
         notifyChange(META_CHANGED);
 
@@ -1139,32 +1149,45 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
             if (mPlayListLen == 0) {
                 return;
             }
-            stop(false);
-            mCursor = getCursorForId(mPlayList[mPlayPos]);
-            if (mCursor == null ) {
-                return;
+            /*
+            try
+            {
+                mCursor.getLong(IDCOLIDX);
             }
-            while(!open(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI + "/" + mCursor.getLong(IDCOLIDX))) {
-                if (mOpenFailedCounter++ < 10 &&  mPlayListLen > 1) {
-                    int pos = getNextPosition(false);
-                    if (pos < 0) {
-                        gotoIdleState();
-                        if (mIsSupposedToBePlaying) {
-                            mIsSupposedToBePlaying = false;
-                            notifyChange(PLAYSTATE_CHANGED);
-                        }
-                        return;
-                    }
-                    mPlayPos = pos;
-                    stop(false);
-                    mPlayPos = pos;
-                    mCursor = getCursorForId(mPlayList[mPlayPos]);
-                } else {
-                    mOpenFailedCounter = 0;
-                    Log.d(LOGTAG, "Failed to open file for playback");
+            catch (Exception e)
+            {
+                mPlayList=null;
+                mPlayListLen=0;
+                return;
+            }*/
+            stop(false);
+
+
+
+                mCursor = getCursorForId(mPlayList[mPlayPos]);
+                if (mCursor == null ) {
                     return;
                 }
-            }
+                while(!open(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI + "/" + mCursor.getLong(IDCOLIDX))) {
+                    if (mOpenFailedCounter++ < 10 &&  mPlayListLen > 1) {
+                        int pos = getNextPosition(false);
+                        if (pos < 0) {
+                            gotoIdleState();
+                            if (mIsSupposedToBePlaying) {
+                                mIsSupposedToBePlaying = false;
+                                notifyChange(PLAYSTATE_CHANGED);
+                            }
+                            return;
+                        }
+                        mPlayPos = pos;
+                        stop(false);
+                        mPlayPos = pos;
+                        mCursor = getCursorForId(mPlayList[mPlayPos]);
+                    } else {
+                        mOpenFailedCounter = 0;
+                        Log.d(LOGTAG, "Failed to open file for playback");
+                        return;
+                    }
 
             updateAlbumBitmap();
 
@@ -1176,6 +1199,8 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
                 seek(bookmark - 5000);
             }
             setNextTrack();
+
+            }
 
         }
     }

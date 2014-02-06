@@ -119,7 +119,13 @@ public class TracksFragment extends RefreshableFragment implements LoaderCallbac
     public void refresh() {
         // The data need to be refreshed
         if( mListView != null ) {
-            getLoaderManager().restartLoader(0, null, this);
+            try{
+                getLoaderManager().restartLoader(0, null, this);
+            }
+            catch (Exception e)
+            {
+
+            }
         }
     }
 

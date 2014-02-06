@@ -27,6 +27,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.provider.BaseColumns;
 import android.provider.MediaStore.Audio;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,6 +35,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -66,9 +68,11 @@ public class AudioPlayerFragment extends Fragment {
     private ImageView mAlbumArt;
 
     // Controls
-    private ImageButton mRepeat, mPlay, mShuffle;
+    private ImageButton mRepeat, mPlay, mShuffle,mBigPrev,mBigNext;
 
     private RepeatingImageButton mPrev, mNext;
+
+    private LinearLayout mBigButtonsLayout;
 
     // Progress
     private SeekBar mProgress;
@@ -76,7 +80,7 @@ public class AudioPlayerFragment extends Fragment {
     // Where we are in the track
     private long mDuration, mLastSeekEventTime, mPosOverride = -1, mStartSeekPos = 0;
 
-    private boolean mFromTouch, paused = false;
+    private boolean mFromTouch, paused = false, paso=false, primera=false;
 
     // Handler
     private static final int REFRESH = 1, UPDATEINFO = 2;
@@ -117,6 +121,37 @@ public class AudioPlayerFragment extends Fragment {
         mPlay = (ImageButton)root.findViewById(R.id.audio_player_play);
         mNext = (RepeatingImageButton)root.findViewById(R.id.audio_player_next);
         mShuffle = (ImageButton)root.findViewById(R.id.audio_player_shuffle);
+
+        mBigPrev = (ImageButton)root.findViewById(R.id.ibBigPrev);
+        mBigNext = (ImageButton)root.findViewById(R.id.ibBigNext);
+
+        mBigButtonsLayout = (LinearLayout)root.findViewById(R.id.bigButtonsLayout);
+
+        mBigNext.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (MusicUtils.mService == null)
+                    return;
+                try {
+                    MusicUtils.mService.next();
+                } catch (RemoteException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        mBigPrev.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (MusicUtils.mService == null)
+                    return;
+                try {
+                        MusicUtils.mService.prev();
+                } catch (RemoteException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
 
         mRepeat.setOnClickListener(new OnClickListener() {
 
@@ -189,7 +224,33 @@ public class AudioPlayerFragment extends Fragment {
         FrameLayout mColorstripBottom = (FrameLayout)root.findViewById(R.id.colorstrip_bottom);
         mColorstripBottom.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark));
         ThemeUtils.setBackgroundColor(getActivity(), mColorstripBottom, "colorstrip");
-        
+
+        mBigButtonsLayout.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                float j = mBigButtonsLayout.getAlpha();
+                if (!primera) {
+                    mBigButtonsLayout.setVisibility(View.VISIBLE);
+                    primera=true;
+                }
+                if (j < 1.0 && !paso) {
+                    j = j + 0.03f;
+                    j = (float) Math.round(j * 100) / 100;
+                    mBigButtonsLayout.setAlpha(j);
+                    mBigButtonsLayout.postDelayed(this, 10);
+                } else if (j == 1 || j > 1)
+                    paso = true;
+                if (j > 0 && paso) {
+                    j = j - 0.03f;
+                    j = (float) Math.round(j * 100) / 100;
+                    mBigButtonsLayout.setAlpha(j);
+                    mBigButtonsLayout.postDelayed(this, 10);
+                }
+                //Log.d("EnergyMusic","Estúpido valor: "+String.valueOf(j));
+            }
+        }, 500);
+
         // Theme chooser
         ThemeUtils.setImageButton(getActivity(), mPrev, "apollo_previous");
         ThemeUtils.setImageButton(getActivity(), mNext, "apollo_next");
@@ -210,6 +271,13 @@ public class AudioPlayerFragment extends Fragment {
             setRepeatButtonImage();
         }
     };
+
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
 
     @Override
     public void onStart() {
