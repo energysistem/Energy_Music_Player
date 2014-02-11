@@ -77,8 +77,8 @@
                     android:layout_height="match_parent"
                     android:id="@+id/ibBigPrev"
                     android:adjustViewBounds="false"
-                    android:src="@drawable/apollo_holo_dark_previous_semitransparent"
-                    android:scaleType="fitCenter"
+                    android:src="@drawable/prev_semitransparent"
+                    android:scaleType="centerInside"
                     android:alpha="1.0"
                     android:background="#000000" />
 
@@ -98,8 +98,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/ibBigNext"
-                    android:src="@drawable/apollo_holo_dark_next_semitransparent"
-                    android:scaleType="fitCenter"
+                    android:src="@drawable/next_semitransparent"
+                    android:scaleType="centerInside"
                     android:alpha="1.0"
                     android:background="#000000"
                     android:adjustViewBounds="false" />

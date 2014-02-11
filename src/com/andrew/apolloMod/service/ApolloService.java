@@ -1203,6 +1203,16 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
             }
 
         }
+        //solución con antifallo para la recarga de imágenes
+        try
+        {
+            updateAlbumBitmap();
+        }
+        catch(Exception e)
+        {
+            Log.d("Energy Music", "Fallo al obtener imagen de album");
+        }
+
     }
 
     private void setNextTrack() {
