@@ -26,11 +26,14 @@
 
 package com.andrew.apolloMod.helpers.lastfm;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 import com.andrew.apolloMod.helpers.DomElement;
+import com.andrew.apolloMod.ui.adapters.TabAdapter;
 
 
 /**
@@ -67,9 +70,16 @@ public final class ResponseBuilder {
 			return Collections.emptyList();
 		Collection<DomElement> children = element.getChildren();
 		Collection<T> items = new ArrayList<T>(children.size());
-		for (DomElement child : children) {
-			items.add(factory.createItemFromElement(child));
-		}
+        try
+        {
+            for (DomElement child : children) {
+                items.add(factory.createItemFromElement(child));
+            }
+        }
+        catch (Exception e)
+        {
+            Log.e("EnergyMusic",e.toString());
+        }
 		return items;
 	}
 
@@ -91,7 +101,9 @@ public final class ResponseBuilder {
 	}
 
 	public static <T> PaginatedResult<T> buildPaginatedResult(DomElement contentElement, DomElement childElement, ItemFactory<T> factory) {
+        //TODO:falsear
 		Collection<T> items = buildCollection(childElement, factory);
+
 
 		String totalPagesAttribute = contentElement.getAttribute("totalPages");
 		if (totalPagesAttribute == null)
@@ -101,6 +113,7 @@ public final class ResponseBuilder {
 		int totalPages = Integer.parseInt(totalPagesAttribute);
 
 		return new PaginatedResult<T>(page, totalPages, items);
+        //return new PaginatedResult<T>(0, 1, items);
 	}
 
 	public static <T> T buildItem(Result result, Class<T> itemClass) {

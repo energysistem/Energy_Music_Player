@@ -26,8 +26,16 @@
 
 package com.andrew.apolloMod.helpers.lastfm;
 
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
+import java.util.logging.XMLFormatter;
 
 import com.andrew.apolloMod.helpers.DomElement;
 import com.andrew.apolloMod.helpers.utils.StringUtilities;
@@ -41,6 +49,8 @@ import com.andrew.apolloMod.helpers.utils.StringUtilities;
  * @author Janni Kovacs
  */
 public class Artist extends MusicEntry {
+
+    public static List<DomElement> jambalista=new ArrayList<DomElement>();
 
     static final ItemFactory<Artist> FACTORY = new ArtistFactory();
 
@@ -87,8 +97,76 @@ public class Artist extends MusicEntry {
         if (limit != -1) {
         	params.put("limit", Integer.toString(limit));
 		}     
-        Result result = Caller.getInstance().call("artist.getImages", apiKey, params);
+        Result result = Caller.getInstance().call("artist.search", apiKey, params);
         return ResponseBuilder.buildPaginatedResult(result, Image.class);
+    }
+
+    public static String pillarImagenes(String artistOrMbid, int page, int limit, String apiKey) {
+        Map<String, String> params = new HashMap<String, String>();
+        if (StringUtilities.isMbid(artistOrMbid)) {
+            params.put("mbid", artistOrMbid);
+        } else {
+            params.put("artist", artistOrMbid);
+        }
+        if (page != -1) {
+            params.put("page", Integer.toString(page));
+        }
+        if (limit != -1) {
+            params.put("limit", Integer.toString(limit));
+        }
+        Result result = Caller.getInstance().call("artist.search", apiKey, params);
+
+        jambalista=new ArrayList<DomElement>();
+        procesarResultado(result.getContentElement());
+
+        String url="";
+
+        url=pillarLaMasGrande();
+
+        Log.d("pausa","pausa");
+
+        return url;
+    }
+
+    public static String pillarLaMasGrande()
+    {
+        String url="";
+        for(int i=0;i<jambalista.size();i++)
+        {
+            if(jambalista.get(i).hasAttribute("size"))
+            {
+                if(jambalista.get(i).getAttribute("size").equalsIgnoreCase("mega"))
+                {
+                    return jambalista.get(i).getText();
+                }
+            }
+        }
+
+        return url;
+    }
+
+    public static void procesarResultado(DomElement element){
+
+        if(element.getChildren().size()<=0)
+        {
+            if(element.getTagName().equalsIgnoreCase("image"))
+            {
+                try {
+                    jambalista.add(element);
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        }
+        else
+        {
+            Collection<DomElement> children = element.getChildren();
+            for (DomElement hijopuñetero : children) {
+                procesarResultado(hijopuñetero);
+            }
+        }
     }
 
     private static class ArtistFactory implements ItemFactory<Artist> {

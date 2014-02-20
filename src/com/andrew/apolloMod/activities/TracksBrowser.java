@@ -146,7 +146,8 @@ public class TracksBrowser extends Activity implements ServiceConnection {
     	        } else if (Audio.Albums.CONTENT_TYPE.equals(mimeType)) {
                     mInfo.type = TYPE_ALBUM;
                     mInfo.data = new String[]{ getAlbumId(), getArtist(), getAlbum() };
-    	        } 
+    	        }
+                //TODO: lastfm
                 mImageProvider.loadImage((ImageView)findViewById(R.id.half_artist_image), mInfo );
                 return true;
             case R.id.image_edit_web:

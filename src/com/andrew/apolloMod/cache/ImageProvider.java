@@ -34,6 +34,8 @@ public class ImageProvider implements GetBitmapTask.OnBitmapReadyListener{
     private int thumbSize;
     
     private static  ImageProvider mInstance;
+
+    private GetBitmapTask mAlbumBitmapTask;
     
     protected ImageProvider( Activity activity ) {
     	mContext = activity;
@@ -59,7 +61,14 @@ public class ImageProvider implements GetBitmapTask.OnBitmapReadyListener{
     	String tag = ImageUtils.createShortTag(imageInfo) + imageInfo.size;
     	if( imageInfo.source.equals(SRC_FILE) || imageInfo.source.equals(SRC_LASTFM) || imageInfo.source.equals(SRC_GALLERY)){
     		clearFromMemoryCache( ImageUtils.createShortTag(imageInfo) );
-    		asyncLoad( tag, imageView, new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext() ) );
+            if (mAlbumBitmapTask != null) {
+                mAlbumBitmapTask.cancel(true);
+                mAlbumBitmapTask = null;
+            }
+            mAlbumBitmapTask= new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext());
+    		//asyncLoad( tag, imageView, new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext() ) );
+            //asyncLoad( tag, imageView, mAlbumBitmapTask );
+            mAlbumBitmapTask.execute();
 		}
     	if(!setCachedBitmap(imageView, tag)){
             asyncLoad( tag, imageView, new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext() ) );

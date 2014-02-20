@@ -473,7 +473,6 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
         mPlayer = new MultiPlayer();
         mPlayer.setHandler(mMediaplayerHandler);
 
-        //TODO: resuelto?
         try
         {
             reloadQueue();

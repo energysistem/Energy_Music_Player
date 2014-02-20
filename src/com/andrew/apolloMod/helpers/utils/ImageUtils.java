@@ -116,12 +116,18 @@ public class ImageUtils {
 	            }
 	        }
 	        else if ( imageInfo.type.equals(TYPE_ARTIST) ) {
+                imageUrl=Artist.pillarImagenes(imageInfo.data[0], 1, 1, LASTFM_API_KEY);
+                /*
 		        PaginatedResult<Image> images = Artist.getImages(imageInfo.data[0], 2, 1, LASTFM_API_KEY);
 	            Iterator<Image> iterator = images.getPageResults().iterator();
+
+
+
 	            if (iterator.hasNext()) {
 		            Image image = iterator.next();	
 			        imageUrl = image.getLargestImage();
 	            }
+	            */
 	        }
         } catch ( Exception e ) {
         	return null;
