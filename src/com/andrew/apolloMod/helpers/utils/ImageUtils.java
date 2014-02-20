@@ -105,45 +105,41 @@ public class ImageUtils {
         }
         return null;
 	}
-	
-    public static File getImageFromWeb( Context context, ImageInfo imageInfo ) {
-    	String imageUrl = null;
-        try {
-	        if( imageInfo.type.equals(TYPE_ALBUM) ){  
-	        	Album image = Album.getInfo(imageInfo.data[1], imageInfo.data[2], LASTFM_API_KEY);
-	            if (image != null) {
-	            	imageUrl = image.getLargestImage();
-	            }
-	        }
-	        else if ( imageInfo.type.equals(TYPE_ARTIST) ) {
-                imageUrl=Artist.pillarImagenes(imageInfo.data[0], 1, 1, LASTFM_API_KEY);
-                /*
-		        PaginatedResult<Image> images = Artist.getImages(imageInfo.data[0], 2, 1, LASTFM_API_KEY);
-	            Iterator<Image> iterator = images.getPageResults().iterator();
 
 
 
-	            if (iterator.hasNext()) {
-		            Image image = iterator.next();	
-			        imageUrl = image.getLargestImage();
-	            }
-	            */
-	        }
-        } catch ( Exception e ) {
-        	return null;
-        }
-        if ( imageUrl == null || imageUrl.isEmpty() ) {
+public static File getImageFromWeb( Context context, ImageInfo imageInfo ) {
+            String imageUrl = null;
+            try {
+                if( imageInfo.type.equals(TYPE_ALBUM) ){
+                    Album image = Album.getInfo(imageInfo.data[1], imageInfo.data[2], LASTFM_API_KEY);
+                    if (image != null) {
+                     imageUrl = image.getLargestImage();
+                    }
+            }
+            else if( imageInfo.type.equals(TYPE_ARTIST) ){
+                Artist image = Artist.getInfo(imageInfo.data[0], LASTFM_API_KEY);
+                if (image != null) {
+                    imageUrl = image.getLargestImage();
+                }
+            }
+            } catch ( Exception e ) {
+                e.printStackTrace();
+                return null;
+            }
+            if ( imageUrl == null || imageUrl.isEmpty() ) {
+                return null;
+            }
+            File newFile = getFile( context, imageInfo );
+            ApolloUtils.downloadFile( imageUrl, newFile );
+            if (newFile.exists()) {
+                return newFile;
+            }
             return null;
         }
-        File newFile = getFile( context, imageInfo );
-        ApolloUtils.downloadFile( imageUrl, newFile );
-		if (newFile.exists()) {
-            return newFile;
-        }
-        return null;
-    }    
 
-    public static File getImageFromMediaStore( Context context, ImageInfo imageInfo ){
+
+public static File getImageFromMediaStore( Context context, ImageInfo imageInfo ){
     	String mAlbum = imageInfo.data[0];
     	String[] projection = {
                 BaseColumns._ID, Audio.Albums._ID, Audio.Albums.ALBUM_ART, Audio.Albums.ALBUM

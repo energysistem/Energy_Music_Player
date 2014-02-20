@@ -26,16 +26,13 @@
 
 package com.andrew.apolloMod.helpers.lastfm;
 
-import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.Locale;
 import java.util.Map;
-import java.util.logging.XMLFormatter;
+import java.util.WeakHashMap;
+
+import android.content.Context;
+import android.util.Log;
 
 import com.andrew.apolloMod.helpers.DomElement;
 import com.andrew.apolloMod.helpers.utils.StringUtilities;
@@ -45,12 +42,10 @@ import com.andrew.apolloMod.helpers.utils.StringUtilities;
  * This class contains static methods that executes API methods relating to
  * artists.<br/>
  * Method names are equivalent to the last.fm API method names.
- * 
+ *
  * @author Janni Kovacs
  */
 public class Artist extends MusicEntry {
-
-    public static List<DomElement> jambalista=new ArrayList<DomElement>();
 
     static final ItemFactory<Artist> FACTORY = new ArtistFactory();
 
@@ -59,115 +54,40 @@ public class Artist extends MusicEntry {
     }
 
     protected Artist(String name, String url, String mbid, int playcount, int listeners,
-            boolean streamable) {
+                     boolean streamable) {
         super(name, url, mbid, playcount, listeners, streamable);
     }
 
     /**
-     * Get {@link Image}s for this artist in a variety of sizes.
-     * 
-     * @param artistOrMbid The artist name in question
-     * @param apiKey A Last.fm API key
-     * @return a list of {@link Image}s
+     * Retrieves detailed artist info for the given artist or mbid entry.
+     *
+     * @param artistOrMbid Name of the artist or an mbid
+     * @return detailed artist info
      */
-    public static PaginatedResult<Image> getImages(String artistOrMbid, String apiKey) {
-        return getImages(artistOrMbid, -1, -1, apiKey);
+    public final static Artist getInfo(final String artistOrMbid, String apiKey) {
+        return getInfo(artistOrMbid, Locale.getDefault(), apiKey);
     }
+
 
     /**
-     * Get {@link Image}s for this artist in a variety of sizes.
-     * 
-     * @param artistOrMbid The artist name in question
-     * @param page Which page of limit amount to display
-     * @param limit How many to return. Defaults and maxes out at 50
-     * @param apiKey A Last.fm API key
-     * @return a list of {@link Image}s
+     * Retrieves detailed artist info for the given artist or mbid entry.
+     *
+     * @param artistOrMbid Name of the artist or an mbid
+     * @param locale The language to fetch info in, or <code>null</code>
+     * @param apiKey The API key
+     * @return detailed artist info
      */
-    public static PaginatedResult<Image> getImages(String artistOrMbid, int page, int limit,
-            String apiKey) {
-        Map<String, String> params = new HashMap<String, String>();
-        if (StringUtilities.isMbid(artistOrMbid)) {
-            params.put("mbid", artistOrMbid);
-        } else {
-            params.put("artist", artistOrMbid);
+    public final static Artist getInfo(final String artistOrMbid,
+                                       final Locale locale, final String apiKey) {
+        final Map<String, String> mParams = new WeakHashMap<String, String>();
+        mParams.put("artist", artistOrMbid);
+        if (locale != null && locale.getLanguage().length() != 0) {
+            mParams.put("lang", locale.getLanguage());
         }
-        if (page != -1) {
-        	params.put("page", Integer.toString(page));
-		}
-        if (limit != -1) {
-        	params.put("limit", Integer.toString(limit));
-		}     
-        Result result = Caller.getInstance().call("artist.search", apiKey, params);
-        return ResponseBuilder.buildPaginatedResult(result, Image.class);
+        final Result mResult = Caller.getInstance().call("artist.getInfo", apiKey, mParams);
+        return ResponseBuilder.buildItem(mResult, Artist.class);
     }
 
-    public static String pillarImagenes(String artistOrMbid, int page, int limit, String apiKey) {
-        Map<String, String> params = new HashMap<String, String>();
-        if (StringUtilities.isMbid(artistOrMbid)) {
-            params.put("mbid", artistOrMbid);
-        } else {
-            params.put("artist", artistOrMbid);
-        }
-        if (page != -1) {
-            params.put("page", Integer.toString(page));
-        }
-        if (limit != -1) {
-            params.put("limit", Integer.toString(limit));
-        }
-        Result result = Caller.getInstance().call("artist.search", apiKey, params);
-
-        jambalista=new ArrayList<DomElement>();
-        procesarResultado(result.getContentElement());
-
-        String url="";
-
-        url=pillarLaMasGrande();
-
-        Log.d("pausa","pausa");
-
-        return url;
-    }
-
-    public static String pillarLaMasGrande()
-    {
-        String url="";
-        for(int i=0;i<jambalista.size();i++)
-        {
-            if(jambalista.get(i).hasAttribute("size"))
-            {
-                if(jambalista.get(i).getAttribute("size").equalsIgnoreCase("mega"))
-                {
-                    return jambalista.get(i).getText();
-                }
-            }
-        }
-
-        return url;
-    }
-
-    public static void procesarResultado(DomElement element){
-
-        if(element.getChildren().size()<=0)
-        {
-            if(element.getTagName().equalsIgnoreCase("image"))
-            {
-                try {
-                    jambalista.add(element);
-                }
-                catch (Exception e)
-                {
-
-                }
-            }
-        }
-        else
-        {
-            Collection<DomElement> children = element.getChildren();
-            for (DomElement hijopuñetero : children) {
-                procesarResultado(hijopuñetero);
-            }
-        }
-    }
 
     private static class ArtistFactory implements ItemFactory<Artist> {
         @Override

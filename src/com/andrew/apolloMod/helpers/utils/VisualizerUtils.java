@@ -46,8 +46,7 @@ public class VisualizerUtils {
 	  public static void initVisualizer( MediaPlayer player ){
 		  VisualizerUtils.releaseVisualizer();
 		  try{
-			  //mVisualizer =  new Visualizer(player.getAudioSessionId());
-              mVisualizer =  new Visualizer(0);
+			  mVisualizer =  new Visualizer(player.getAudioSessionId());
 		  }
 		  catch(Exception e){
 			  mVisualizer = null;

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 
 package com.andrew.apolloMod.ui.fragments.list;
@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.BaseColumns;
@@ -22,6 +23,7 @@ import android.provider.MediaStore.Audio.AudioColumns;
 import android.provider.MediaStore.Audio.Genres;
 import android.provider.MediaStore.Audio.Playlists;
 import android.provider.MediaStore.MediaColumns;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -33,6 +35,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.andrew.apolloMod.NowPlayingCursor;
@@ -119,13 +122,7 @@ public class TracksFragment extends RefreshableFragment implements LoaderCallbac
     public void refresh() {
         // The data need to be refreshed
         if( mListView != null ) {
-            try{
-                getLoaderManager().restartLoader(0, null, this);
-            }
-            catch (Exception e)
-            {
-
-            }
+            getLoaderManager().restartLoader(0, null, this);
         }
     }
 
@@ -159,6 +156,30 @@ public class TracksFragment extends RefreshableFragment implements LoaderCallbac
                         emptyness.setVisibility(View.GONE);
                 }
             }
+        }
+        else{
+
+            RelativeLayout  shuffle = (RelativeLayout)root.findViewById(R.id.shuffle_wrapper);
+            shuffle.setVisibility(View.VISIBLE);
+            shuffle.setOnClickListener(new RelativeLayout.OnClickListener() {
+                public void onClick(View v)
+                {
+
+                    Uri uri = Audio.Media.EXTERNAL_CONTENT_URI;
+                    String[] projection = new String[] {
+                            BaseColumns._ID
+                    };
+                    String selection = AudioColumns.IS_MUSIC + "=1";
+                    String sortOrder = "RANDOM()";
+                    Cursor cursor = MusicUtils.query(getActivity(), uri, projection, selection, null, sortOrder);
+                    if (cursor != null) {
+                        MusicUtils.shuffleAll(getActivity(), cursor);
+                        cursor.close();
+                        cursor = null;
+                    }
+                }
+            });
+
         }
         return root;
     }
@@ -253,7 +274,7 @@ public class TracksFragment extends RefreshableFragment implements LoaderCallbac
         if (getArguments() != null
                 && Playlists.CONTENT_TYPE.equals(getArguments().getString(MIME_TYPE))
                 && (getArguments().getLong(BaseColumns._ID) >= 0 || getArguments().getLong(
-                        BaseColumns._ID) == PLAYLIST_FAVORITES)) {
+                BaseColumns._ID) == PLAYLIST_FAVORITES)) {
             mMediaIdIndex = data.getColumnIndexOrThrow(Playlists.Members.AUDIO_ID);
             mTitleIndex = data.getColumnIndexOrThrow(MediaColumns.TITLE);
             mAlbumIndex = data.getColumnIndexOrThrow(AudioColumns.ALBUM);
@@ -281,6 +302,35 @@ public class TracksFragment extends RefreshableFragment implements LoaderCallbac
             mTitleIndex = data.getColumnIndexOrThrow(MediaColumns.TITLE);
             mArtistIndex = data.getColumnIndexOrThrow(AudioColumns.ARTIST);
             mAlbumIndex = data.getColumnIndexOrThrow(AudioColumns.ALBUM);
+
+            //TODO: rewrite fragment to make it more efficient so this section can be removed
+
+            if (mPlaylistId == PLAYLIST_QUEUE) {
+                long[] mNowPlaying = MusicUtils.getQueue();
+
+                String[] audioCols = new String[] { BaseColumns._ID, MediaColumns.TITLE, AudioColumns.ARTIST};
+
+                MatrixCursor playlistCursor = new MatrixCursor(audioCols);
+                for(int i = 0; i < mNowPlaying.length; i++){
+                    data.moveToPosition(-1);
+                    while (data.moveToNext()) {
+                        long audioid = data.getLong(mMediaIdIndex);
+                        if( audioid == mNowPlaying[i]) {
+                            String trackName = data.getString(TracksFragment.mTitleIndex);
+                            String artistName = data.getString(TracksFragment.mArtistIndex);
+                            playlistCursor.addRow(new Object[] {audioid, trackName, artistName });
+
+                        }
+                    }
+                }
+                mMediaIdIndex = playlistCursor.getColumnIndexOrThrow(BaseColumns._ID);
+                mTitleIndex = playlistCursor.getColumnIndexOrThrow(MediaColumns.TITLE);
+                mArtistIndex = playlistCursor.getColumnIndexOrThrow(AudioColumns.ARTIST);
+                mTrackAdapter.changeCursor(playlistCursor);
+                mListView.invalidateViews();
+                mCursor = playlistCursor;
+                return;
+            }
         }
         mTrackAdapter.changeCursor(data);
         mListView.invalidateViews();
@@ -334,7 +384,7 @@ public class TracksFragment extends RefreshableFragment implements LoaderCallbac
             case ADD_TO_PLAYLIST: {
                 Intent intent = new Intent(INTENT_ADD_TO_PLAYLIST);
                 long[] list = new long[] {
-                    mSelectedId
+                        mSelectedId
                 };
                 intent.putExtra(INTENT_PLAYLIST_LIST, list);
                 getActivity().startActivity(intent);
@@ -453,7 +503,32 @@ public class TracksFragment extends RefreshableFragment implements LoaderCallbac
             }
             selection.append(")");
             mCursor = MusicUtils.query(getActivity(), uri, cols, selection.toString(), null, null);
-            mTrackAdapter.changeCursor(mCursor);
+
+            mMediaIdIndex =mCursor.getColumnIndexOrThrow(BaseColumns._ID);
+            mTitleIndex = mCursor.getColumnIndexOrThrow(MediaColumns.TITLE);
+            mArtistIndex = mCursor.getColumnIndexOrThrow(AudioColumns.ARTIST);
+
+
+            String[] audioCols = new String[] { BaseColumns._ID, MediaColumns.TITLE, AudioColumns.ARTIST};
+
+            MatrixCursor playlistCursor = new MatrixCursor(audioCols);
+            for(int i = 0; i < mNowPlaying.length; i++){
+                mCursor.moveToPosition(-1);
+                while (mCursor.moveToNext()) {
+                    long audioid = mCursor.getLong(mMediaIdIndex);
+                    if( audioid == mNowPlaying[i]) {
+                        String trackName = mCursor.getString(TracksFragment.mTitleIndex);
+                        String artistName = mCursor.getString(TracksFragment.mArtistIndex);
+                        playlistCursor.addRow(new Object[] {audioid, trackName, artistName });
+
+                    }
+                }
+            }
+            mMediaIdIndex = playlistCursor.getColumnIndexOrThrow(BaseColumns._ID);
+            mTitleIndex = playlistCursor.getColumnIndexOrThrow(MediaColumns.TITLE);
+            mArtistIndex = playlistCursor.getColumnIndexOrThrow(AudioColumns.ARTIST);
+            mCursor = playlistCursor;
+            mTrackAdapter.changeCursor(playlistCursor);
         }
     }
 

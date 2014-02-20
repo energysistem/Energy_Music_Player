@@ -58,19 +58,12 @@ public class ImageProvider implements GetBitmapTask.OnBitmapReadyListener{
     }
     
     public void loadImage( ImageView imageView, ImageInfo imageInfo ){
-    	String tag = ImageUtils.createShortTag(imageInfo) + imageInfo.size;
-    	if( imageInfo.source.equals(SRC_FILE) || imageInfo.source.equals(SRC_LASTFM) || imageInfo.source.equals(SRC_GALLERY)){
-    		clearFromMemoryCache( ImageUtils.createShortTag(imageInfo) );
-            if (mAlbumBitmapTask != null) {
-                mAlbumBitmapTask.cancel(true);
-                mAlbumBitmapTask = null;
-            }
-            mAlbumBitmapTask= new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext());
-    		//asyncLoad( tag, imageView, new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext() ) );
-            //asyncLoad( tag, imageView, mAlbumBitmapTask );
-            mAlbumBitmapTask.execute();
-		}
-    	if(!setCachedBitmap(imageView, tag)){
+        String tag = ImageUtils.createShortTag(imageInfo) + imageInfo.size;
+        if( imageInfo.source.equals(SRC_FILE) || imageInfo.source.equals(SRC_LASTFM) || imageInfo.source.equals(SRC_GALLERY)){
+            clearFromMemoryCache( ImageUtils.createShortTag(imageInfo) );
+            asyncLoad( tag, imageView, new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext() ) );
+        }
+        if(!setCachedBitmap(imageView, tag)){
             asyncLoad( tag, imageView, new GetBitmapTask( thumbSize, imageInfo, this, imageView.getContext() ) );
         }
     }

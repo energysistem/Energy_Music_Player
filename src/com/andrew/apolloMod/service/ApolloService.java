@@ -1074,9 +1074,6 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
      */
     public void open(long[] list, int position) {
         synchronized (this) {
-            if (mShuffleMode == SHUFFLE_AUTO) {
-                mShuffleMode = SHUFFLE_NORMAL;
-            }
             long oldId = getAudioId();
             int listlength = list.length;
             boolean newlist = true;
@@ -1097,7 +1094,7 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
             if (position >= 0) {
                 mPlayPos = position;
             } else {
-                mPlayPos = mRand.nextInt(mPlayListLen);
+                mPlayPos = 0;
             }
             mHistory.clear();
 
@@ -1187,6 +1184,7 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
                         Log.d(LOGTAG, "Failed to open file for playback");
                         return;
                     }
+                }
 
             updateAlbumBitmap();
 
@@ -1199,9 +1197,10 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
             }
             setNextTrack();
 
-            }
-
         }
+
+        //TODO: revisar cambio a original
+        /*
         //solución con antifallo para la recarga de imágenes
         try
         {
@@ -1210,7 +1209,7 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
         catch(Exception e)
         {
             Log.d("Energy Music", "Fallo al obtener imagen de album");
-        }
+        }*/
 
     }
 
@@ -2261,15 +2260,17 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
             player.setOnErrorListener(errorListener);
             Intent i = new Intent(AudioEffect.ACTION_OPEN_AUDIO_EFFECT_CONTROL_SESSION);
             i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, getAudioSessionId());
-            //Log.d("audioid_2",String.valueOf(getAudioSessionId()));
             i.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, getPackageName());
+
+            sendBroadcast(i);
+
+            VisualizerUtils.initVisualizer( player );
+
+            //TODO: revisar cambio a original
             SharedPreferences prefs =getSharedPreferences("MisPreferencias",Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
             editor.putString("audioid", String.valueOf(getAudioSessionId()));
             editor.commit();
-            sendBroadcast(i);
-
-            VisualizerUtils.initVisualizer( player );
             return true;
         }
 

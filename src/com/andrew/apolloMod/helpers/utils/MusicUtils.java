@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
 
 import android.app.Activity;
 import android.app.SearchManager;
@@ -124,7 +125,7 @@ public class MusicUtils {
      *         an album
      */
     public static String makeAlbumsLabel(Context mContext, int numalbums, int numsongs,
-            boolean isUnknown) {
+                                         boolean isUnknown) {
 
         StringBuilder songs_albums = new StringBuilder();
 
@@ -172,7 +173,7 @@ public class MusicUtils {
      * @return
      */
     public static Cursor query(Context context, Uri uri, String[] projection, String selection,
-            String[] selectionArgs, String sortOrder, int limit) {
+                               String[] selectionArgs, String sortOrder, int limit) {
         try {
             ContentResolver resolver = context.getContentResolver();
             if (resolver == null) {
@@ -197,7 +198,7 @@ public class MusicUtils {
      * @return
      */
     public static Cursor query(Context context, Uri uri, String[] projection, String selection,
-            String[] selectionArgs, String sortOrder) {
+                               String[] selectionArgs, String sortOrder) {
         return query(context, uri, projection, selection, selectionArgs, sortOrder, 0);
     }
 
@@ -206,7 +207,9 @@ public class MusicUtils {
      * @param cursor
      */
     public static void shuffleAll(Context context, Cursor cursor) {
-        playAll(context, cursor, 0, true);
+
+        long[] list = getRandomSongListForCursor(cursor);
+        playAll(context, list, -1, false);
     }
 
     /**
@@ -267,6 +270,42 @@ public class MusicUtils {
         for (int i = 0; i < len; i++) {
             list[i] = cursor.getLong(colidx);
             cursor.moveToNext();
+        }
+        return list;
+    }
+
+    /**
+     * @param cursor
+     * @return
+     */
+    public static long[] getRandomSongListForCursor(Cursor cursor) {
+        if (cursor == null) {
+            return sEmptyList;
+        }
+        int len = cursor.getCount();
+        long[] list = new long[len];
+        cursor.moveToFirst();
+        int colidx = -1;
+        try {
+            colidx = cursor.getColumnIndexOrThrow(Audio.Playlists.Members.AUDIO_ID);
+        } catch (IllegalArgumentException ex) {
+            colidx = cursor.getColumnIndexOrThrow(BaseColumns._ID);
+        }
+        for (int i = 0; i < len; i++) {
+            list[i] = cursor.getLong(colidx);
+            cursor.moveToNext();
+        }
+        int index;
+        Random random = new Random();
+        for (int i = list.length - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            if (index != i)
+            {
+                list[index] ^= list[i];
+                list[i] ^= list[index];
+                list[index] ^= list[i];
+            }
         }
         return list;
     }
@@ -344,7 +383,7 @@ public class MusicUtils {
      */
     public static long[] getSongListForArtist(Context context, long id) {
         final String[] projection = new String[] {
-            BaseColumns._ID
+                BaseColumns._ID
         };
         String selection = AudioColumns.ARTIST_ID + "=" + id + " AND " + AudioColumns.IS_MUSIC
                 + "=1";
@@ -366,7 +405,7 @@ public class MusicUtils {
      */
     public static long[] getSongListForAlbum(Context context, long id) {
         final String[] projection = new String[] {
-            BaseColumns._ID
+                BaseColumns._ID
         };
         String selection = AudioColumns.ALBUM_ID + "=" + id + " AND " + AudioColumns.IS_MUSIC
                 + "=1";
@@ -388,7 +427,7 @@ public class MusicUtils {
      */
     public static long[] getSongListForGenre(Context context, long id) {
         String[] projection = new String[] {
-            BaseColumns._ID
+                BaseColumns._ID
         };
         StringBuilder selection = new StringBuilder();
         selection.append(AudioColumns.IS_MUSIC + "=1");
@@ -411,7 +450,7 @@ public class MusicUtils {
      */
     public static long[] getSongListForPlaylist(Context context, long id) {
         final String[] projection = new String[] {
-            Audio.Playlists.Members.AUDIO_ID
+                Audio.Playlists.Members.AUDIO_ID
         };
         String sortOrder = Playlists.Members.DEFAULT_SORT_ORDER;
         Uri uri = Playlists.Members.getContentUri(EXTERNAL, id);
@@ -434,7 +473,7 @@ public class MusicUtils {
         if (name != null && name.length() > 0) {
             ContentResolver resolver = context.getContentResolver();
             String[] cols = new String[] {
-                PlaylistsColumns.NAME
+                    PlaylistsColumns.NAME
             };
             String whereclause = PlaylistsColumns.NAME + " = '" + name + "'";
             Cursor cur = resolver.query(Audio.Playlists.EXTERNAL_CONTENT_URI, cols, whereclause,
@@ -458,7 +497,7 @@ public class MusicUtils {
         long favorites_id = -1;
         String favorites_where = PlaylistsColumns.NAME + "='" + "Favorites" + "'";
         String[] favorites_cols = new String[] {
-            BaseColumns._ID
+                BaseColumns._ID
         };
         Uri favorites_uri = Audio.Playlists.EXTERNAL_CONTENT_URI;
         Cursor cursor = query(context, favorites_uri, favorites_cols, favorites_where, null, null);
@@ -535,7 +574,7 @@ public class MusicUtils {
             // need to determine the number of items currently in the playlist,
             // so the play_order field can be maintained.
             String[] cols = new String[] {
-                "count(*)"
+                    "count(*)"
             };
             Uri uri = Audio.Playlists.Members.getContentUri(EXTERNAL, playlistid);
             Cursor cur = resolver.query(uri, cols, null, null, null);
@@ -610,7 +649,7 @@ public class MusicUtils {
 
             String favorites_where = PlaylistsColumns.NAME + "='" + PLAYLIST_NAME_FAVORITES + "'";
             String[] favorites_cols = new String[] {
-                BaseColumns._ID
+                    BaseColumns._ID
             };
             Uri favorites_uri = Audio.Playlists.EXTERNAL_CONTENT_URI;
             Cursor cursor = resolver.query(favorites_uri, favorites_cols, favorites_where, null,
@@ -624,7 +663,7 @@ public class MusicUtils {
             }
 
             String[] cols = new String[] {
-                Playlists.Members.AUDIO_ID
+                    Playlists.Members.AUDIO_ID
             };
             Uri uri = Playlists.Members.getContentUri(EXTERNAL, favorites_id);
             Cursor cur = resolver.query(uri, cols, null, null, null);
@@ -661,7 +700,7 @@ public class MusicUtils {
 
             String favorites_where = PlaylistsColumns.NAME + "='" + PLAYLIST_NAME_FAVORITES + "'";
             String[] favorites_cols = new String[] {
-                BaseColumns._ID
+                    BaseColumns._ID
             };
             Uri favorites_uri = Audio.Playlists.EXTERNAL_CONTENT_URI;
             Cursor cursor = resolver.query(favorites_uri, favorites_cols, favorites_where, null,
@@ -675,7 +714,7 @@ public class MusicUtils {
             }
 
             String[] cols = new String[] {
-                Playlists.Members.AUDIO_ID
+                    Playlists.Members.AUDIO_ID
             };
             Uri uri = Playlists.Members.getContentUri(EXTERNAL, favorites_id);
             Cursor cur = resolver.query(uri, cols, null, null, null);
@@ -705,7 +744,7 @@ public class MusicUtils {
             ContentResolver resolver = context.getContentResolver();
             String favorites_where = PlaylistsColumns.NAME + "='" + PLAYLIST_NAME_FAVORITES + "'";
             String[] favorites_cols = new String[] {
-                BaseColumns._ID
+                    BaseColumns._ID
             };
             Uri favorites_uri = Audio.Playlists.EXTERNAL_CONTENT_URI;
             Cursor cursor = resolver.query(favorites_uri, favorites_cols, favorites_where, null,
@@ -755,7 +794,7 @@ public class MusicUtils {
             values.put(PlaylistsColumns.NAME, name);
             resolver.update(Audio.Playlists.EXTERNAL_CONTENT_URI, values, BaseColumns._ID + "=?",
                     new String[] {
-                        String.valueOf(id)
+                            String.valueOf(id)
                     });
             Toast.makeText(mContext, "Playlist renamed", Toast.LENGTH_SHORT).show();
         }
@@ -964,7 +1003,7 @@ public class MusicUtils {
     public static String getArtistName(Context mContext, long artist_id, boolean default_name) {
         String where = BaseColumns._ID + "=" + artist_id;
         String[] cols = new String[] {
-            ArtistColumns.ARTIST
+                ArtistColumns.ARTIST
         };
         Uri uri = Audio.Artists.EXTERNAL_CONTENT_URI;
         Cursor cursor = mContext.getContentResolver().query(uri, cols, where, null, null);
@@ -999,7 +1038,7 @@ public class MusicUtils {
     public static String getAlbumName(Context mContext, long album_id, boolean default_name) {
         String where = BaseColumns._ID + "=" + album_id;
         String[] cols = new String[] {
-            AlbumColumns.ALBUM
+                AlbumColumns.ALBUM
         };
         Uri uri = Audio.Albums.EXTERNAL_CONTENT_URI;
         Cursor cursor = mContext.getContentResolver().query(uri, cols, where, null, null);
@@ -1032,7 +1071,7 @@ public class MusicUtils {
     public static String getPlaylistName(Context mContext, long playlist_id) {
         String where = BaseColumns._ID + "=" + playlist_id;
         String[] cols = new String[] {
-            PlaylistsColumns.NAME
+                PlaylistsColumns.NAME
         };
         Uri uri = Audio.Playlists.EXTERNAL_CONTENT_URI;
         Cursor cursor = mContext.getContentResolver().query(uri, cols, where, null, null);
@@ -1056,7 +1095,7 @@ public class MusicUtils {
     public static String getGenreName(Context mContext, long genre_id, boolean default_name) {
         String where = BaseColumns._ID + "=" + genre_id;
         String[] cols = new String[] {
-            GenresColumns.NAME
+                GenresColumns.NAME
         };
         Uri uri = Audio.Genres.EXTERNAL_CONTENT_URI;
         Cursor cursor = mContext.getContentResolver().query(uri, cols, where, null, null);
@@ -1136,7 +1175,7 @@ public class MusicUtils {
      * @param list
      */
     public static void makePlaylistList(Context mContext, boolean create_shortcut,
-            List<Map<String, String>> list) {
+                                        List<Map<String, String>> list) {
 
         Map<String, String> map;
 
@@ -1185,10 +1224,10 @@ public class MusicUtils {
             }
         }
     }
-    
-    public static void notifyWidgets(String what){ 
+
+    public static void notifyWidgets(String what){
         try {
-        	mService.notifyChange(what);
+            mService.notifyChange(what);
         } catch (Exception e) {
         }
     }

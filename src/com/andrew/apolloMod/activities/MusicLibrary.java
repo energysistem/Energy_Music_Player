@@ -230,6 +230,8 @@ public class MusicLibrary extends Activity implements ServiceConnection {
 	            break;
 
 	        case R.id.action_eqalizer:
+                //TODO: revisar cambio a original
+
                 SharedPreferences prefs = getSharedPreferences("MisPreferencias",this.getApplicationContext().MODE_PRIVATE);
                 String audioid = prefs.getString("audioid", "0");
                 //Log.d("audioid_cheto",audioid);
@@ -237,7 +239,11 @@ public class MusicLibrary extends Activity implements ServiceConnection {
                 i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, Integer.valueOf(audioid));
                 i.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC);
                 startActivityForResult(i, 0);
-	            break;
+                /*
+                Intent i = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
+                i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, MusicUtils.getCurrentAudioId());
+                startActivityForResult(i, 0);*/
+                break;
 
 	        case R.id.action_shuffle_all:
 	        	shuffleAll();
@@ -291,7 +297,7 @@ public class MusicLibrary extends Activity implements ServiceConnection {
             BaseColumns._ID
         };
         String selection = AudioColumns.IS_MUSIC + "=1";
-        String sortOrder = Audio.Media.DEFAULT_SORT_ORDER;
+        String sortOrder = "RANDOM()";
         Cursor cursor = MusicUtils.query(this, uri, projection, selection, null, sortOrder);
         if (cursor != null) {
             MusicUtils.shuffleAll(this, cursor);
