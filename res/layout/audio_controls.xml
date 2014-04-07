@@ -11,7 +11,8 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/audio_player_seek_bar_padding"
+            android:paddingTop="@dimen/audio_player_seek_bar_padding"    
+            android:progressDrawable="@drawable/audio_player_seekbar" 
             android:thumb="@null" />
 
         <TextView
@@ -50,7 +51,7 @@
             android:contentDescription="@string/cd_repeat"
             android:src="@drawable/apollo_holo_light_repeat_normal" />
 
-        <com.andrew.apolloMod.ui.widgets.RepeatingImageButton
+        <com.energy.energyMusic.ui.widgets.RepeatingImageButton
             android:id="@+id/audio_player_prev"
             style="@style/AudioPlayerButton"
             android:src="@drawable/apollo_holo_light_previous" />
@@ -61,7 +62,7 @@
             android:contentDescription="@string/cd_play"
             android:src="@drawable/apollo_holo_light_pause" />
 
-        <com.andrew.apolloMod.ui.widgets.RepeatingImageButton
+        <com.energy.energyMusic.ui.widgets.RepeatingImageButton
             android:id="@+id/audio_player_next"
             style="@style/AudioPlayerButton"
             android:src="@drawable/apollo_holo_light_next" />

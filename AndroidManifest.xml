@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.andrew.apolloMod"
+    package="com.energy.energyMusic"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -32,7 +32,7 @@
         android:largeHeap="true"
         android:process=":main"
         android:taskAffinity="apollo.task.music"
-        android:theme="@android:style/Theme.Holo.Light" >
+        android:theme="@android:style/Theme.Holo.Light">
         <meta-data
             android:name="android.app.default_searchable"
             android:value=".activities.QueryBrowserActivity" />
@@ -58,8 +58,8 @@
         <activity
             android:name=".activities.MusicLibrary"
             android:label="@string/app_name"
-        	android:logo="@drawable/ic_logo"
-            android:windowSoftInputMode="adjustPan" >
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/CustomActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
@@ -68,33 +68,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.APP_MUSIC" />
             </intent-filter>
-        </activity>
-        <!-- Now Playing -->
-        <activity
-            android:name=".activities.AudioPlayerHolder"
-            android:clearTaskOnLaunch="true"
-            android:excludeFromRecents="true"
-            android:label="@string/nowplaying"
-            android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="content" />
-                <data android:host="media" />
-                <data android:mimeType="audio/*" />
-                <data android:mimeType="application/ogg" />
-                <data android:mimeType="application/x-ogg" />
-                <data android:mimeType="application/itunes" />
-            </intent-filter>
             <intent-filter>
                 <action android:name="com.andrew.apolloMod.PLAYBACK_VIEWER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <!-- Now Playing -->
         <!-- Play External File -->
         <activity
             android:name=".activities.PlayExternal"
@@ -140,8 +120,16 @@
         <!-- Settings -->
         <activity
             android:name=".preferences.SettingsHolder"
-        	android:logo="@drawable/ic_logo"
-            android:label="@string/settings" />
+            android:theme="@style/CustomActionBarTheme"
+            android:label="" />
+        <!-- Simple EQ -->
+        <activity
+            android:name=".activities.SimpleEq"
+            android:excludeFromRecents="true"
+            android:label="@string/simple_eq_page_title"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName=".activities.MusicLibrary" />
+
         <activity
             android:name=".menu.PlaylistDialog"
             android:label="@string/rename_playlist"
@@ -158,7 +146,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.andrew.apolloMod.menu.PlaylistPicker"
+            android:name=".menu.PlaylistPicker"
             android:icon="@drawable/ic_launcher"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
             <intent-filter>
@@ -169,7 +157,7 @@
         </activity>
         <!-- 1x1 App Widget -->
         <receiver
-            android:name="com.andrew.apolloMod.app.widgets.AppWidget11"
+            android:name=".app.widgets.AppWidget11"
             android:label="@string/apollo_1x1" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -181,7 +169,7 @@
         </receiver>
         <!-- 4x1 App Widget -->
         <receiver
-            android:name="com.andrew.apolloMod.app.widgets.AppWidget41"
+            android:name=".app.widgets.AppWidget41"
             android:label="@string/apollo_4x1" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -193,7 +181,7 @@
         </receiver>
         <!-- 4x2 App Widget -->
         <receiver
-            android:name="com.andrew.apolloMod.app.widgets.AppWidget42"
+            android:name=".app.widgets.AppWidget42"
             android:label="@string/apollo_4x2" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -204,15 +192,17 @@
                 android:resource="@xml/appwidget4x2_info" />
         </receiver>
         <!-- Media button receiver -->
-        <receiver android:name="com.andrew.apolloMod.service.MediaButtonIntentReceiver" >
+        <receiver android:name=".service.MediaButtonIntentReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+            <intent-filter>
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
             </intent-filter>
         </receiver>
         <!-- Music service -->
         <service
-            android:name="com.andrew.apolloMod.service.ApolloService"
+            android:name=".service.ApolloService"
             android:label="@string/app_name"
             android:process=":main" />
     </application>

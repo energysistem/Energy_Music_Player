@@ -11,16 +11,16 @@
     <!-- Tabs -->
     <dimen name="tab_padding_top_bottom">6dp</dimen>
     <dimen name="tab_padding_left_right">40dp</dimen>
-    <dimen name="tab_height">30dp</dimen>
+    <dimen name="tab_height">40dp</dimen>
 
     <!-- Bottom ActionBar -->
-    <dimen name="bottom_action_bar_height">48dp</dimen>
-    <dimen name="bottom_action_bar_padding_left">4dp</dimen>
-    <dimen name="bottom_action_bar_item_width">56dp</dimen>
-    <dimen name="bottom_action_bar_item_padding_left_right">12dp</dimen>
-    <dimen name="bottom_action_bar_album_art_width_height">30dp</dimen>
+    <dimen name="bottom_action_bar_height">68dp</dimen>
+    <dimen name="bottom_action_bar_padding_left">12dp</dimen>
+    <dimen name="bottom_action_bar_item_width">36dp</dimen>
+    <dimen name="bottom_action_bar_item_padding_left_right">6dp</dimen>
+    <dimen name="bottom_action_bar_album_art_width_height">45dp</dimen>
     <dimen name="bottom_action_bar_divider_height">2dp</dimen>
-    <dimen name="bottom_action_bar_info_padding_left">5dp</dimen>
+    <dimen name="bottom_action_bar_info_padding_left">12dp</dimen>
 
     <!-- ViewPager margin stroke width -->
     <dimen name="viewpager_margin_stroke_width">0dp</dimen>
@@ -34,14 +34,19 @@
     <dimen name="list_separator_container_padding_left">16dp</dimen>
 
     <!-- ListView items -->
-    <dimen name="listview_item_height">66dp</dimen>
+    <dimen name="listview_item_height">74dp</dimen>
     <dimen name="listview_items_padding_left_top">9dp</dimen>
     <dimen name="listview_items_padding_small_top">4dp</dimen>
-    <dimen name="listview_items_padding_right">85dp</dimen>
+    <dimen name="listview_items_padding_gp_top">16dp</dimen>
+    <dimen name="listview_items_padding_right">50dp</dimen>
+    <dimen name="listview_items_padding_top_bottom">5dp</dimen>
+    <dimen name="listview_items_padding_left_right">10dp</dimen>
     <dimen name="listview_peak_meter_one_padding_right">80dp</dimen>
     <dimen name="listview_peak_meter_two_padding_right">70dp</dimen>
     <dimen name="listview_album_art">54dp</dimen>
     <dimen name="listview_album_margin">4dp</dimen>
+    <dimen name="listview_drag_height">74dp</dimen>
+    <dimen name="listview_drag_width">18dp</dimen>
 
     <!-- Quick Context Menu -->
     <dimen name="quick_context_padding_right">4dp</dimen>
@@ -62,8 +67,10 @@
 
     <!-- Half and half layout -->
     <dimen name="half_and_half_text_padding">5dp</dimen>
-    <dimen name="half_and_half_image_height">200dp</dimen>
+    <dimen name="half_and_half_imageheight">250dp</dimen>
     <dimen name="half_and_half_container_padding">3dp</dimen>
+    <dimen name="half_and_half_text_wrap_height">70dp</dimen>
+    <dimen name="half_and_half_imagebutton_padding">4dp</dimen>
 
     <!-- ContextMenu header text padding -->
     <dimen name="header_text_padding">5dp</dimen>
@@ -71,8 +78,12 @@
 
     <!-- GridView items -->
     <dimen name="gridview_image_width">152dp</dimen>
-    <dimen name="gridview_image_height">152dp</dimen>
-    <dimen name="gridview_item_margin">3dp</dimen>
+    <dimen name="gridview_image_height">132dp</dimen>
+    <dimen name="gridview_item_fullheight">168dp</dimen>
+    <dimen name="gridview_item_margin">7dp</dimen>
+    <dimen name="gridview_item_padding_right_left">6dp</dimen>
+    <dimen name="gridview_item_padding_right_left_outer">4dp</dimen>
+    <dimen name="gridview_item_padding_bottom">10dp</dimen>
     <dimen name="gridview_item_ccontainer_height">64dp</dimen>
     <dimen name="gridview_item_ccontainer_padding_left">12dp</dimen>
     <dimen name="gridview_item_ccontainer_padding_right">12dp</dimen>
@@ -128,5 +139,14 @@
     <dimen name="four_by_two_height">180dp</dimen>
     <dimen name="four_by_two_control_height">55dp</dimen>
     <dimen name="four_by_two_album_art_width">135dp</dimen>
+    
+    <!-- Simple Eq -->
+    <dimen name="simple_eq_margin_top_bottom">3dp</dimen>
+    <dimen name="simple_eq_margin_left_right">6dp</dimen>
+    <dimen name="simple_eq_section_margin">10dp</dimen>
+    <dimen name="simple_eq_seek_vert_height">26dp</dimen>
+    <dimen name="simple_eq_seek_vert_width">30dp</dimen>
+    <dimen name="simple_eq_seek_vert_padding_right">10dp</dimen>
+    <dimen name="simple_eq_seek_vert_padding_left">20dp</dimen>
 
 </resources>

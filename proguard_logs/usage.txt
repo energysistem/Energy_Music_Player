@@ -1,0 +1,538 @@
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompatIcs:
+    26:26:AccessibilityServiceInfoCompatIcs()
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompatJellyBeanMr2:
+    25:25:AccessibilityServiceInfoCompatJellyBeanMr2()
+android.support.v4.app.ActionBarDrawerToggle:
+    private static final float TOGGLE_DRAWABLE_OFFSET
+    private static final int ID_HOME
+android.support.v4.app.ActionBarDrawerToggleHoneycomb:
+    private static final java.lang.String TAG
+    39:92:ActionBarDrawerToggleHoneycomb()
+android.support.v4.app.ActivityCompatHoneycomb:
+    27:27:ActivityCompatHoneycomb()
+    34:35:static void dump(android.app.Activity,java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+android.support.v4.app.ActivityCompatJB:
+    24:24:ActivityCompatJB()
+android.support.v4.app.BackStackRecord:
+    static final java.lang.String TAG
+    static final int OP_NULL
+    static final int OP_ADD
+    static final int OP_REPLACE
+    static final int OP_REMOVE
+    static final int OP_HIDE
+    static final int OP_SHOW
+    static final int OP_DETACH
+    static final int OP_ATTACH
+    779:779:public int getTransition()
+    783:783:public int getTransitionStyle()
+android.support.v4.app.DialogFragment:
+    private static final java.lang.String SAVED_DIALOG_STATE_TAG
+    private static final java.lang.String SAVED_STYLE
+    private static final java.lang.String SAVED_THEME
+    private static final java.lang.String SAVED_CANCELABLE
+    private static final java.lang.String SAVED_SHOWS_DIALOG
+    private static final java.lang.String SAVED_BACK_STACK_ID
+android.support.v4.app.Fragment:
+    static final int INITIALIZING
+    static final int CREATED
+    static final int ACTIVITY_CREATED
+    static final int STOPPED
+    static final int STARTED
+    static final int RESUMED
+    1450:1456:android.support.v4.app.Fragment findFragmentByWho(java.lang.String)
+android.support.v4.app.FragmentActivity:
+    private static final java.lang.String TAG
+    static final java.lang.String FRAGMENTS_TAG
+    private static final int HONEYCOMB
+    static final int MSG_REALLY_STOPPED
+    static final int MSG_RESUME_PENDING
+android.support.v4.app.FragmentActivity$FragmentTag:
+    public static final int Fragment_id
+    public static final int Fragment_name
+    public static final int Fragment_tag
+    134:134:FragmentActivity$FragmentTag()
+android.support.v4.app.FragmentManagerImpl:
+    static final java.lang.String TAG
+    static final java.lang.String TARGET_REQUEST_CODE_STATE_TAG
+    static final java.lang.String TARGET_STATE_TAG
+    static final java.lang.String VIEW_STATE_TAG
+    static final java.lang.String USER_VISIBLE_HINT_TAG
+    static final int ANIM_DUR
+    public static final int ANIM_STYLE_OPEN_ENTER
+    public static final int ANIM_STYLE_OPEN_EXIT
+    public static final int ANIM_STYLE_CLOSE_ENTER
+    public static final int ANIM_STYLE_CLOSE_EXIT
+    public static final int ANIM_STYLE_FADE_ENTER
+    public static final int ANIM_STYLE_FADE_EXIT
+    1330:1338:public android.support.v4.app.Fragment findFragmentByWho(java.lang.String)
+android.support.v4.app.FragmentPagerAdapter:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+android.support.v4.app.FragmentStatePagerAdapter:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+android.support.v4.app.ListFragment:
+    static final int INTERNAL_EMPTY_ID
+    static final int INTERNAL_PROGRESS_CONTAINER_ID
+    static final int INTERNAL_LIST_CONTAINER_ID
+android.support.v4.app.LoaderManagerImpl:
+    static final java.lang.String TAG
+    boolean mRetainingStarted
+android.support.v4.app.NavUtils:
+    private static final java.lang.String TAG
+android.support.v4.app.NavUtilsJB:
+    23:23:NavUtilsJB()
+android.support.v4.app.NotificationCompatHoneycomb:
+    25:25:NotificationCompatHoneycomb()
+android.support.v4.app.NotificationCompatIceCreamSandwich:
+    25:25:NotificationCompatIceCreamSandwich()
+android.support.v4.app.ShareCompat$IntentReader:
+    private static final java.lang.String TAG
+android.support.v4.app.ShareCompatICS:
+    private static final java.lang.String HISTORY_FILENAME_PREFIX
+    25:25:ShareCompatICS()
+android.support.v4.app.ShareCompatJB:
+    21:21:ShareCompatJB()
+android.support.v4.app.TaskStackBuilder:
+    private static final java.lang.String TAG
+android.support.v4.app.TaskStackBuilder$TaskStackBuilderImplJellybean
+android.support.v4.app.TaskStackBuilderHoneycomb:
+    26:26:TaskStackBuilderHoneycomb()
+android.support.v4.app.TaskStackBuilderJellybean
+android.support.v4.content.AsyncTaskLoader:
+    static final java.lang.String TAG
+    static final boolean DEBUG
+android.support.v4.content.ContextCompat:
+    private static final java.lang.String DIR_ANDROID
+    private static final java.lang.String DIR_DATA
+    private static final java.lang.String DIR_OBB
+    private static final java.lang.String DIR_FILES
+    private static final java.lang.String DIR_CACHE
+android.support.v4.content.ContextCompatFroyo:
+    23:23:ContextCompatFroyo()
+android.support.v4.content.ContextCompatHoneycomb:
+    27:27:ContextCompatHoneycomb()
+android.support.v4.content.ContextCompatJellybean:
+    23:23:ContextCompatJellybean()
+android.support.v4.content.ContextCompatKitKat:
+    23:23:ContextCompatKitKat()
+android.support.v4.content.FileProvider:
+    private static final java.lang.String META_DATA_FILE_PROVIDER_PATHS
+    private static final java.lang.String TAG_ROOT_PATH
+    private static final java.lang.String TAG_FILES_PATH
+    private static final java.lang.String TAG_CACHE_PATH
+    private static final java.lang.String TAG_EXTERNAL
+    private static final java.lang.String ATTR_NAME
+    private static final java.lang.String ATTR_PATH
+android.support.v4.content.IntentCompatHoneycomb:
+    22:22:IntentCompatHoneycomb()
+android.support.v4.content.IntentCompatIcsMr1:
+    21:21:IntentCompatIcsMr1()
+android.support.v4.content.LocalBroadcastManager:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    static final int MSG_EXEC_PENDING_BROADCASTS
+android.support.v4.content.ModernAsyncTask:
+    private static final java.lang.String LOG_TAG
+    private static final int CORE_POOL_SIZE
+    private static final int MAXIMUM_POOL_SIZE
+    private static final int KEEP_ALIVE
+    private static final int MESSAGE_POST_RESULT
+    private static final int MESSAGE_POST_PROGRESS
+    106:107:public static void init()
+    111:112:public static void setDefaultExecutor(java.util.concurrent.Executor)
+    169:169:public final android.support.v4.content.ModernAsyncTask$Status getStatus()
+    321:321:public final java.lang.Object get()
+    341:341:public final java.lang.Object get(long,java.util.concurrent.TimeUnit)
+    371:371:public final varargs android.support.v4.content.ModernAsyncTask execute(java.lang.Object[])
+    433:434:public static void execute(java.lang.Runnable)
+    451:455:protected final varargs void publishProgress(java.lang.Object[])
+android.support.v4.content.WakefulBroadcastReceiver:
+    private static final java.lang.String EXTRA_WAKE_LOCK_ID
+android.support.v4.graphics.drawable.DrawableCompatHoneycomb:
+    24:24:DrawableCompatHoneycomb()
+android.support.v4.graphics.drawable.DrawableCompatKitKat:
+    24:24:DrawableCompatKitKat()
+android.support.v4.hardware.display.DisplayManagerJellybeanMr1:
+    22:22:DisplayManagerJellybeanMr1()
+android.support.v4.media.TransportMediator$1:
+    70:70:public long getPlaybackPosition()
+    75:76:public void playbackPositionUpdate(long)
+android.support.v4.media.TransportMediatorCallback:
+    public abstract long getPlaybackPosition()
+    public abstract void playbackPositionUpdate(long)
+android.support.v4.media.TransportMediatorJellybeanMR2:
+    111:117:void windowAttached()
+    120:128:void gainFocus()
+    150:150:public long onGetPlaybackPosition()
+    155:156:public void onPlaybackPositionUpdate(long)
+android.support.v4.media.TransportMediatorJellybeanMR2$1:
+    45:46:public void onWindowAttached()
+    49:50:public void onWindowDetached()
+android.support.v4.media.TransportMediatorJellybeanMR2$2:
+    56:58:public void onWindowFocusChanged(boolean)
+android.support.v4.media.TransportPerformer:
+    static final int AUDIOFOCUS_GAIN
+    static final int AUDIOFOCUS_GAIN_TRANSIENT
+    static final int AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK
+    static final int AUDIOFOCUS_LOSS
+    static final int AUDIOFOCUS_LOSS_TRANSIENT
+    static final int AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK
+android.support.v4.net.ConnectivityManagerCompatGingerbread:
+    33:33:ConnectivityManagerCompatGingerbread()
+android.support.v4.net.ConnectivityManagerCompatHoneycombMR2:
+    35:35:ConnectivityManagerCompatHoneycombMR2()
+android.support.v4.net.ConnectivityManagerCompatJellyBean:
+    24:24:ConnectivityManagerCompatJellyBean()
+android.support.v4.net.TrafficStatsCompatIcs:
+    27:27:TrafficStatsCompatIcs()
+android.support.v4.os.EnvironmentCompat:
+    private static final java.lang.String TAG
+android.support.v4.os.EnvironmentCompatKitKat:
+    23:23:EnvironmentCompatKitKat()
+android.support.v4.os.ParcelableCompatCreatorHoneycombMR2Stub:
+    22:22:ParcelableCompatCreatorHoneycombMR2Stub()
+android.support.v4.print.PrintHelperKitkat:
+    private static final java.lang.String LOG_TAG
+    private static final int MAX_PRINT_SIZE
+android.support.v4.print.PrintHelperKitkat$1:
+    private android.print.PrintAttributes mAttributes
+    154:162:public void onLayout(android.print.PrintAttributes,android.print.PrintAttributes,android.os.CancellationSignal,android.print.PrintDocumentAdapter$LayoutResultCallback,android.os.Bundle)
+    168:222:public void onWrite(android.print.PageRange[],android.os.ParcelFileDescriptor,android.os.CancellationSignal,android.print.PrintDocumentAdapter$WriteResultCallback)
+android.support.v4.text.BidiFormatter:
+    private static final char LRE
+    private static final char RLE
+    private static final char PDF
+    private static final char LRM
+    private static final char RLM
+    private static final java.lang.String EMPTY_STRING
+    private static final int FLAG_STEREO_RESET
+    private static final int DEFAULT_FLAGS
+    private static final int DIR_LTR
+    private static final int DIR_UNKNOWN
+    private static final int DIR_RTL
+android.support.v4.text.BidiFormatter$DirectionalityEstimator:
+    private static final int DIR_TYPE_CACHE_SIZE
+android.support.v4.text.ICUCompatIcs:
+    private static final java.lang.String TAG
+    24:24:ICUCompatIcs()
+android.support.v4.text.TextDirectionHeuristicsCompat:
+    private static final int STATE_TRUE
+    private static final int STATE_FALSE
+    private static final int STATE_UNKNOWN
+android.support.v4.util.ContainerHelpers:
+    19:19:ContainerHelpers()
+android.support.v4.util.SimpleArrayMap:
+    private static final boolean DEBUG
+    private static final java.lang.String TAG
+    private static final int BASE_SIZE
+    private static final int CACHE_SIZE
+android.support.v4.util.TimeUtils:
+    private static final int SECONDS_PER_MINUTE
+    private static final int SECONDS_PER_HOUR
+    private static final int SECONDS_PER_DAY
+android.support.v4.view.AccessibilityDelegateCompatIcs:
+    28:30:AccessibilityDelegateCompatIcs()
+android.support.v4.view.AccessibilityDelegateCompatJellyBean:
+    30:32:AccessibilityDelegateCompatJellyBean()
+android.support.v4.view.ActionProvider:
+    private static final java.lang.String TAG
+android.support.v4.view.GestureDetectorCompat$GestureDetectorCompatImplBase:
+    private static final int SHOW_PRESS
+    private static final int LONG_PRESS
+    private static final int TAP
+android.support.v4.view.GravityCompatJellybeanMr1:
+    23:23:GravityCompatJellybeanMr1()
+android.support.v4.view.KeyEventCompat$BaseKeyEventVersionImpl:
+    private static final int META_MODIFIER_MASK
+    private static final int META_ALL_MASK
+android.support.v4.view.KeyEventCompatEclair:
+    23:23:KeyEventCompatEclair()
+android.support.v4.view.KeyEventCompatHoneycomb:
+    24:24:KeyEventCompatHoneycomb()
+android.support.v4.view.MarginLayoutParamsCompatJellybeanMr1:
+    22:22:MarginLayoutParamsCompatJellybeanMr1()
+android.support.v4.view.MenuItemCompat:
+    private static final java.lang.String TAG
+android.support.v4.view.MenuItemCompatHoneycomb:
+    25:25:MenuItemCompatHoneycomb()
+android.support.v4.view.MenuItemCompatIcs:
+    22:51:MenuItemCompatIcs()
+android.support.v4.view.MotionEventCompatEclair:
+    24:24:MotionEventCompatEclair()
+android.support.v4.view.PagerTabStrip:
+    private static final java.lang.String TAG
+    private static final int INDICATOR_HEIGHT
+    private static final int MIN_PADDING_BOTTOM
+    private static final int TAB_PADDING
+    private static final int TAB_SPACING
+    private static final int MIN_TEXT_SPACING
+    private static final int FULL_UNDERLINE_HEIGHT
+    private static final int MIN_STRIP_HEIGHT
+android.support.v4.view.PagerTitleStrip:
+    private static final java.lang.String TAG
+    private static final float SIDE_ALPHA
+    private static final int TEXT_SPACING
+android.support.v4.view.PagerTitleStripIcs:
+    26:31:PagerTitleStripIcs()
+android.support.v4.view.PagerTitleStripIcs$SingleLineAllCapsTransform:
+    private static final java.lang.String TAG
+android.support.v4.view.ScaleGestureDetectorCompatKitKat:
+    29:30:private ScaleGestureDetectorCompatKitKat()
+android.support.v4.view.VelocityTrackerCompatHoneycomb:
+    24:24:VelocityTrackerCompatHoneycomb()
+android.support.v4.view.ViewCompat:
+    private static final long FAKE_FRAME_TIME
+android.support.v4.view.ViewCompatEclairMr1:
+    22:22:ViewCompatEclairMr1()
+android.support.v4.view.ViewCompatGingerbread:
+    21:21:ViewCompatGingerbread()
+android.support.v4.view.ViewCompatHC:
+    23:23:ViewCompatHC()
+android.support.v4.view.ViewCompatICS:
+    27:27:ViewCompatICS()
+android.support.v4.view.ViewCompatJB:
+    26:26:ViewCompatJB()
+android.support.v4.view.ViewCompatJellybeanMr1:
+    25:25:ViewCompatJellybeanMr1()
+android.support.v4.view.ViewConfigurationCompatFroyo:
+    24:24:ViewConfigurationCompatFroyo()
+android.support.v4.view.ViewGroupCompatHC:
+    23:24:private ViewGroupCompatHC()
+android.support.v4.view.ViewGroupCompatIcs:
+    26:26:ViewGroupCompatIcs()
+android.support.v4.view.ViewGroupCompatJellybeanMR2:
+    22:22:ViewGroupCompatJellybeanMR2()
+android.support.v4.view.ViewPager:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private static final boolean USE_CACHE
+    private static final int DEFAULT_OFFSCREEN_PAGES
+    private static final int MAX_SETTLE_DURATION
+    private static final int MIN_DISTANCE_FOR_FLING
+    private static final int DEFAULT_GUTTER_SIZE
+    private static final int MIN_FLING_VELOCITY
+    private boolean mIgnoreGutter
+    private static final int INVALID_POINTER
+    private static final int CLOSE_ENOUGH
+    private static final int DRAW_ORDER_DEFAULT
+    private static final int DRAW_ORDER_FORWARD
+    private static final int DRAW_ORDER_REVERSE
+    778:779:void smoothScrollTo(int,int)
+android.support.v4.view.accessibility.AccessibilityEventCompatIcs:
+    25:25:AccessibilityEventCompatIcs()
+android.support.v4.view.accessibility.AccessibilityManagerCompatIcs:
+    28:30:AccessibilityManagerCompatIcs()
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatIcs:
+    28:28:AccessibilityNodeInfoCompatIcs()
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatJellyBean:
+    26:26:AccessibilityNodeInfoCompatJellyBean()
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatJellybeanMr2:
+    21:21:AccessibilityNodeInfoCompatJellybeanMr2()
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatKitKat:
+    24:24:AccessibilityNodeInfoCompatKitKat()
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1:
+    123:127:public java.lang.Object findFocus(int)
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean:
+    28:29:AccessibilityNodeProviderCompatJellyBean()
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat:
+    28:29:AccessibilityNodeProviderCompatKitKat()
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat$1:
+    61:61:public android.view.accessibility.AccessibilityNodeInfo findFocus(int)
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge:
+    public abstract java.lang.Object findFocus(int)
+android.support.v4.view.accessibility.AccessibilityRecordCompatIcs:
+    28:28:AccessibilityRecordCompatIcs()
+android.support.v4.view.accessibility.AccessibilityRecordCompatIcsMr1:
+    24:24:AccessibilityRecordCompatIcsMr1()
+android.support.v4.view.accessibility.AccessibilityRecordCompatJellyBean:
+    25:25:AccessibilityRecordCompatJellyBean()
+android.support.v4.widget.AutoScrollHelper:
+    private static final int HORIZONTAL
+    private static final int VERTICAL
+    private static final int DEFAULT_EDGE_TYPE
+    private static final int DEFAULT_MINIMUM_VELOCITY_DIPS
+    private static final int DEFAULT_MAXIMUM_VELOCITY_DIPS
+    private static final float DEFAULT_MAXIMUM_EDGE
+    private static final float DEFAULT_RELATIVE_EDGE
+    private static final float DEFAULT_RELATIVE_VELOCITY
+    private static final int DEFAULT_RAMP_UP_DURATION
+    private static final int DEFAULT_RAMP_DOWN_DURATION
+android.support.v4.widget.ContentLoadingProgressBar:
+    private static final int MIN_SHOW_TIME
+    private static final int MIN_DELAY
+android.support.v4.widget.DrawerLayout:
+    private static final java.lang.String TAG
+    private static final int MIN_DRAWER_MARGIN
+    private static final int DEFAULT_SCRIM_COLOR
+    private static final int PEEK_DELAY
+    private static final int MIN_FLING_VELOCITY
+    private static final boolean ALLOW_EDGE_LOCK
+    private static final boolean CHILDREN_DISALLOW_INTERCEPT
+    private static final float TOUCH_SLOP_SENSITIVITY
+    540:549:void moveDrawerToOffset(android.view.View,float)
+android.support.v4.widget.EdgeEffectCompatIcs:
+    28:28:EdgeEffectCompatIcs()
+android.support.v4.widget.ListPopupWindowCompatKitKat:
+    26:26:ListPopupWindowCompatKitKat()
+android.support.v4.widget.PopupMenuCompatKitKat:
+    25:25:PopupMenuCompatKitKat()
+android.support.v4.widget.ScrollerCompatGingerbread:
+    24:24:ScrollerCompatGingerbread()
+android.support.v4.widget.ScrollerCompatIcs:
+    24:24:ScrollerCompatIcs()
+android.support.v4.widget.SearchViewCompat:
+    264:266:private SearchViewCompat(android.content.Context)
+android.support.v4.widget.SearchViewCompatHoneycomb:
+    30:37:SearchViewCompatHoneycomb()
+android.support.v4.widget.SearchViewCompatIcs:
+    26:28:SearchViewCompatIcs()
+android.support.v4.widget.SlidingPaneLayout:
+    private static final java.lang.String TAG
+    private static final int DEFAULT_OVERHANG_SIZE
+    private static final int DEFAULT_FADE_COLOR
+    private static final int MIN_FLING_VELOCITY
+android.support.v4.widget.ViewDragHelper:
+    private static final java.lang.String TAG
+    private static final int EDGE_SIZE
+    private static final int BASE_SETTLE_DURATION
+    private static final int MAX_SETTLE_DURATION
+com.androidquery.callback.AbstractAjaxCallback:
+    private static final java.lang.String lineEnd
+    private static final java.lang.String twoHyphens
+    private static final java.lang.String boundary
+com.androidquery.callback.BitmapAjaxCallback:
+    private static final int FADE_DUR
+com.androidquery.service.MarketService:
+    private boolean fetch
+    private boolean completed
+    private static final java.lang.String SKIP_VERSION
+    private static final java.lang.String BULLET
+    57:57:static synthetic boolean access$1(com.androidquery.service.MarketService)
+    57:57:static synthetic void access$2(com.androidquery.service.MarketService,boolean)
+    47:47:static synthetic com.androidquery.AQuery access$3(com.androidquery.service.MarketService)
+    53:53:static synthetic int access$4(com.androidquery.service.MarketService)
+    58:58:static synthetic boolean access$5(com.androidquery.service.MarketService)
+    58:58:static synthetic void access$6(com.androidquery.service.MarketService,boolean)
+    53:53:static synthetic void access$7(com.androidquery.service.MarketService,int)
+    218:218:static synthetic java.lang.String access$8(com.androidquery.service.MarketService)
+com.androidquery.service.MarketService$Handler:
+    435:468:public void marketCb(java.lang.String,org.json.JSONObject,com.androidquery.callback.AjaxStatus)
+    472:477:private void cb(java.lang.String,org.json.JSONObject,com.androidquery.callback.AjaxStatus)
+    482:495:public void detailCb(java.lang.String,java.lang.String,com.androidquery.callback.AjaxStatus)
+com.androidquery.util.AQUtility:
+    private static final int IO_BUFFER_SIZE
+com.androidquery.util.BitmapCache:
+    private static final long serialVersionUID
+com.androidquery.util.WebImage:
+    private static final java.lang.String PREF_FILE
+    private static final java.lang.String DOUBLE_TAP_TOAST_COUNT
+com.energy.energyMusic.IApolloService$Stub:
+    private static final java.lang.String DESCRIPTOR
+    static final int TRANSACTION_openFile
+    static final int TRANSACTION_open
+    static final int TRANSACTION_getIdFromPath
+    static final int TRANSACTION_getQueuePosition
+    static final int TRANSACTION_isPlaying
+    static final int TRANSACTION_stop
+    static final int TRANSACTION_pause
+    static final int TRANSACTION_play
+    static final int TRANSACTION_prev
+    static final int TRANSACTION_next
+    static final int TRANSACTION_duration
+    static final int TRANSACTION_position
+    static final int TRANSACTION_seek
+    static final int TRANSACTION_getTrackName
+    static final int TRANSACTION_getAlbumName
+    static final int TRANSACTION_getAlbumId
+    static final int TRANSACTION_getAlbumBitmap
+    static final int TRANSACTION_getArtistName
+    static final int TRANSACTION_getArtistId
+    static final int TRANSACTION_enqueue
+    static final int TRANSACTION_getQueue
+    static final int TRANSACTION_setQueuePosition
+    static final int TRANSACTION_getPath
+    static final int TRANSACTION_getAudioId
+    static final int TRANSACTION_setShuffleMode
+    static final int TRANSACTION_notifyChange
+    static final int TRANSACTION_getShuffleMode
+    static final int TRANSACTION_removeTracks
+    static final int TRANSACTION_moveQueueItem
+    static final int TRANSACTION_removeTrack
+    static final int TRANSACTION_setRepeatMode
+    static final int TRANSACTION_getRepeatMode
+    static final int TRANSACTION_getMediaMountedCount
+    static final int TRANSACTION_getAudioSessionId
+    static final int TRANSACTION_addToFavorites
+    static final int TRANSACTION_removeFromFavorites
+    static final int TRANSACTION_isFavorite
+    static final int TRANSACTION_toggleFavorite
+com.energy.energyMusic.IApolloService$Stub$Proxy:
+    393:393:public java.lang.String getInterfaceDescriptor()
+com.energy.energyMusic.activities.PlayExternal:
+    private static final java.lang.String TAG
+com.energy.energyMusic.app.widgets.AppWidget11:
+    static final java.lang.String TAG
+com.energy.energyMusic.helpers.lastfm.Album:
+    54:56:private Album(java.lang.String,java.lang.String,java.lang.String,int,int,boolean,java.lang.String)
+com.energy.energyMusic.helpers.lastfm.Caller:
+    private static final java.lang.String PARAM_API_KEY
+    private static final java.lang.String DEFAULT_API_ROOT
+com.energy.energyMusic.helpers.lastfm.Session:
+    114:119:static com.energy.energyMusic.helpers.lastfm.Session sessionFromElement(com.energy.energyMusic.helpers.DomElement,java.lang.String,java.lang.String)
+com.energy.energyMusic.helpers.utils.ImageUtils:
+    private static final java.lang.String IMAGE_EXTENSION
+com.energy.energyMusic.service.ApolloService:
+    private static final int TRACK_ENDED
+    private static final int RELEASE_WAKELOCK
+    private static final int SERVER_DIED
+    private static final int FOCUSCHANGE
+    private static final int FADEDOWN
+    private static final int FADEUP
+    private static final int TRACK_WENT_TO_NEXT
+    private static final int MAX_HISTORY_SIZE
+    private static final java.lang.String LOGTAG
+    private static final int IDCOLIDX
+    private static final int PODCASTCOLIDX
+    private static final int BOOKMARKCOLIDX
+    private static final int IDLE_DELAY
+com.energy.energyMusic.service.MediaButtonIntentReceiver:
+    private static final int MSG_LONGPRESS_TIMEOUT
+    private static final int LONG_PRESS_DELAY
+com.energy.energyMusic.ui.fragments.AudioPlayerFragment:
+    private android.widget.ImageButton mBigPrev
+    private android.widget.ImageButton mBigNext
+    private android.widget.LinearLayout mBigButtonsLayout
+    private static final int REFRESH
+    private static final int UPDATEINFO
+com.energy.energyMusic.ui.fragments.list.PlaylistsFragment:
+    private static final int DELETE_PLAYLIST
+    private static final int RENAME_PLAYLIST
+com.mobeta.android.dslv.DragSortListView:
+    private static final int IDLE
+    private static final int REMOVING
+    private static final int DROPPING
+    private static final int STOPPED
+    private static final int DRAGGING
+    private static final int NO_CANCEL
+    private static final int ON_TOUCH_EVENT
+    private static final int ON_INTERCEPT_TOUCH_EVENT
+    private static final int sCacheSize
+    849:851:private void printPosData()
+    1874:1879:private void adjustItem(int)
+    2181:2182:private void invalidateFloatView()
+com.mobeta.android.dslv.DragSortListView$DragScroller:
+    public static final int STOP
+    public static final int UP
+    public static final int DOWN
+    private int mLastHeader
+    private int mFirstFooter
+com.mobeta.android.dslv.DragSortListView$LiftAnimator:
+    1210:1212:public DragSortListView$LiftAnimator(com.mobeta.android.dslv.DragSortListView,float,int)
+com.sothree.slidinguppanel.SlidingUpPanelLayout:
+    private static final int DEFAULT_PANEL_HEIGHT
+    private static final int DEFAULT_SHADOW_HEIGHT
+    private static final int DEFAULT_FADE_COLOR
+    private static final int DEFAULT_MIN_FLING_VELOCITY
+com.sothree.slidinguppanel.SlidingUpPanelLayout$LayoutParams:
+    android.graphics.Paint dimPaint

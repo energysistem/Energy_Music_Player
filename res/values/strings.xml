@@ -44,6 +44,8 @@
         <!-- message shown when zero or more than one song was added -->
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> songs added to playlist</item>
     </plurals>
+    <!-- Toasts after removing song from playlist -->
+    <string name="track_removed_from_playlist">\"%s\" removed from playlist</string>
 
     <!-- Headers -->
     <string name="album_header">ALBUM LIST</string>
@@ -124,15 +126,32 @@
     <string name="widget_style_summary">Choose the widget design</string>
     <string name="widget_style_dark">Holo Dark</string>
     <string name="widget_style_light">Holo Light</string>
-    
+    <string name="about_apollomod_title">About Energy Music</string>
+    <string name="about_apollomod_message"><![CDATA[Energy Music is an open source music player based on ApolloMod and released under the same Apache License.\n\n
+License Link:\n
+        http://www.apache.org/licenses/LICENSE-2.0.html \n\n
+
+You can find the Energy Music Source Code in:\n
+        http://www.energysistem.com \n\n
+
+ApolloMod Source Code:\n
+https://github.com/Splitter/android_packages_apps_apolloMod
+
+    ]]></string>
+    <string name="dependencies">Dependency Licenses</string>
+    <string name="dependencies_title">Dependency Licenses:</string>
+
     <!-- Settings keys -->
     <string name="key_themes" translatable="false">themepreview</string>
     <string name="key_themes_package" translatable="false">themePackageName</string>
     <string name="key_themes_preferences" translatable="false">themePrefences</string>
     <string name="key_build_version" translatable="false">build_version</string>
+    <string name="key_build_depends" translatable="false">build_depends</string>
     <string name="key_tabs_enabled" translatable="false">tabs_enabled</string>
     <string name="key_visualization_type" translatable="false">visualization_type</string>
     <string name="key_widget_style" translatable="false">widget_type</string>
+    <string name="key_delete_cache" translatable="false">delete_cache</string>
+    <string name="app_version_number" translatable="false">1.0</string>
 
     <!-- Theme layout Buttons -->
     <string name="apply_theme">Apply theme</string>
@@ -178,5 +197,16 @@
     <!-- Titles for Albums/Artist screens -->
     <string name="artist_page_title">" Artist: "</string>
     <string name="album_page_title">" Album: "</string>
+
+    <!--  Simple EQ -->
+    <string name="simple_eq_page_title">Equalizer</string>
+    <string name="simple_eq_bass">Bass Boost</string>
+    <string name="simple_eq_equalizer">Equalizer</string>
+    <string name="simple_eq_band0">15Hz</string>
+    <string name="simple_eq_band1">62Hz</string>
+    <string name="simple_eq_band2">250Hz</string>
+    <string name="simple_eq_band3">1kHz</string>
+    <string name="simple_eq_band4">5kHz</string>
+    <string name="simple_eq_band5">16kHz</string>
 
 </resources>

@@ -16,7 +16,7 @@
         android:layout_height="@dimen/status_bar_album_art"
         android:background="@drawable/status_bg"
         android:scaleType="center"
-        android:src="@drawable/stat_notify_music"
+        android:src="@drawable/stat_notify_music_alter"
         android:visibility="gone" />
 
     <LinearLayout

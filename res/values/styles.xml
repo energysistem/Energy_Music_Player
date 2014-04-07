@@ -203,21 +203,29 @@
     <!-- Overflow Holo theme -->
     <style name="Apollo.Holo" parent="@android:style/Theme.Holo.Light">
         <item name="android:actionOverflowButtonStyle">@style/OverFlowHolo</item>
+        <item name="android:windowTitleBackgroundStyle">@style/MyActionBar</item>
     </style>
 
     <!-- Overflow Holo.Light theme -->
     <style name="Apollo.Holo.Light" parent="@android:style/Theme.Holo.Light">
         <item name="android:actionOverflowButtonStyle">@style/OverFlowHolo.Light</item>
+        <item name="android:windowTitleBackgroundStyle">@style/MyActionBar</item>
     </style>
 
     <!-- Overflow Holo.Dark -->
     <style name="OverFlowHolo" parent="@android:style/Widget.Holo.ActionButton.Overflow">
-        <item name="android:src">@drawable/apollo_holo_dark_overflow</item>
+        <item name="android:src">@drawable/apollo_holo_light_overflow</item>
     </style>
 
     <!-- Overflow Holo.Light -->
     <style name="OverFlowHolo.Light" parent="@android:style/Widget.Holo.ActionButton.Overflow">
         <item name="android:src">@drawable/apollo_holo_light_overflow</item>
     </style>
-    
+
+    <style name="WindowTitleBackground">
+        <item name="android:background">@color/titlebackgroundcolor</item>
+    </style>
+
+
+
 </resources>
