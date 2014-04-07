@@ -41,7 +41,8 @@ public class SimpleEq extends FragmentActivity
     TextView SeekBarLabels[] = new TextView[6];
     
     SharedPreferences mPreferences;
-    
+
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -79,7 +80,8 @@ public class SimpleEq extends FragmentActivity
         SeekBars[5]  = (VerticalSeekBar)findViewById(R.id.simple_eq_band5_seek);
         SeekBars[5].setOnSeekBarChangeListener(this);
         SeekBarLabels[5] = (TextView)findViewById(R.id.simple_eq_band5);
-        
+
+
         mPreferences = getSharedPreferences(APOLLO_PREFERENCES, MODE_WORLD_READABLE
                 | MODE_WORLD_WRITEABLE);
         

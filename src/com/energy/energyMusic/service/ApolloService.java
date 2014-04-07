@@ -441,6 +441,7 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
     public ApolloService() {
     }
 
+    @SuppressWarnings("deprecation")
     @SuppressLint({ "WorldWriteableFiles", "WorldReadableFiles" })
 	@Override
     public void onCreate() {

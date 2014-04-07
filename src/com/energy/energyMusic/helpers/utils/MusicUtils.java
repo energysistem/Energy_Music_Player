@@ -161,6 +161,7 @@ public class MusicUtils {
         return null;
     }
 
+    @SuppressWarnings("deprecation")
     public static void updateEqualizerSettings(Context context){
 
         SharedPreferences mPreferences = context.getSharedPreferences(APOLLO_PREFERENCES, Context.MODE_WORLD_READABLE

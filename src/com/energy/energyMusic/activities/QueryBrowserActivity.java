@@ -178,6 +178,7 @@ public class QueryBrowserActivity extends ListActivity implements ServiceConnect
 
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public Object onRetainNonConfigurationInstance() {
         mAdapterSent = true;
