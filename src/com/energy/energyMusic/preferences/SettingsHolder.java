@@ -10,8 +10,10 @@ import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,6 +57,8 @@ public class SettingsHolder extends PreferenceActivity  implements ServiceConnec
     protected void onCreate(Bundle savedInstanceState) {
         // This should be called first thing
         super.onCreate(savedInstanceState);
+        if (!ApolloUtils.isTablet(this))
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mContext = this;
         // Load settings XML
         int preferencesResId = R.xml.settings;
@@ -79,37 +84,19 @@ public class SettingsHolder extends PreferenceActivity  implements ServiceConnec
 
 
         LayoutInflater li = LayoutInflater.from(this);
-        View customView=new View(this);
-        if(!ApolloUtils.isTablet(this))
-        {
-            customView = li.inflate(R.layout.mibarrasmartphonevacia, null);
-        }
-        else
-        {
-            if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_MEDIUM && getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-            {
-                customView = li.inflate(R.layout.barra_tablet_mdpi_land, null);
-            }
-            else if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_MEDIUM && getResources().getConfiguration().orientation== Configuration.ORIENTATION_PORTRAIT)
-            {
-                customView = li.inflate(R.layout.barra_tablet_mdpi_port, null);
-            }
-            else if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_XHIGH && getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-            {
-                customView = li.inflate(R.layout.barra_tablet_xhdpi_land, null);
-            }
-            else if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_XHIGH && getResources().getConfiguration().orientation== Configuration.ORIENTATION_PORTRAIT)
-            {
-                customView = li.inflate(R.layout.barra_tablet_xhdpi_port, null);
-            }
-            else
-            {
-                //TODO:arreglar
-                customView = li.inflate(R.layout.mibarrasmartphonevacia, null);
-            }
-        }
-
+        View customView=li.inflate(R.layout.mi_barra_alternativa,null);
         bar.setCustomView(customView);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        Log.d("Jamba", "Cambio detectado settingsholder");
+        super.onConfigurationChanged(newConfig);
+
+        Intent intent = getIntent();
+        this.finish();
+        startActivity(intent);
     }
 
     @Override

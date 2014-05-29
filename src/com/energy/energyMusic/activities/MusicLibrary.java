@@ -29,6 +29,7 @@ import android.provider.MediaStore.Audio.AudioColumns;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -37,6 +38,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.energy.energyMusic.IApolloService;
 import com.energy.energyMusic.R;
@@ -80,6 +82,7 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
 
     @Override
     protected void onCreate(Bundle icicle) {
+
         super.onCreate(icicle);
 
         VisualizerUtils.releaseVisualizer();
@@ -104,7 +107,7 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
         mPanel.setAnchorPoint(0);
 
         mPanel.setDragView(findViewById(R.id.bottom_action_bar_dragview));
-        mPanel.setShadowDrawable(getResources().getDrawable(R.drawable.above_shadow));
+        //TODO: revisar mPanel.setShadowDrawable(getResources().getDrawable(R.drawable.above_shadow));
         mPanel.setAnchorPoint(0.0f);
         mPanel.setPanelSlideListener(new PanelSlideListener() {
             @Override
@@ -134,16 +137,22 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
 
         String startedFrom = getIntent().getStringExtra("started_from");
         if(startedFrom!=null){
-            ViewTreeObserver vto = mPanel.getViewTreeObserver();
-            vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    if(!isAlreadyStarted){
-                        mPanel.expandPane();
-                        isAlreadyStarted=true;
+            try {
+                ViewTreeObserver vto = mPanel.getViewTreeObserver();
+                vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        if (!isAlreadyStarted) {
+                            mPanel.expandPane();
+                            isAlreadyStarted = true;
+                        }
                     }
-                }
-            });
+                });
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
         // Style the actionbar
@@ -168,6 +177,12 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
     }
 
     @Override
+    public void onPause(){
+
+        super.onPause();
+    }
+
+    @Override
     public void onServiceConnected(ComponentName name, IBinder obj) {
         MusicUtils.mService = IApolloService.Stub.asInterface(obj);
     }
@@ -178,6 +193,17 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
     }
 
     @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        super.onConfigurationChanged(newConfig);
+
+        Intent intent = getIntent();
+        this.finish();
+        startActivity(intent);
+    }
+
+
+    @Override
     protected void onStart() {
 
         // Bind to Service
@@ -185,6 +211,7 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(ApolloService.META_CHANGED);
+
         super.onStart();
     }
 
@@ -209,7 +236,7 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
         //Get tab visibility preferences
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         Set<String> defaults = new HashSet<String>(Arrays.asList(
-        		getResources().getStringArray(R.array.tab_titles)
+        		getResources().getStringArray(R.array.tab_titles_values)
         	));
         Set<String> tabs_set = sp.getStringSet(TABS_ENABLED,defaults);
         //if its empty fill reset it to full defaults
@@ -217,26 +244,56 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
         if(tabs_set.size()==0){
         	tabs_set = defaults;
         }
-        
+
+        //si veníamos de versión anterior, hay que coger los defaults
+
         //Only show tabs that were set in preferences
         // Recently added tracks
-        if(tabs_set.contains(getResources().getString(R.string.tab_recent)))
-        	mPagerAdapter.addFragment(new RecentlyAddedFragment());
-        // Artists
-        if(tabs_set.contains(getResources().getString(R.string.tab_artists)))
-        	mPagerAdapter.addFragment(new ArtistsFragment());
-        // Albums
-        if(tabs_set.contains(getResources().getString(R.string.tab_albums)))
-        	mPagerAdapter.addFragment(new AlbumsFragment());
-        // // Tracks
-        if(tabs_set.contains(getResources().getString(R.string.tab_songs)))
-        	mPagerAdapter.addFragment(new SongsFragment());
-        // // Playlists
-        if(tabs_set.contains(getResources().getString(R.string.tab_playlists)))
-        	mPagerAdapter.addFragment(new PlaylistsFragment());
-        // // Genres
-        if(tabs_set.contains(getResources().getString(R.string.tab_genres)))
-        	mPagerAdapter.addFragment(new GenresFragment());
+        int count;
+        boolean bucle=true;
+        do {
+            count=0;
+
+            if (tabs_set.contains(getResources().getString(R.string.tab_recent))) {
+                mPagerAdapter.addFragment(new RecentlyAddedFragment());
+                count++;
+            }
+            // Artists
+            if (tabs_set.contains(getResources().getString(R.string.tab_artists))) {
+                mPagerAdapter.addFragment(new ArtistsFragment());
+                count++;
+            }
+            // Albums
+            if (tabs_set.contains(getResources().getString(R.string.tab_albums))) {
+                mPagerAdapter.addFragment(new AlbumsFragment());
+                count++;
+            }
+            // // Tracks
+            if (tabs_set.contains(getResources().getString(R.string.tab_songs))) {
+                mPagerAdapter.addFragment(new SongsFragment());
+                count++;
+            }
+            // // Playlists
+            if (tabs_set.contains(getResources().getString(R.string.tab_playlists))) {
+                mPagerAdapter.addFragment(new PlaylistsFragment());
+                count++;
+            }
+            // // Genres
+            if (tabs_set.contains(getResources().getString(R.string.tab_genres))) {
+                mPagerAdapter.addFragment(new GenresFragment());
+                count++;
+            }
+            if(count!=tabs_set.size())
+            {
+                tabs_set=defaults;
+                SharedPreferences.Editor editor=sp.edit();
+                editor.putStringSet(TABS_ENABLED,defaults);
+                editor.commit();
+                mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+            }
+            else
+                bucle=false;
+        }while(bucle);
 
         // Initiate ViewPager
         ViewPager mViewPager = (ViewPager)findViewById(R.id.viewPager);
@@ -266,63 +323,13 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
      * For the theme chooser
      */
     private void initActionBar() {
-/*
-    	ActionBar actBar = getActionBar();
-        
-        // The ActionBar Title and UP ids are hidden.
-        int upId = Resources.getSystem().getIdentifier("up", "id", "android");
-        
-        ImageView actionBarUp = (ImageView)findViewById(upId);
 
-        // Theme chooser
-        ThemeUtils.setActionBarBackground(this, actBar, "action_bar_background");
-        ThemeUtils.initThemeChooser(this, actionBarUp, "action_bar_up", THEME_ITEM_BACKGROUND);
-
-    	actBar.setDisplayUseLogoEnabled(true);
-        actBar.setDisplayShowTitleEnabled(false);
-
-
-*/
         ActionBar bar = getActionBar();
         bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 
 
         LayoutInflater li = LayoutInflater.from(this);
-        View customView=new View(this);
-        if(!ApolloUtils.isTablet(this))
-        {
-            if(ViewConfiguration.get(getApplicationContext()).hasPermanentMenuKey())
-            {
-                customView = li.inflate(R.layout.mibarrasmartphone_solo_busqueda, null);
-            }
-            else
-            {
-                customView = li.inflate(R.layout.mibarrasmartphone, null);
-            }
-        }
-        else
-        {
-            if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_MEDIUM && getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-            {
-                customView = li.inflate(R.layout.barra_tablet_mdpi_land, null);
-            }
-            else if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_MEDIUM && getResources().getConfiguration().orientation== Configuration.ORIENTATION_PORTRAIT)
-            {
-                customView = li.inflate(R.layout.barra_tablet_mdpi_port, null);
-            }
-            else if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_XHIGH && getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-            {
-                customView = li.inflate(R.layout.barra_tablet_xhdpi_land, null);
-            }
-            else if(getResources().getDisplayMetrics().densityDpi == DisplayMetrics.DENSITY_XHIGH && getResources().getConfiguration().orientation== Configuration.ORIENTATION_PORTRAIT)
-            {
-                customView = li.inflate(R.layout.barra_tablet_xhdpi_port, null);
-            }
-            else
-            {
-                customView=li.inflate(R.layout.mi_barra_alternativa,null);
-            }
-        }
+        View customView=li.inflate(R.layout.mi_barra_alternativa,null);
         bar.setCustomView(customView);
     }
     
@@ -341,16 +348,6 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
 	            break;
 
 	        case R.id.action_eqalizer:
-                //TODO: revisar cambio a original
-    /*
-                SharedPreferences prefs = getSharedPreferences("MisPreferencias",this.getApplicationContext().MODE_PRIVATE);
-                String audioid = prefs.getString("audioid", "0");
-                //Log.d("audioid_cheto",audioid);
-	        	Intent i = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
-                i.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, Integer.valueOf(audioid));
-                i.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC);
-                startActivityForResult(i, 0);
-                */
                 final Intent intent = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
                 if (getPackageManager().resolveActivity(intent, 0) == null) {
                     startActivity(new Intent(this, SimpleEq.class));
@@ -377,7 +374,6 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
         return true;
     }
 
-    
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
     	Intent i = getBaseContext().getPackageManager()
@@ -385,10 +381,7 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
     }   
-    
-    
-    
-    
+
     /**
      * Initiate the Top Actionbar
      */
@@ -414,6 +407,6 @@ public class MusicLibrary extends FragmentActivity implements ServiceConnection 
             cursor.close();
             cursor = null;
         }
-    }    
+    }
 
 }

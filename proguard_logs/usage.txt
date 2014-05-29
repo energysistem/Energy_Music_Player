@@ -529,10 +529,73 @@ com.mobeta.android.dslv.DragSortListView$DragScroller:
     private int mFirstFooter
 com.mobeta.android.dslv.DragSortListView$LiftAnimator:
     1210:1212:public DragSortListView$LiftAnimator(com.mobeta.android.dslv.DragSortListView,float,int)
+com.nineoldandroids.animation.AnimatorInflater:
+    private static final int AnimatorSet_ordering
+    private static final int PropertyAnimator_propertyName
+    private static final int Animator_interpolator
+    private static final int Animator_duration
+    private static final int Animator_startOffset
+    private static final int Animator_repeatCount
+    private static final int Animator_repeatMode
+    private static final int Animator_valueFrom
+    private static final int Animator_valueTo
+    private static final int Animator_valueType
+    private static final int TOGETHER
+    private static final int VALUE_TYPE_FLOAT
+com.nineoldandroids.animation.AnimatorSet$Dependency:
+    static final int WITH
+    static final int AFTER
+com.nineoldandroids.animation.ObjectAnimator:
+    private static final boolean DBG
+com.nineoldandroids.animation.PreHoneycombCompat:
+    167:167:private PreHoneycombCompat()
+com.nineoldandroids.animation.ValueAnimator:
+    private static final long DEFAULT_FRAME_DELAY
+    static final int ANIMATION_START
+    static final int ANIMATION_FRAME
+    static final int STOPPED
+    static final int RUNNING
+    static final int SEEKED
+com.nineoldandroids.util.ReflectiveProperty:
+    private static final java.lang.String PREFIX_GET
+    private static final java.lang.String PREFIX_IS
+    private static final java.lang.String PREFIX_SET
+com.nineoldandroids.view.ViewHelper$Honeycomb:
+    179:179:private ViewHelper$Honeycomb()
+com.nineoldandroids.view.ViewPropertyAnimatorHC:
+    private static final int NONE
+    private static final int TRANSLATION_X
+    private static final int TRANSLATION_Y
+    private static final int SCALE_X
+    private static final int SCALE_Y
+    private static final int ROTATION
+    private static final int ROTATION_X
+    private static final int ROTATION_Y
+    private static final int X
+    private static final int Y
+    private static final int ALPHA
+    private static final int TRANSFORM_MASK
+com.nineoldandroids.view.ViewPropertyAnimatorICS:
+    private static final long RETURN_WHEN_NULL
+com.nineoldandroids.view.ViewPropertyAnimatorPreHC:
+    private static final int NONE
+    private static final int TRANSLATION_X
+    private static final int TRANSLATION_Y
+    private static final int SCALE_X
+    private static final int SCALE_Y
+    private static final int ROTATION
+    private static final int ROTATION_X
+    private static final int ROTATION_Y
+    private static final int X
+    private static final int Y
+    private static final int ALPHA
+    private static final int TRANSFORM_MASK
 com.sothree.slidinguppanel.SlidingUpPanelLayout:
     private static final int DEFAULT_PANEL_HEIGHT
     private static final int DEFAULT_SHADOW_HEIGHT
     private static final int DEFAULT_FADE_COLOR
     private static final int DEFAULT_MIN_FLING_VELOCITY
+    private static final boolean DEFAULT_OVERLAY_FLAG
+    private static final int DEFAULT_PARALAX_OFFSET
 com.sothree.slidinguppanel.SlidingUpPanelLayout$LayoutParams:
     android.graphics.Paint dimPaint

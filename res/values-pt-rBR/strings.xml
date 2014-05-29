@@ -67,12 +67,19 @@
     <string name="error">Erro</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">RECENTE</string>
-    <string name="tab_artists">ARTISTAS</string>
-    <string name="tab_albums">ÁLBUNS</string>
-    <string name="tab_songs">MÚSICAS</string>
-    <string name="tab_playlists">LISTAS</string>
-    <string name="tab_genres">GÊNEROS</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">RECENTE</string>
+    <string name="tab_artists_entry">ARTISTAS</string>
+    <string name="tab_albums_entry">ÁLBUNS</string>
+    <string name="tab_songs_entry">MÚSICAS</string>
+    <string name="tab_playlists_entry">LISTAS</string>
+    <string name="tab_genres_entry">GÊNEROS</string>
 
     <string name="play_external_question_msg">Selecione a ação para aplicar a: \n\n<b><xliff:g id="name" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">%s</xliff:g></b></string>
     <string name="play_external_question_button_play">Reproduzir</string>

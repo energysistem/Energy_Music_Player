@@ -111,12 +111,19 @@
     <string name="overwrite">Felülírás</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">MOSTANÁBAN</string>
-    <string name="tab_artists">ELŐADÓK</string>
-    <string name="tab_albums">ALBUMOK</string>
-    <string name="tab_songs">DALOK</string>
-    <string name="tab_playlists">LISTÁK</string>
-    <string name="tab_genres">MŰFAJOK</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">MOSTANÁBAN</string>
+    <string name="tab_artists_entry">ELŐADÓK</string>
+    <string name="tab_albums_entry">ALBUMOK</string>
+    <string name="tab_songs_entry">DALOK</string>
+    <string name="tab_playlists_entry">LISTÁK</string>
+    <string name="tab_genres_entry">MŰFAJOK</string>
 
     <!-- External file dialog -->
     <string name="play_external_question_msg">Válasszon eseményt a következőhöz: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>

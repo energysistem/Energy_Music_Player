@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
@@ -140,19 +141,24 @@ public class ScrollableTabView extends HorizontalScrollView implements
 
     private void selectTab(int position) {
 
-        for (int i = 0, pos = 0; i < mContainer.getChildCount(); i ++ , pos++) {
-            View tab = mContainer.getChildAt(i);
-            tab.setSelected(pos == position);
-        }
-        
-        View selectedTab = mContainer.getChildAt(position);
+            if(mContainer.getChildCount()==0)
+            {
 
-        final int w = selectedTab.getMeasuredWidth();
-        final int l = selectedTab.getLeft();
+            }
 
-        final int x = l - this.getWidth() / 2 + w / 2;
+            for (int i = 0, pos = 0; i < mContainer.getChildCount(); i ++ , pos++) {
+                View tab = mContainer.getChildAt(i);
+                tab.setSelected(pos == position);
+            }
 
-        smoothScrollTo(x, this.getScrollY());
+            View selectedTab = mContainer.getChildAt(position);
+
+            final int w = selectedTab.getMeasuredWidth();
+            final int l = selectedTab.getLeft();
+
+            final int x = l - this.getWidth() / 2 + w / 2;
+
+            smoothScrollTo(x, this.getScrollY());
 
     }
 

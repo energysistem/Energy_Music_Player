@@ -110,12 +110,19 @@
     <string name="overwrite">Sobrescribir</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">RECIENTES</string>
-    <string name="tab_artists">ARTISTAS</string>
-    <string name="tab_albums">ÁLBUMES</string>
-    <string name="tab_songs">CANCIONES</string>
-    <string name="tab_playlists">LISTAS</string>
-    <string name="tab_genres">GÉNEROS</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">RECIENTES</string>
+    <string name="tab_artists_entry">ARTISTAS</string>
+    <string name="tab_albums_entry">ÁLBUMES</string>
+    <string name="tab_songs_entry">CANCIONES</string>
+    <string name="tab_playlists_entry">LISTAS</string>
+    <string name="tab_genres_entry">GÉNEROS</string>
 
     <string name="play_external_question_msg">Seleccione la acción a aplicar a:\n\n
         <b>

@@ -111,12 +111,20 @@
     <string name="overwrite">Korvaa</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">VIIMEISIMMÄT</string>
-    <string name="tab_artists">ESITTÄJÄT</string>
-    <string name="tab_albums">ALBUMIT</string>
-    <string name="tab_songs">KAPPALEET</string>
-    <string name="tab_playlists">SOITTOLISTAT</string>
-    <string name="tab_genres">TYYLILAJIT</string>
+
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">VIIMEISIMMÄT</string>
+    <string name="tab_artists_entry">ESITTÄJÄT</string>
+    <string name="tab_albums_entry">ALBUMIT</string>
+    <string name="tab_songs_entry">KAPPALEET</string>
+    <string name="tab_playlists_entry">SOITTOLISTAT</string>
+    <string name="tab_genres_entry">TYYLILAJIT</string>
 
     <!-- External file dialog -->
     <string name="play_external_question_msg">Valitse toiminto, joka suoritetaan kohteelle: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>

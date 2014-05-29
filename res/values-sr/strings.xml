@@ -117,12 +117,19 @@
     <string name="overwrite">Пребриши</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">НЕДАВНО</string>
-    <string name="tab_artists">ИЗВОЂАЧИ</string>
-    <string name="tab_albums">АЛБУМИ</string>
-    <string name="tab_songs">ПЕСМЕ</string>
-    <string name="tab_playlists">ЛИСТЕ</string>
-    <string name="tab_genres">ЖАНРОВИ</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">НЕДАВНО</string>
+    <string name="tab_artists_entry">ИЗВОЂАЧИ</string>
+    <string name="tab_albums_entry">АЛБУМИ</string>
+    <string name="tab_songs_entry">ПЕСМЕ</string>
+    <string name="tab_playlists_entry">ЛИСТЕ</string>
+    <string name="tab_genres_entry">ЖАНРОВИ</string>
 
     <!-- External file dialog -->
     <string name="play_external_question_msg">Изабери радњу и примени на: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>

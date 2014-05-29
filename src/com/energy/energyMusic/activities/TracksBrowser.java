@@ -7,6 +7,7 @@ package com.energy.energyMusic.activities;
 import android.app.SearchManager;
 import android.content.*;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.media.AudioManager;
@@ -22,6 +23,7 @@ import android.provider.MediaStore.Audio.Playlists;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -101,7 +103,7 @@ public class TracksBrowser extends FragmentActivity implements ServiceConnection
         mPanel = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         mPanel.setAnchorPoint(0);
         mPanel.setDragView(findViewById(R.id.bottom_action_bar_dragview));
-        mPanel.setShadowDrawable(getResources().getDrawable(R.drawable.above_shadow));
+        //TODO: REvisar mPanel.setShadowDrawable(getResources().getDrawable(R.drawable.above_shadow));
         mPanel.setAnchorPoint(0.0f);
         mPanel.setPanelSlideListener(new PanelSlideListener() {
             @Override

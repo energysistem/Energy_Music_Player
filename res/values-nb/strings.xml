@@ -110,12 +110,19 @@
     <string name="overwrite">Overskrive</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">NYLIGE</string>
-    <string name="tab_artists">ARTISTER</string>
-    <string name="tab_albums">ALBUM</string>
-    <string name="tab_songs">SANGER</string>
-    <string name="tab_playlists">SPILLELISTER</string>
-    <string name="tab_genres">SJANGRE</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">NYLIGE</string>
+    <string name="tab_artists_entry">ARTISTER</string>
+    <string name="tab_albums_entry">ALBUM</string>
+    <string name="tab_songs_entry">SANGER</string>
+    <string name="tab_playlists_entry">SPILLELISTER</string>
+    <string name="tab_genres_entry">SJANGRE</string>
 
     <!-- External file dialog -->
     <string name="play_external_question_msg">Select the action to apply to: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>

@@ -99,12 +99,19 @@
     <string name="overwrite">Overschrijven</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">RECENT</string>
-    <string name="tab_artists">ARTIESTEN</string>
-    <string name="tab_albums">ALBUMS</string>
-    <string name="tab_songs">NUMMERS</string>
-    <string name="tab_playlists">AFSPEELLIJSTEN</string>
-    <string name="tab_genres">GENRES</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">RECENT</string>
+    <string name="tab_artists_entry">ARTIESTEN</string>
+    <string name="tab_albums_entry">ALBUMS</string>
+    <string name="tab_songs_entry">NUMMERS</string>
+    <string name="tab_playlists_entry">AFSPEELLIJSTEN</string>
+    <string name="tab_genres_entry">GENRES</string>
 
     <!-- External file dialog -->
     <string name="play_external_question_msg">Kies de toe te passen actie op: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>

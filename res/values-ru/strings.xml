@@ -109,10 +109,17 @@
     <string name="error">Ошибка</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">ПОСЛЕДНИЕ</string>
-    <string name="tab_artists">ИСПОЛНИТЕЛИ</string>
-    <string name="tab_albums">АЛЬБОМЫ</string>
-    <string name="tab_songs">ТРЕКИ</string>
-    <string name="tab_playlists">ПЛЕЙЛИСТЫ</string>
-    <string name="tab_genres">ЖАНРЫ</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">ПОСЛЕДНИЕ</string>
+    <string name="tab_artists_entry">ИСПОЛНИТЕЛИ</string>
+    <string name="tab_albums_entry">АЛЬБОМЫ</string>
+    <string name="tab_songs_entry">ТРЕКИ</string>
+    <string name="tab_playlists_entry">ПЛЕЙЛИСТЫ</string>
+    <string name="tab_genres_entry">ЖАНРЫ</string>
 </resources>

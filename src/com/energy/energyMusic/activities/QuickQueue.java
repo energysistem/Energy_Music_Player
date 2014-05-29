@@ -4,11 +4,14 @@
 
 package com.energy.energyMusic.activities;
 
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.provider.MediaStore.Audio;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 import com.energy.energyMusic.ui.fragments.grid.QuickQueueFragment;
 
@@ -34,5 +37,6 @@ public class QuickQueue extends FragmentActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new QuickQueueFragment(bundle)).commit();
     }
+
 }
 

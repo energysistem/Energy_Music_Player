@@ -110,12 +110,19 @@
     <string name="overwrite">Prepísať</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">NEDÁVNE</string>
-    <string name="tab_artists">UMELCI</string>
-    <string name="tab_albums">ALBUMY</string>
-    <string name="tab_songs">SKLADBY</string>
-    <string name="tab_playlists">PLAYLISTY</string>
-    <string name="tab_genres">ŽÁNRE</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">NEDÁVNE</string>
+    <string name="tab_artists_entry">UMELCI</string>
+    <string name="tab_albums_entry">ALBUMY</string>
+    <string name="tab_songs_entry">SKLADBY</string>
+    <string name="tab_playlists_entry">PLAYLISTY</string>
+    <string name="tab_genres_entry">ŽÁNRE</string>
 
     <!-- Something went wrong -->
     <string name="error">Chyba</string>

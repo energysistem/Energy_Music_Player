@@ -7,9 +7,9 @@
             android:key="@string/key_tabs_enabled"
             android:summary="@string/tab_visibility_summary"
             android:title="@string/tab_visibility_title"
-            android:entries="@array/tab_titles"
-            android:entryValues="@array/tab_titles"
-            android:defaultValue="@array/tab_titles"
+            android:entries="@array/tab_titles_entries"
+            android:entryValues="@array/tab_titles_values"
+            android:defaultValue="@array/tab_titles_values"
             android:capitalize="words"
             />
         <ListPreference

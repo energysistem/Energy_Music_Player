@@ -62,7 +62,6 @@ public class MediaButtonIntentReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.d("Testbutton","botondetectado");
         String intentAction = intent.getAction();
         if (AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(intentAction)) {
             Intent i = new Intent(context, ApolloService.class);
@@ -70,7 +69,6 @@ public class MediaButtonIntentReceiver extends BroadcastReceiver {
             i.putExtra(ApolloService.CMDNAME, ApolloService.CMDPAUSE);
             context.startService(i);
         } else if (Intent.ACTION_MEDIA_BUTTON.equals(intentAction)) {
-            Log.d("Testbutton","botón multimedia");
             KeyEvent event = (KeyEvent)intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
 
             if (event == null) {
@@ -87,11 +85,13 @@ public class MediaButtonIntentReceiver extends BroadcastReceiver {
             // long press: start auto-shuffle mode.
 
             String command = null;
+            //Log.d("EarphoneKey",String.valueOf(keycode));
             switch (keycode) {
                 case KeyEvent.KEYCODE_MEDIA_STOP:
                     command = ApolloService.CMDSTOP;
                     break;
                 case KeyEvent.KEYCODE_HEADSETHOOK:
+                    //Log.d("MultimediaButton","botondetectadoHEADSET");
                 case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
                     command = ApolloService.CMDTOGGLEPAUSE;
                     break;

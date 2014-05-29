@@ -30,12 +30,14 @@ public class ScrollingTabsAdapter implements TabAdapter {
         final Button tab = (Button)inflater.inflate(R.layout.tabs, null);
 
         //Get default values for tab visibility preferences
-        final String[] mTitles = activity.getResources().getStringArray(R.array.tab_titles);
+        final String[] mTitles = activity.getResources().getStringArray(R.array.tab_titles_values);
+        final String[] mTitles_cheto = activity.getResources().getStringArray(R.array.tab_titles_entries);
 
         //Get tab visibility preferences
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
         Set<String> defaults = new HashSet<String>(Arrays.asList(mTitles));
         Set<String> tabs_set = sp.getStringSet(TABS_ENABLED,defaults);
+
         //if its empty fill reset it to full defaults
     		//stops app from crashing when no tabs are shown
     		//TODO:rewrite activity to not crash when no tabs are chosen to show
@@ -50,7 +52,7 @@ public class ScrollingTabsAdapter implements TabAdapter {
         int cnt = 0;
         for(int i = 0 ; i< mTitles.length ; i++){
         	if(tabs_set.contains(mTitles[i])){
-        		tabs_new[cnt]=mTitles[i];
+        		tabs_new[cnt]=mTitles_cheto[i];
         		cnt++;
         	}        	
         }        

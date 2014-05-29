@@ -110,12 +110,19 @@
     <string name="overwrite">Nadpisz</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">OSTATNIE</string>
-    <string name="tab_artists">WYKONAWCY</string>
-    <string name="tab_albums">ALBUMY</string>
-    <string name="tab_songs">UTWORY</string>
-    <string name="tab_playlists">PLAYLISTY</string>
-    <string name="tab_genres">GATUNKI</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">OSTATNIE</string>
+    <string name="tab_artists_entry">WYKONAWCY</string>
+    <string name="tab_albums_entry">ALBUMY</string>
+    <string name="tab_songs_entry">UTWORY</string>
+    <string name="tab_playlists_entry">PLAYLISTY</string>
+    <string name="tab_genres_entry">GATUNKI</string>
 
     <!-- Something went wrong -->
     <string name="error">Błąd</string>

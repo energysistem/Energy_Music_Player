@@ -131,9 +131,6 @@
 License Link:\n
         http://www.apache.org/licenses/LICENSE-2.0.html \n\n
 
-You can find the Energy Music Source Code in:\n
-        http://www.energysistem.com \n\n
-
 ApolloMod Source Code:\n
 https://github.com/Splitter/android_packages_apps_apolloMod
 
@@ -172,6 +169,14 @@ https://github.com/Splitter/android_packages_apps_apolloMod
     <string name="tab_songs">Songs</string>
     <string name="tab_playlists">Playlists</string>
     <string name="tab_genres">Genres</string>
+
+    <!-- Tabs -->
+    <string name="tab_recent_entry">Recent</string>
+    <string name="tab_artists_entry">Artists</string>
+    <string name="tab_albums_entry">Albums</string>
+    <string name="tab_songs_entry">Songs</string>
+    <string name="tab_playlists_entry">Playlists</string>
+    <string name="tab_genres_entry">Genres</string>
     
     <!-- Visualizations -->
     <string name="visual_none">None</string>

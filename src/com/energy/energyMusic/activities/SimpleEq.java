@@ -4,12 +4,15 @@
 
 package com.energy.energyMusic.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.SeekBar;
@@ -41,6 +44,7 @@ public class SimpleEq extends FragmentActivity
     TextView SeekBarLabels[] = new TextView[6];
     
     SharedPreferences mPreferences;
+
 
     @SuppressWarnings("deprecation")
     @Override

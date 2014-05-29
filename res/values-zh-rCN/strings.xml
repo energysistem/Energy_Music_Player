@@ -110,12 +110,19 @@
     <string name="overwrite">覆盖</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">最近</string>
-    <string name="tab_artists">艺术家</string>
-    <string name="tab_albums">专辑</string>
-    <string name="tab_songs">歌曲</string>
-    <string name="tab_playlists">播放列表</string>
-    <string name="tab_genres">流派</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">最近</string>
+    <string name="tab_artists_entry">艺术家</string>
+    <string name="tab_albums_entry">专辑</string>
+    <string name="tab_songs_entry">歌曲</string>
+    <string name="tab_playlists_entry">播放列表</string>
+    <string name="tab_genres_entry">流派</string>
 
     <!-- Something went wrong -->
     <string name="error">错误</string>

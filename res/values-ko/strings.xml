@@ -110,12 +110,19 @@
     <string name="overwrite">덮어쓰기</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">최근</string>
-    <string name="tab_artists">아티스트</string>
-    <string name="tab_albums">앨범</string>
-    <string name="tab_songs">노래</string>
-    <string name="tab_playlists">재생목록</string>
-    <string name="tab_genres">장르</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">최근</string>
+    <string name="tab_artists_entry">아티스트</string>
+    <string name="tab_albums_entry">앨범</string>
+    <string name="tab_songs_entry">노래</string>
+    <string name="tab_playlists_entry">재생목록</string>
+    <string name="tab_genres_entry">장르</string>
 
     <!-- External file dialog -->
     <string name="play_external_question_msg">다음에 적용할 액션을 고르세요: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>

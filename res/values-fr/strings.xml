@@ -111,12 +111,19 @@
     <string name="overwrite">Remplacer</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">RÉCENT</string>
-    <string name="tab_artists">ARTISTES</string>
-    <string name="tab_albums">ALBUMS</string>
-    <string name="tab_songs">TITRES</string>
-    <string name="tab_playlists">LISTES</string>
-    <string name="tab_genres">GENRES</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+
+    <string name="tab_recent_entry">RÉCENT</string>
+    <string name="tab_artists_entry">ARTISTES</string>
+    <string name="tab_albums_entry">ALBUMS</string>
+    <string name="tab_songs_entry">TITRES</string>
+    <string name="tab_playlists_entry">LISTES</string>
+    <string name="tab_genres_entry">GENRES</string>
 
     <!-- Something went wrong -->
     <string name="error">Erreur</string>

@@ -783,6 +783,8 @@ public class ApolloService extends Service implements GetBitmapTask.OnBitmapRead
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
+        //Log.d("MultimediaButtonTest","servicio_iniciado");
         mServiceStartId = startId;
         mDelayedStopHandler.removeCallbacksAndMessages(null);
 

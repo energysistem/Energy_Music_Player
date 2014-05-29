@@ -87,37 +87,6 @@ public class AudioPlayerFragment extends Fragment {
         mNext = (RepeatingImageButton)root.findViewById(R.id.audio_player_next);
         mShuffle = (ImageButton)root.findViewById(R.id.audio_player_shuffle);
 
-        //mBigPrev = (ImageButton)root.findViewById(R.id.ibBigPrev);
-        //mBigNext = (ImageButton)root.findViewById(R.id.ibBigNext);
-
-        //mBigButtonsLayout = (LinearLayout)root.findViewById(R.id.bigButtonsLayout);
-/*
-        mBigNext.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MusicUtils.mService == null)
-                    return;
-                try {
-                    MusicUtils.mService.next();
-                } catch (RemoteException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-
-        mBigPrev.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MusicUtils.mService == null)
-                    return;
-                try {
-                        MusicUtils.mService.prev();
-                } catch (RemoteException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
-*/
         mRepeat.setOnClickListener(new OnClickListener() {
 
             @Override

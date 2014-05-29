@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.energy.energyMusic"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="5"
+    android:versionName="1.4" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="15" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="17" />
 
     <!-- This is used for Last.fm and Google Music -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -27,7 +27,7 @@
     <application
         android:allowTaskReparenting="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:process=":main"
@@ -57,6 +57,7 @@
         <!-- Main Activity -->
         <activity
             android:name=".activities.MusicLibrary"
+            android:configChanges="keyboardHidden|orientation|locale|layoutDirection"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/CustomActionBarTheme">
@@ -120,6 +121,7 @@
         <!-- Settings -->
         <activity
             android:name=".preferences.SettingsHolder"
+            android:configChanges="keyboardHidden|orientation|locale|layoutDirection"
             android:theme="@style/CustomActionBarTheme"
             android:label="" />
         <!-- Simple EQ -->
@@ -147,7 +149,7 @@
         </activity>
         <activity
             android:name=".menu.PlaylistPicker"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@mipmap/ic_launcher"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
             <intent-filter>
                 <action android:name="com.andrew.apolloMod.ADD_TO_PLAYLIST" />

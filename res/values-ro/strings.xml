@@ -61,11 +61,17 @@
     <string name="new_playlist_name_template">"Lista de redare <xliff:g id="number">%d</xliff:g>"</string>
     <string name="save">"Salvaţi"</string>
     <string name="overwrite">"Suprascrieţi"</string>
-    <string name="tab_recent">"RECENTE"</string>
-    <string name="tab_artists">"INTERPREŢI"</string>
-    <string name="tab_albums">"ALBUME"</string>
-    <string name="tab_songs">"MELODII"</string>
-    <string name="tab_playlists">"LISTE DE REDARE"</string>
-    <string name="tab_genres">"GENURI"</string>
+    <string name="tab_recent">Recent</string>
+    <string name="tab_artists">Artists</string>
+    <string name="tab_albums">Albums</string>
+    <string name="tab_songs">Songs</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="tab_genres">Genres</string>
+    <string name="tab_recent_entry">"RECENTE"</string>
+    <string name="tab_artists_entry">"INTERPREŢI"</string>
+    <string name="tab_albums_entry">"ALBUME"</string>
+    <string name="tab_songs_entry">"MELODII"</string>
+    <string name="tab_playlists_entry">"LISTE DE REDARE"</string>
+    <string name="tab_genres_entry">"GENURI"</string>
     <string name="error">"Eroare"</string>
 </resources>
