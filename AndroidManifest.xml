@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.energy.energyMusic"
-    android:versionCode="5"
+    package="com.energysistem.energyMusic"
+    android:versionCode="7"
     android:versionName="1.5" >
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="17"
         android:targetSdkVersion="17" />
 
     <!-- This is used for Last.fm and Google Music -->
@@ -38,7 +38,7 @@
             android:value=".activities.QueryBrowserActivity" />
         <!-- Serach -->
         <activity
-            android:name=".activities.QueryBrowserActivity"
+            android:name="com.energysistem.energyMusic.activities.QueryBrowserActivity"
             android:exported="true"
             android:theme="@android:style/Theme.Holo.Light" >
             <intent-filter>
@@ -56,7 +56,7 @@
 
         <!-- Main Activity -->
         <activity
-            android:name=".activities.MusicLibrary"
+            android:name="com.energysistem.energyMusic.activities.MusicLibrary"
             android:configChanges="keyboardHidden|orientation|locale|layoutDirection"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan"
@@ -70,7 +70,7 @@
                 <category android:name="android.intent.category.APP_MUSIC" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.andrew.apolloMod.PLAYBACK_VIEWER" />
+                <action android:name="com.energysistem.energyMusic.PLAYBACK_VIEWER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -78,7 +78,7 @@
         <!-- Now Playing -->
         <!-- Play External File -->
         <activity
-            android:name=".activities.PlayExternal"
+            android:name="com.energysistem.energyMusic.activities.PlayExternal"
             android:clearTaskOnLaunch="true"
             android:excludeFromRecents="true"
             android:noHistory="true"
@@ -99,7 +99,7 @@
         </activity>
         <!-- Track browser -->
         <activity
-            android:name=".activities.TracksBrowser"
+            android:name="com.energysistem.energyMusic.activities.TracksBrowser"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
@@ -112,7 +112,7 @@
 
         <!-- Quickly show the queue -->
         <activity
-            android:name=".activities.QuickQueue"
+            android:name="com.energysistem.energyMusic.activities.QuickQueue"
             android:excludeFromRecents="true"
             android:launchMode="singleTop"
             android:noHistory="true"
@@ -120,46 +120,46 @@
             android:windowSoftInputMode="stateUnchanged" />
         <!-- Settings -->
         <activity
-            android:name=".preferences.SettingsHolder"
+            android:name="com.energysistem.energyMusic.preferences.SettingsHolder"
             android:configChanges="keyboardHidden|orientation|locale|layoutDirection"
             android:theme="@style/CustomActionBarTheme"
             android:label="" />
         <!-- Simple EQ -->
         <activity
-            android:name=".activities.SimpleEq"
+            android:name="com.energysistem.energyMusic.activities.SimpleEq"
             android:excludeFromRecents="true"
             android:label="@string/simple_eq_page_title"
             android:windowSoftInputMode="adjustPan"
-            android:parentActivityName=".activities.MusicLibrary" />
+            android:parentActivityName="com.energysistem.energyMusic.activities.MusicLibrary" />
 
         <activity
-            android:name=".menu.PlaylistDialog"
+            android:name="com.energysistem.energyMusic.menu.PlaylistDialog"
             android:label="@string/rename_playlist"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
             <intent-filter>
-                <action android:name="com.andrew.apolloMod.CREATE_PLAYLIST" />
+                <action android:name="com.energysistem.energyMusic.CREATE_PLAYLIST" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.andrew.apolloMod.RENAME_PLAYLIST" />
+                <action android:name="com.energysistem.energyMusic.RENAME_PLAYLIST" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".menu.PlaylistPicker"
+            android:name="com.energysistem.energyMusic.menu.PlaylistPicker"
             android:icon="@mipmap/ic_launcher"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
             <intent-filter>
-                <action android:name="com.andrew.apolloMod.ADD_TO_PLAYLIST" />
+                <action android:name="com.energysistem.energyMusic.ADD_TO_PLAYLIST" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <!-- 1x1 App Widget -->
         <receiver
-            android:name=".app.widgets.AppWidget11"
+            android:name="com.energysistem.energyMusic.app.widgets.AppWidget11"
             android:label="@string/apollo_1x1" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -171,7 +171,7 @@
         </receiver>
         <!-- 4x1 App Widget -->
         <receiver
-            android:name=".app.widgets.AppWidget41"
+            android:name="com.energysistem.energyMusic.app.widgets.AppWidget41"
             android:label="@string/apollo_4x1" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -183,7 +183,7 @@
         </receiver>
         <!-- 4x2 App Widget -->
         <receiver
-            android:name=".app.widgets.AppWidget42"
+            android:name="com.energysistem.energyMusic.app.widgets.AppWidget42"
             android:label="@string/apollo_4x2" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -194,7 +194,7 @@
                 android:resource="@xml/appwidget4x2_info" />
         </receiver>
         <!-- Media button receiver -->
-        <receiver android:name=".service.MediaButtonIntentReceiver" >
+        <receiver android:name="com.energysistem.energyMusic.service.MediaButtonIntentReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
@@ -204,7 +204,7 @@
         </receiver>
         <!-- Music service -->
         <service
-            android:name=".service.ApolloService"
+            android:name="com.energysistem.energyMusic.service.ApolloService"
             android:label="@string/app_name"
             android:process=":main" />
     </application>

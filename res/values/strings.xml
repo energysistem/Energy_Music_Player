@@ -105,6 +105,7 @@
 
     <!-- Unknown genre name -->
     <string name="unknown">Unknown</string>
+    <string name="unknown_last_fm">Unknown</string>
 
     <!-- Settings -->
     <string name="about">About Energy Music</string>

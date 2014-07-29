@@ -51,7 +51,7 @@
             android:contentDescription="@string/cd_repeat"
             android:src="@drawable/apollo_holo_light_repeat_normal" />
 
-        <com.energy.energyMusic.ui.widgets.RepeatingImageButton
+        <com.energysistem.energyMusic.ui.widgets.RepeatingImageButton
             android:id="@+id/audio_player_prev"
             style="@style/AudioPlayerButton"
             android:src="@drawable/apollo_holo_light_previous" />
@@ -62,7 +62,7 @@
             android:contentDescription="@string/cd_play"
             android:src="@drawable/apollo_holo_light_pause" />
 
-        <com.energy.energyMusic.ui.widgets.RepeatingImageButton
+        <com.energysistem.energyMusic.ui.widgets.RepeatingImageButton
             android:id="@+id/audio_player_next"
             style="@style/AudioPlayerButton"
             android:src="@drawable/apollo_holo_light_next" />

@@ -41,13 +41,13 @@
 				    android:layout_gravity="top"
 				    android:orientation="vertical" >
 				
-				<fragment android:name="com.energy.energyMusic.ui.fragments.BottomActionBarFragment"
+				<fragment android:name="com.energysistem.energyMusic.ui.fragments.BottomActionBarFragment"
 		            android:id="@+id/bottomactionbar_new"
 		            android:layout_weight="1"
 					android:layout_width="match_parent"
 	           		android:layout_height="match_parent" />            		
 			</LinearLayout>
-	        <fragment android:name="com.energy.energyMusic.ui.fragments.AudioPlayerFragment"
+	        <fragment android:name="com.energysistem.energyMusic.ui.fragments.AudioPlayerFragment"
 	            android:id="@+id/audio_player_view"
 	            android:layout_weight="1"
 				android:layout_width="match_parent"

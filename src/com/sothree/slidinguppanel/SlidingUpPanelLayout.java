@@ -275,19 +275,19 @@ public class SlidingUpPanelLayout extends ViewGroup {
 
             defAttrs.recycle();
 
-            TypedArray ta = context.obtainStyledAttributes(attrs, com.energy.energyMusic.R.styleable.SlidingUpPanelLayout);
+            TypedArray ta = context.obtainStyledAttributes(attrs, com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout);
 
             if (ta != null) {
-                mPanelHeight = ta.getDimensionPixelSize(com.energy.energyMusic.R.styleable.SlidingUpPanelLayout_panelHeight, -1);
-                mShadowHeight = ta.getDimensionPixelSize(com.energy.energyMusic.R.styleable.SlidingUpPanelLayout_shadowHeight, -1);
-                mParalaxOffset = ta.getDimensionPixelSize(com.energy.energyMusic.R.styleable.SlidingUpPanelLayout_paralaxOffset, -1);
+                mPanelHeight = ta.getDimensionPixelSize(com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout_panelHeight, -1);
+                mShadowHeight = ta.getDimensionPixelSize(com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout_shadowHeight, -1);
+                mParalaxOffset = ta.getDimensionPixelSize(com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout_paralaxOffset, -1);
 
-                mMinFlingVelocity = ta.getInt(com.energy.energyMusic.R.styleable.SlidingUpPanelLayout_flingVelocity, DEFAULT_MIN_FLING_VELOCITY);
-                mCoveredFadeColor = ta.getColor(com.energy.energyMusic.R.styleable.SlidingUpPanelLayout_fadeColor, DEFAULT_FADE_COLOR);
+                mMinFlingVelocity = ta.getInt(com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout_flingVelocity, DEFAULT_MIN_FLING_VELOCITY);
+                mCoveredFadeColor = ta.getColor(com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout_fadeColor, DEFAULT_FADE_COLOR);
 
-                mDragViewResId = ta.getResourceId(com.energy.energyMusic.R.styleable.SlidingUpPanelLayout_dragView, -1);
+                mDragViewResId = ta.getResourceId(com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout_dragView, -1);
 
-                mOverlayContent = ta.getBoolean(com.energy.energyMusic.R.styleable.SlidingUpPanelLayout_overlay,DEFAULT_OVERLAY_FLAG);
+                mOverlayContent = ta.getBoolean(com.energysistem.energyMusic.R.styleable.SlidingUpPanelLayout_overlay,DEFAULT_OVERLAY_FLAG);
             }
 
             ta.recycle();
@@ -306,9 +306,9 @@ public class SlidingUpPanelLayout extends ViewGroup {
         // If the shadow height is zero, don't show the shadow
         if (mShadowHeight > 0) {
             if (mIsSlidingUp) {
-                mShadowDrawable = getResources().getDrawable(com.energy.energyMusic.R.drawable.above_shadow);
+                mShadowDrawable = getResources().getDrawable(com.energysistem.energyMusic.R.drawable.above_shadow);
             } else {
-                mShadowDrawable = getResources().getDrawable(com.energy.energyMusic.R.drawable.below_shadow);
+                mShadowDrawable = getResources().getDrawable(com.energysistem.energyMusic.R.drawable.below_shadow);
             }
 
         } else {

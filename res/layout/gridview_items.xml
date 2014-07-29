@@ -10,7 +10,7 @@
 		    android:layout_height="match_parent"
 			android:background="@drawable/gridview_item_background" >
 		
-		    <com.energy.energyMusic.views.TrackBrowserImageView
+		    <com.energysistem.energyMusic.views.TrackBrowserImageView
 		        android:id="@+id/gridview_image"
 		        android:layout_width="@dimen/gridview_image_width"
 		        android:layout_height="@dimen/gridview_image_height"
