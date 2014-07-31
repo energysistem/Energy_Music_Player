@@ -16,7 +16,7 @@
     />
      
     <item 
-    android:drawable="@color/shuffle_grey"
+    android:drawable="@color/background_grey"
     />
      
     </selector>

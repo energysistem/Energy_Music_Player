@@ -26,9 +26,10 @@
         <item name="android:paddingRight">@dimen/tab_padding_left_right</item>
         <item name="android:paddingTop">@dimen/tab_padding_top_bottom</item>
         <item name="android:textColor">@color/tab_text_color</item>
-        <item name="android:textSize">@dimen/text_size_micro</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textStyle">bold</item>
         <item name="android:focusable">true</item>
+        <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:selectAllOnFocus">false</item>
     </style>
@@ -225,7 +226,5 @@
     <style name="WindowTitleBackground">
         <item name="android:background">@color/titlebackgroundcolor</item>
     </style>
-
-
 
 </resources>

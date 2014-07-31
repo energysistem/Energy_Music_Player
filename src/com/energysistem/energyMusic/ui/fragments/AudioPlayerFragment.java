@@ -163,8 +163,8 @@ public class AudioPlayerFragment extends Fragment {
         mAlbumArtPager.setCurrentItem(1);
         mAlbumArtPager.setOnPageChangeListener(new AlbumArtPageListener());
 
-        FrameLayout mColorstripBottom = (FrameLayout)root.findViewById(R.id.colorstrip_bottom);
-        mColorstripBottom.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark));
+//        FrameLayout mColorstripBottom = (FrameLayout)root.findViewById(R.id.colorstrip_bottom);
+//        mColorstripBottom.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark));
         return root;
     }
 
@@ -557,14 +557,14 @@ public class AudioPlayerFragment extends Fragment {
 
                 if (MusicUtils.mService.isPlaying()) {
                     mCurrentTime.setVisibility(View.VISIBLE);
-                    mCurrentTime.setTextColor(getResources().getColor(R.color.transparent_black));
+                    mCurrentTime.setTextColor(getResources().getColor(R.color.white));
                 } else {
                     // blink the counter
                     int col = mCurrentTime.getCurrentTextColor();
                     mCurrentTime.setTextColor(col == getResources().getColor(
-                            R.color.transparent_black) ? getResources().getColor(
+                            R.color.white) ? getResources().getColor(
                             R.color.holo_blue_dark) : getResources().getColor(
-                            R.color.transparent_black));
+                            R.color.white));
                     remaining = 500;
                 }
 

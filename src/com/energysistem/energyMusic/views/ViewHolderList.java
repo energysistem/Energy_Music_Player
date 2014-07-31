@@ -16,7 +16,7 @@ import com.energysistem.energyMusic.R;
  */
 public class ViewHolderList {
 
-    public final ImageView mViewHolderImage, mPeakOne, mPeakTwo, mQuickContextDivider,
+    public final ImageView mViewHolderImage, mPeakOne, mPeakTwo,
             mQuickContextTip;
 
     public final TextView mViewHolderLineOne;
@@ -32,7 +32,6 @@ public class ViewHolderList {
         mQuickContext = (FrameLayout)view.findViewById(R.id.track_list_context_frame);
         mPeakOne = (ImageView)view.findViewById(R.id.peak_one);
         mPeakTwo = (ImageView)view.findViewById(R.id.peak_two);
-        mQuickContextDivider = (ImageView)view.findViewById(R.id.quick_context_line);
         mQuickContextTip = (ImageView)view.findViewById(R.id.quick_context_tip);
 
     }

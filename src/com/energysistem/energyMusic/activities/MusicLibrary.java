@@ -81,7 +81,7 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
         setContentView(R.layout.library_browser);
 
         // Style the actionbar
-        initActionBar();
+        //initActionBar();
 
         // Control Media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);

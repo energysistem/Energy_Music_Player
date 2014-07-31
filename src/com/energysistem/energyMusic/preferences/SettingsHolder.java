@@ -23,6 +23,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceScreen;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
@@ -74,7 +75,7 @@ public class SettingsHolder extends PreferenceActivity  implements ServiceConnec
 
         initDependencies();
 
-        initActionBar();
+        //initActionBar();
     }
 
     private void initActionBar() {
