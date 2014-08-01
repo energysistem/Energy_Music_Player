@@ -422,13 +422,13 @@ public class AudioPlayerFragment extends Fragment {
         try {
             switch (MusicUtils.mService.getRepeatMode()) {
                 case ApolloService.REPEAT_ALL:
-                    mRepeat.setImageResource(R.drawable.apollo_holo_light_repeat_all);
+                    mRepeat.setImageResource(R.drawable.apollo_holo_dark_repeat_all);
                     break;
                 case ApolloService.REPEAT_CURRENT:
-                    mRepeat.setImageResource(R.drawable.apollo_holo_light_repeat_one);
+                    mRepeat.setImageResource(R.drawable.apollo_holo_dark_repeat_one);
                     break;
                 default:
-                    mRepeat.setImageResource(R.drawable.apollo_holo_light_repeat_normal);
+                    mRepeat.setImageResource(R.drawable.apollo_holo_dark_repeat_normal);
                     break;
             }
         } catch (RemoteException ex) {
@@ -445,13 +445,13 @@ public class AudioPlayerFragment extends Fragment {
         try {
             switch (MusicUtils.mService.getShuffleMode()) {
                 case ApolloService.SHUFFLE_NONE:
-                    mShuffle.setImageResource(R.drawable.apollo_holo_light_shuffle_normal);
+                    mShuffle.setImageResource(R.drawable.apollo_holo_dark_shuffle_normal);
                     break;
                 case ApolloService.SHUFFLE_AUTO:
-                    mShuffle.setImageResource(R.drawable.apollo_holo_light_shuffle_on);
+                    mShuffle.setImageResource(R.drawable.apollo_holo_dark_shuffle_on);
                     break;
                 default:
-                    mShuffle.setImageResource(R.drawable.apollo_holo_light_shuffle_on);
+                    mShuffle.setImageResource(R.drawable.apollo_holo_dark_shuffle_on);
                     break;
             }
         } catch (RemoteException ex) {
@@ -465,9 +465,9 @@ public class AudioPlayerFragment extends Fragment {
     private void setPauseButtonImage() {
         try {
             if (MusicUtils.mService != null && MusicUtils.mService.isPlaying()) {
-                mPlay.setImageResource(R.drawable.apollo_holo_light_pause);
+                mPlay.setImageResource(R.drawable.apollo_holo_dark_pause);
             } else {
-                mPlay.setImageResource(R.drawable.apollo_holo_light_play);
+                mPlay.setImageResource(R.drawable.apollo_holo_dark_play);
             }
         } catch (RemoteException ex) {
             ex.printStackTrace();

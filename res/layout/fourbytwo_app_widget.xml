@@ -15,6 +15,7 @@
         android:id="@+id/four_by_two_controls"
         android:layout_width="match_parent"
         android:layout_height="@dimen/four_by_two_control_height"
+        android:paddingTop="20dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 

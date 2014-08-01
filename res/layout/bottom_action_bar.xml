@@ -61,13 +61,15 @@
             android:id="@+id/bottom_action_bar_previous"
             style="@style/BottomActionBarItem"
             android:contentDescription="@string/cd_previous"
+            android:layout_marginRight="10dp"
             android:src="@drawable/apollo_holo_dark_prev" />
 
         <ImageButton
             android:id="@+id/bottom_action_bar_play"
             style="@style/BottomActionBarItem"
             android:contentDescription="@string/cd_play"
-            android:src="@drawable/apollo_holo_dark_play" />
+            android:layout_marginRight="10dp"
+            android:src="@drawable/apollo_holo_dark_play2" />
 
         <ImageButton
             android:id="@+id/bottom_action_bar_next"

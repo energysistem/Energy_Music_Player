@@ -170,9 +170,9 @@ public class BottomActionBarFragment extends Fragment {
     private void setPauseButtonImage() {
         try {
             if (MusicUtils.mService != null && MusicUtils.mService.isPlaying()) {
-                mPlay.setImageResource(R.drawable.apollo_holo_light_pause);
+                mPlay.setImageResource(R.drawable.apollo_holo_dark_pause2);
             } else {
-                mPlay.setImageResource(R.drawable.apollo_holo_light_play);
+                mPlay.setImageResource(R.drawable.apollo_holo_dark_play2);
             }
         } catch (RemoteException ex) {
             ex.printStackTrace();

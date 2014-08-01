@@ -24,7 +24,7 @@
             android:id="@+id/audio_player_play"
             style="@style/AudioPlayerButton"
             android:contentDescription="@string/cd_play"
-            android:src="@drawable/apollo_holo_dark_pause" />
+            android:src="@drawable/apollo_holo_dark_pause2" />
 
         <com.energysistem.energyMusic.ui.widgets.RepeatingImageButton
             android:id="@+id/audio_player_next"

@@ -22,6 +22,6 @@
         android:layout_gravity="center"
         android:layout_marginRight="@dimen/quick_context_margin_right"
         android:scaleType="centerInside"
-        android:src="@drawable/apollo_holo_dark_overflow" />
+        android:src="@drawable/apollo_holo_light_overflow" />
 
 </FrameLayout>

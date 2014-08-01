@@ -57,7 +57,7 @@
         <!-- Main Activity -->
         <activity
             android:name="com.energysistem.energyMusic.activities.MusicLibrary"
-            android:configChanges="keyboardHidden|orientation|locale|layoutDirection"
+            android:configChanges="keyboardHidden|orientation|locale"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/CustomActionBarTheme">
@@ -122,7 +122,7 @@
         <!-- Settings -->
         <activity
             android:name="com.energysistem.energyMusic.preferences.SettingsHolder"
-            android:configChanges="keyboardHidden|orientation|locale|layoutDirection"
+            android:configChanges="keyboardHidden|orientation|locale"
             android:theme="@style/CustomActionBarTheme"
             android:label="@string/app_name" />
         <!-- Simple EQ -->
