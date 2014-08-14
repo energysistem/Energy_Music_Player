@@ -31,6 +31,7 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
@@ -44,6 +45,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.energysistem.energyMusic.R;
 import com.energysistem.energyMusic.helpers.utils.ApolloUtils;
@@ -277,6 +279,19 @@ public class QueryBrowserActivity extends ListActivity implements ServiceConnect
         }
     }
 
+    private void playAll(Cursor c) {
+        if(MediaStore.INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH.equals(getIntent())) {
+            Toast.makeText(this, "Play", Toast.LENGTH_LONG).show();
+            MusicUtils.removeAllTracks();
+            MusicUtils.playAll(this, c);
+            try {
+                MusicUtils.mService.play();
+            } catch (RemoteException e) {
+                //
+            }
+        }
+    }
+
     private Cursor getQueryCursor(AsyncQueryHandler async, String filter) {
         if (filter == null) {
             filter = "";
@@ -430,6 +445,7 @@ public class QueryBrowserActivity extends ListActivity implements ServiceConnect
             Cursor c = mActivity.getQueryCursor(null, s);
             mConstraint = s;
             mConstraintIsValid = true;
+            mActivity.playAll(c);
             return c;
         }
     }

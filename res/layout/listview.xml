@@ -6,7 +6,7 @@
     android:gravity="center_vertical"
     android:orientation="vertical" >
 
-    <include layout="@layout/shadow" />
+    <!-- <include layout="@layout/shadow" /> -->
 
     <include layout="@layout/list_separator" />
 

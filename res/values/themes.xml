@@ -23,6 +23,7 @@
     <style name="MyActionBar"
         parent="android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/blue_energy</item>
+        <item name="android:icon">@drawable/stat_notify_music_alter</item>
         <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
     </style>
 
