@@ -49,6 +49,8 @@ import com.energysistem.energyMusic.ui.adapters.PagerAdapter;
 import com.energysistem.energyMusic.ui.fragments.list.AlbumListFragment;
 import com.energysistem.energyMusic.ui.fragments.list.ArtistAlbumsFragment;
 import com.energysistem.energyMusic.ui.fragments.list.ArtistListFragment;
+import com.energysistem.energyMusic.ui.fragments.list.FolderFragment;
+import com.energysistem.energyMusic.ui.fragments.list.FolderListFragment;
 import com.energysistem.energyMusic.ui.fragments.list.GenreListFragment;
 import com.energysistem.energyMusic.ui.fragments.list.PlaylistListFragment;
 
@@ -56,6 +58,7 @@ import static com.energysistem.energyMusic.Constants.ALBUM_ID_KEY;
 import static com.energysistem.energyMusic.Constants.ALBUM_KEY;
 import static com.energysistem.energyMusic.Constants.ARTIST_ID;
 import static com.energysistem.energyMusic.Constants.ARTIST_KEY;
+import static com.energysistem.energyMusic.Constants.FOLDER_KEY;
 import static com.energysistem.energyMusic.Constants.GENRE_KEY;
 import static com.energysistem.energyMusic.Constants.INTENT_ACTION;
 import static com.energysistem.energyMusic.Constants.MIME_TYPE;
@@ -387,6 +390,14 @@ public class TracksBrowser extends SlidingUpPanelActivity implements ServiceConn
             mInfo.data = new String[]{ plyName };
             lineOne = plyName;
         }
+        else if (MediaStore.Audio.Media.CONTENT_TYPE.equals(mimeType)) {
+            String path = bundle.getString(FOLDER_KEY);
+            mInfo.type = TYPE_PLAYLIST;
+            mInfo.data = new String[]{ path };
+            lineOne = path.substring(path.lastIndexOf("/")+1);
+            imageView.setImageResource(R.drawable.folder);
+            imageView.setBackground(null);
+        }
         else{
             String genName = MusicUtils.parseGenreName(this,
                     MusicUtils.getGenreName(this, bundle.getLong(BaseColumns._ID), true));
@@ -396,7 +407,8 @@ public class TracksBrowser extends SlidingUpPanelActivity implements ServiceConn
             lineOne = genName;
         }
 
-        mImageProvider.loadImage( imageView, mInfo );
+        if (!MediaStore.Audio.Media.CONTENT_TYPE.equals(mimeType))
+            mImageProvider.loadImage( imageView, mInfo );
         TextView lineOneView = (TextView)findViewById(R.id.half_artist_image_text);
         lineOneView.setText(lineOne);
         TextView lineTwoView = (TextView)findViewById(R.id.half_artist_image_text_line_two);
@@ -424,6 +436,9 @@ public class TracksBrowser extends SlidingUpPanelActivity implements ServiceConn
         }
         else if(Audio.Albums.CONTENT_TYPE.equals(mimeType)){
             mPagerAdapter.addFragment(new AlbumListFragment(bundle));
+        }
+        else if(MediaStore.Audio.Media.CONTENT_TYPE.equals(mimeType)){
+            mPagerAdapter.addFragment(new FolderListFragment(bundle));
         }
 
         // Set up ViewPager
@@ -587,10 +602,14 @@ public class TracksBrowser extends SlidingUpPanelActivity implements ServiceConn
             name =  getString (R.string.artist_page_title)+MusicUtils.getArtistName(this, id, true);
         } else if (Audio.Albums.CONTENT_TYPE.equals(mimeType)) {
             id = bundle.getLong(BaseColumns._ID);
-            name =  getString (R.string.album_page_title)+MusicUtils.getAlbumName(this, id, true);
+            name =  getString(R.string.album_page_title)+MusicUtils.getAlbumName(this, id, true);
         } else if (Audio.Genres.CONTENT_TYPE.equals(mimeType)) {
             id = bundle.getLong(BaseColumns._ID);
             name = MusicUtils.parseGenreName(this, MusicUtils.getGenreName(this, id, true));
+        } else if (MediaStore.Audio.Media.CONTENT_TYPE.equals(mimeType)) {
+                String folderName = bundle.getString(FOLDER_KEY);
+                folderName = folderName.substring(folderName.lastIndexOf("/")+1);
+                name = getString(R.string.folder_page_title)+folderName;
         } else {
             setTitle(R.string.app_name);
             return;

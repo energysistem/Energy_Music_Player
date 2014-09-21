@@ -1,6 +1,7 @@
 
 package com.energysistem.energyMusic.ui.fragments.list;
 
+import android.os.AsyncTask;
 import android.support.v4.content.Loader;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -16,7 +17,10 @@ import com.energysistem.energyMusic.ui.fragments.base.DragSortListViewFragment;
 import static com.energysistem.energyMusic.Constants.TYPE_SONG;
 
 public class NowPlayingFragment extends DragSortListViewFragment{
-	
+
+    private MatrixCursor playlistCursor;
+    private Loader<Cursor> loader;
+
 	@Override
 	public void setupFragmentData() {
 		mAdapter = new NowPlayingAdapter(getActivity(), R.layout.dragsort_listview_items, null,
@@ -46,28 +50,16 @@ public class NowPlayingFragment extends DragSortListViewFragment{
 	}
 
     @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor data) {
         if (data == null) {
             return;
         }
-        long[] mNowPlaying = MusicUtils.getQueue();
+        loader = cursorLoader;
     	String[] audioCols = new String[] { BaseColumns._ID, MediaColumns.TITLE, AudioColumns.ARTIST, AudioColumns.ALBUM};
-        MatrixCursor playlistCursor = new MatrixCursor(audioCols);
-    	for(int i = 0; i < mNowPlaying.length; i++){
-    		data.moveToPosition(-1);
-    		while (data.moveToNext()) {
-                long audioid = data.getLong(data.getColumnIndexOrThrow(BaseColumns._ID));
-            	if( audioid == mNowPlaying[i]) {
-                    String trackName = data.getString(data.getColumnIndexOrThrow(MediaColumns.TITLE));
-                    String artistName = data.getString(data.getColumnIndexOrThrow(AudioColumns.ARTIST));
-                    String albumName = data.getString(data.getColumnIndexOrThrow(AudioColumns.ALBUM));
-            		playlistCursor.addRow(new Object[] {audioid, trackName, artistName, albumName });
-            	}
-            }
-    	}
-        data.close();
-		mCursor = playlistCursor;
-        super.onLoadFinished(loader, playlistCursor);
+        playlistCursor = new MatrixCursor(audioCols);
+
+        LoadItemsTask loadItemTask = new LoadItemsTask();
+        loadItemTask.execute(data);
     }
 
     /**
@@ -128,5 +120,45 @@ public class NowPlayingFragment extends DragSortListViewFragment{
 			mCursor.close();
         mCursor = playlistCursor;
         mAdapter.changeCursor(playlistCursor);
+    }
+
+    private class LoadItemsTask extends AsyncTask<Cursor, String, Long> {
+
+        long[] mNowPlaying;
+        Cursor data;
+
+        @Override
+        protected void onPreExecute() {
+            mNowPlaying = MusicUtils.getQueue();
+        }
+
+        protected Long doInBackground(Cursor... datas) {
+            data = datas[0];
+            for(int i = 0; i < mNowPlaying.length; i++) {
+                data.moveToPosition(-1);
+                while (data.moveToNext()) {
+                    long audioid = data.getLong(data.getColumnIndexOrThrow(BaseColumns._ID));
+                    if (audioid == mNowPlaying[i]) {
+                        String trackName = data.getString(data.getColumnIndexOrThrow(MediaColumns.TITLE));
+                        String artistName = data.getString(data.getColumnIndexOrThrow(AudioColumns.ARTIST));
+                        String albumName = data.getString(data.getColumnIndexOrThrow(AudioColumns.ALBUM));
+                        publishProgress(String.valueOf(audioid), trackName, artistName, albumName);
+
+                    }
+                }
+            }
+            return Long.parseLong("1");
+        }
+
+        @Override
+        protected void onProgressUpdate(String... progress) {
+            NowPlayingFragment.this.playlistCursor.addRow(new Object[] {progress[0], progress[1], progress[2], progress[3] });
+        }
+
+        protected void onPostExecute(Long result) {
+            data.close();
+            mCursor = playlistCursor;
+            NowPlayingFragment.super.onLoadFinished(NowPlayingFragment.this.loader, playlistCursor);
+        }
     }
 }

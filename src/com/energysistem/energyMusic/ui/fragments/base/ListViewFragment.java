@@ -32,7 +32,7 @@ import static com.energysistem.energyMusic.Constants.INTENT_PLAYLIST_LIST;
 
 
 public abstract class ListViewFragment extends RefreshableFragment implements LoaderCallbacks<Cursor>,
-        OnItemClickListener {
+        OnItemClickListener  {
 
     // Adapter
     protected ListViewAdapter mAdapter;
@@ -85,6 +85,7 @@ public abstract class ListViewFragment extends RefreshableFragment implements Lo
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setupFragmentData();
+        setUpBroadcastReceiver();
         mListView.setOnCreateContextMenuListener(this);
         mListView.setOnItemClickListener(this);
         mListView.setAdapter(mAdapter);
@@ -193,14 +194,18 @@ public abstract class ListViewFragment extends RefreshableFragment implements Lo
     /**
      * Update the list as needed
      */
-    private final BroadcastReceiver mMediaStatusReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (mListView != null) {
-                mAdapter.notifyDataSetChanged();
+    protected BroadcastReceiver mMediaStatusReceiver;
+
+    protected void setUpBroadcastReceiver() {
+        mMediaStatusReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (mListView != null) {
+                    mAdapter.notifyDataSetChanged();
+                }
             }
-        }
-    };
+        };
+    }
 
     @Override
     public void onStart() {

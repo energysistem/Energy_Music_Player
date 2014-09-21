@@ -168,6 +168,7 @@ https://github.com/Splitter/android_packages_apps_apolloMod
     <string name="tab_artists">Artists</string>
     <string name="tab_albums">Albums</string>
     <string name="tab_songs">Songs</string>
+    <string name="tab_folders">Folders</string>
     <string name="tab_playlists">Playlists</string>
     <string name="tab_genres">Genres</string>
 
@@ -176,6 +177,7 @@ https://github.com/Splitter/android_packages_apps_apolloMod
     <string name="tab_artists_entry">Artists</string>
     <string name="tab_albums_entry">Albums</string>
     <string name="tab_songs_entry">Songs</string>
+    <string name="tab_folders_entry">Folders</string>
     <string name="tab_playlists_entry">Playlists</string>
     <string name="tab_genres_entry">Genres</string>
     
@@ -203,6 +205,7 @@ https://github.com/Splitter/android_packages_apps_apolloMod
     <!-- Titles for Albums/Artist screens -->
     <string name="artist_page_title">" Artist: "</string>
     <string name="album_page_title">" Album: "</string>
+    <string name="folder_page_title">" Folder: "</string>
 
     <!--  Simple EQ -->
     <string name="simple_eq_page_title">Equalizer</string>

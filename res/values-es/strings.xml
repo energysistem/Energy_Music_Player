@@ -114,6 +114,7 @@
     <string name="tab_artists">Artists</string>
     <string name="tab_albums">Albums</string>
     <string name="tab_songs">Songs</string>
+    <string name="tab_folders">Folders</string>
     <string name="tab_playlists">Playlists</string>
     <string name="tab_genres">Genres</string>
 
@@ -121,6 +122,7 @@
     <string name="tab_artists_entry">ARTISTAS</string>
     <string name="tab_albums_entry">ÁLBUMES</string>
     <string name="tab_songs_entry">CANCIONES</string>
+    <string name="tab_folders_entry">CARPETAS</string>
     <string name="tab_playlists_entry">LISTAS</string>
     <string name="tab_genres_entry">GÉNEROS</string>
 
@@ -139,6 +141,7 @@
     <!-- Titles for Albums/Artist screens -->
     <string name="artist_page_title">" Artista: "</string>
     <string name="album_page_title">" Álbum: "</string>
+    <string name="folder_page_title">" Carpeta: "</string>
 
 
 </resources>

@@ -18,7 +18,7 @@ public final class Constants {
 
     // SharedPreferences
     public final static String APOLLO = "Apollo", APOLLO_PREFERENCES = "apollopreferences",
-            ARTIST_KEY = "artist", ALBUM_KEY = "album", ALBUM_ID_KEY = "albumid", NUMALBUMS = "num_albums",
+            ARTIST_KEY = "artist", FOLDER_KEY = "folder", ALBUM_KEY = "album", ALBUM_ID_KEY = "albumid", NUMALBUMS = "num_albums",
             GENRE_KEY = "genres", ARTIST_ID = "artistid", NUMWEEKS = "numweeks",
             PLAYLIST_NAME_FAVORITES = "Favorites", PLAYLIST_NAME = "playlist", WIDGET_STYLE="widget_type",
             THEME_PACKAGE_NAME = "themePackageName", THEME_DESCRIPTION = "themeDescription",
@@ -27,7 +27,7 @@ public final class Constants {
     
     //Image Loading Constants
     public final static String TYPE_ARTIST = "artist", TYPE_ALBUM = "album", TYPE_GENRE = "genre",
-    		TYPE_PLAYLIST  = "playlist", TYPE_SONG="song", ALBUM_SUFFIX = "albartimg", ARTIST_SUFFIX = "artstimg",
+    		TYPE_PLAYLIST  = "playlist", TYPE_SONG="song", TYPE_FOLDER="folder",ALBUM_SUFFIX = "albartimg", ARTIST_SUFFIX = "artstimg",
     		PLAYLIST_SUFFIX = "plylstimg", GENRE_SUFFIX = "gnreimg", SRC_FIRST_AVAILABLE = "first_avail",
     		SRC_LASTFM = "last_fm", SRC_FILE = "from_file", SRC_GALLERY = "from_gallery",
     		SIZE_NORMAL = "normal", SIZE_THUMB = "thumb";

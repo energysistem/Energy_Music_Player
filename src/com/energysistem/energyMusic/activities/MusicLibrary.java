@@ -43,6 +43,7 @@ import com.energysistem.energyMusic.ui.adapters.PagerAdapter;
 import com.energysistem.energyMusic.ui.adapters.ScrollingTabsAdapter;
 import com.energysistem.energyMusic.ui.fragments.grid.AlbumsFragment;
 import com.energysistem.energyMusic.ui.fragments.grid.ArtistsFragment;
+import com.energysistem.energyMusic.ui.fragments.list.FolderFragment;
 import com.energysistem.energyMusic.ui.fragments.list.GenresFragment;
 import com.energysistem.energyMusic.ui.fragments.list.PlaylistsFragment;
 import com.energysistem.energyMusic.ui.fragments.list.RecentlyAddedFragment;
@@ -184,6 +185,11 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
             // // Tracks
             if (tabs_set.contains(getResources().getString(R.string.tab_songs))) {
                 mPagerAdapter.addFragment(new SongsFragment());
+                count++;
+            }
+            // // Folders
+            if (tabs_set.contains(getResources().getString(R.string.tab_folders))) {
+                mPagerAdapter.addFragment(new FolderFragment());
                 count++;
             }
             // // Playlists

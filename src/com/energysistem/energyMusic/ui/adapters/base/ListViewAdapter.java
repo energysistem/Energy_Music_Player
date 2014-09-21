@@ -58,7 +58,7 @@ public abstract class ListViewAdapter extends SimpleCursorAdapter {
                 R.dimen.listview_items_padding_left_top);
         top = mContext.getResources().getDimensionPixelSize(
                 R.dimen.listview_items_padding_gp_top);
-        
+
     	mImageProvider = ImageProvider.getInstance( (Activity) mContext );
     }
 

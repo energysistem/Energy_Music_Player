@@ -7,6 +7,7 @@
         <item>@string/tab_artists</item>
         <item>@string/tab_albums</item>
         <item>@string/tab_songs</item>
+        <item>@string/tab_folders</item>
         <item>@string/tab_playlists</item>
         <item>@string/tab_genres</item>
     </string-array>
@@ -16,6 +17,7 @@
         <item>@string/tab_artists_entry</item>
         <item>@string/tab_albums_entry</item>
         <item>@string/tab_songs_entry</item>
+        <item>@string/tab_folders_entry</item>
         <item>@string/tab_playlists_entry</item>
         <item>@string/tab_genres_entry</item>
     </string-array>

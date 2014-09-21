@@ -24,6 +24,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
 import android.provider.MediaStore.Audio.AlbumColumns;
 import android.provider.MediaStore.Audio.ArtistColumns;
@@ -46,6 +47,7 @@ import static com.energysistem.energyMusic.Constants.ALBUM_ID_KEY;
 import static com.energysistem.energyMusic.Constants.ALBUM_KEY;
 import static com.energysistem.energyMusic.Constants.ARTIST_ID;
 import static com.energysistem.energyMusic.Constants.ARTIST_KEY;
+import static com.energysistem.energyMusic.Constants.FOLDER_KEY;
 import static com.energysistem.energyMusic.Constants.GENRE_KEY;
 import static com.energysistem.energyMusic.Constants.MIME_TYPE;
 import static com.energysistem.energyMusic.Constants.NUMALBUMS;
@@ -54,6 +56,7 @@ import static com.energysistem.energyMusic.Constants.SIZE_THUMB;
 import static com.energysistem.energyMusic.Constants.SRC_FIRST_AVAILABLE;
 import static com.energysistem.energyMusic.Constants.TYPE_ALBUM;
 import static com.energysistem.energyMusic.Constants.TYPE_ARTIST;
+import static com.energysistem.energyMusic.Constants.TYPE_FOLDER;
 import static com.energysistem.energyMusic.Constants.TYPE_PLAYLIST;
 import static com.energysistem.energyMusic.Constants.TYPE_GENRE;
 import static com.energysistem.energyMusic.Constants.UP_STARTS_ALBUM_ACTIVITY;
@@ -351,6 +354,12 @@ public class ApolloUtils {
             bundle.putString(ALBUM_KEY, albumName);
             bundle.putString(ALBUM_ID_KEY, albumId);
             bundle.putBoolean(UP_STARTS_ALBUM_ACTIVITY, true);
+        }
+        else if( Type == TYPE_FOLDER ){
+            String path = mCursor.getString(mCursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA));
+            path = path.substring(0, path.lastIndexOf("/"));
+            bundle.putString(MIME_TYPE, MediaStore.Audio.Media.CONTENT_TYPE);
+            bundle.putString(FOLDER_KEY, path);
         }
         else if( Type == TYPE_GENRE ){
             String genreKey = mCursor.getString(mCursor.getColumnIndexOrThrow(Audio.Genres.NAME));
