@@ -153,6 +153,7 @@ public class NowPlayingFragment extends DragSortListViewFragment{
         @Override
         protected void onProgressUpdate(String... progress) {
             NowPlayingFragment.this.playlistCursor.addRow(new Object[] {progress[0], progress[1], progress[2], progress[3] });
+            mAdapter.notifyDataSetChanged();
         }
 
         protected void onPostExecute(Long result) {

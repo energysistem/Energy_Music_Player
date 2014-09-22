@@ -50,7 +50,19 @@ public class FolderAdapter extends ArrayAdapter<Folder> {
         lineOneTextView.setPadding(left, top, right, 0);
         TextView lineTwoTextView = (TextView) result.findViewById(R.id.listview_item_line_two);
         lineTwoTextView.setVisibility(View.GONE);
+        ImageView contextButton = (ImageView) result.findViewById(R.id.quick_context_tip);
+        contextButton.setOnClickListener(showContextMenu);
 
         return result;
     }
+
+    /**
+     * Used to quickly show our the ContextMenu
+     */
+    private final View.OnClickListener showContextMenu = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            v.showContextMenu();
+        }
+    };
 }

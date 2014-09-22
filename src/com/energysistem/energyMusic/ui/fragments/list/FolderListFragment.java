@@ -51,7 +51,7 @@ public class FolderListFragment extends ListViewFragment  {
         where.append(AudioColumns.IS_MUSIC + "=1").append(
                 " AND " + MediaStore.MediaColumns.TITLE + " != '' AND "+MediaStore.Audio.Media.DATA+" like '"+path+"%'");
         mWhere = where.toString();
-        mSortOrder = MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
+        mSortOrder = MediaStore.MediaColumns.TITLE;
         mUri = MediaStore.Audio.Media.getContentUriForPath(path);
         mType = TYPE_GENRE;
         mTitleColumn = MediaStore.MediaColumns.TITLE;

@@ -529,6 +529,31 @@ public class MusicUtils {
 
     /**
      * @param context
+     * @param path
+     * @return
+     */
+    public static long[] getSongListForFolder(Context context, String path) {
+        String[] projection = new String[] {
+                BaseColumns._ID
+        };
+        StringBuilder selection = new StringBuilder();
+        selection.append(AudioColumns.IS_MUSIC + "=1");
+        selection.append(
+                " AND " + MediaStore.MediaColumns.TITLE + " != '' AND "+MediaStore.Audio.Media.DATA+" like '"+path+"%'");
+        String mSortOrder = MediaStore.MediaColumns.TITLE;
+        Uri uri = MediaStore.Audio.Media.getContentUriForPath(path);
+        Cursor cursor = context.getContentResolver().query(uri, projection, selection.toString(),
+                null, mSortOrder);
+        if (cursor != null) {
+            long[] list = getSongListForCursor(cursor);
+            cursor.close();
+            return list;
+        }
+        return sEmptyList;
+    }
+
+    /**
+     * @param context
      * @param id
      * @return
      */
