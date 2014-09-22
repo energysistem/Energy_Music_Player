@@ -68,7 +68,7 @@ public class FolderFragment extends ListViewFragment  {
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor data) {
         // Check for database errors
-        if (data == null) {
+        if (data == null || data.getCount() < 1) {
             return;
         }
 
@@ -125,6 +125,11 @@ public class FolderFragment extends ListViewFragment  {
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
+        if (mCursor == null || mCursor.getCount() < 1) {
+            return;
+        }
+
         AdapterView.AdapterContextMenuInfo mi = (AdapterView.AdapterContextMenuInfo)menuInfo;
         mSelectedPosition = mi.position;
         mCursor.moveToFirst();

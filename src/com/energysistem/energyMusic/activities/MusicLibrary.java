@@ -5,6 +5,7 @@
 package com.energysistem.energyMusic.activities;
 
 import android.app.ActionBar;
+import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -17,6 +18,7 @@ import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
@@ -29,6 +31,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 
 import com.energysistem.energyMusic.IApolloService;
 import com.energysistem.energyMusic.R;
@@ -64,17 +67,26 @@ import static com.energysistem.energyMusic.Constants.TABS_ENABLED;
 public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConnection {
 
     private ServiceToken mToken;
+    protected Dialog mSplashDialog;
 
     @Override
     protected void onCreate(Bundle icicle) {
+        long tStart = 0;
+
+        if (icicle == null) {
+            tStart = System.currentTimeMillis();
+            showSplashScreen();
+        }
         super.onCreate(icicle);
+
+        super.setTheme(R.style.CustomActionBarTheme);
 
         VisualizerUtils.releaseVisualizer();
 
         // Landscape mode on phone isn't ready
         if (!ApolloUtils.isTablet(this))
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
+
         // Scan for music
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 
@@ -89,6 +101,12 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
 
         // Important!
         initPager();
+
+        if (icicle == null) {
+            long tEnd = System.currentTimeMillis();
+            long elapsedTime = tEnd - tStart;
+            removeSplashScreen(elapsedTime);
+        }
     }
 
     @Override
@@ -328,4 +346,53 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
         }
     }
 
+    @Override
+    protected void onSaveInstanceState (Bundle outState) {
+        outState.putBoolean("SplashScreen", true);
+    }
+
+    /**
+     * Removes the Dialog that displays the splash screen
+     */
+    protected void removeSplashScreen(long elapsedTime) {
+
+        if (elapsedTime > 3000) {
+            elapsedTime = 3000;
+        }
+
+        final long showTime = 3000 - elapsedTime;
+
+        Thread thread = new Thread()
+        {
+            @Override
+            public void run() {
+                try {
+                        sleep(showTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                if (mSplashDialog != null) {
+                    mSplashDialog.dismiss();
+                    mSplashDialog = null;
+                }
+            }
+        };
+
+        thread.start();
+    }
+
+    /**
+     * Shows the splash screen over the full Activity
+     */
+    protected void showSplashScreen() {
+
+
+        mSplashDialog = new Dialog(this, R.style.SplashScreen);
+        mSplashDialog.setContentView(R.layout.splashscreen);
+        mSplashDialog.setCancelable(false);
+        mSplashDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        mSplashDialog.show();
+
+    }
 }
