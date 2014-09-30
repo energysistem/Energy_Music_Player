@@ -21,8 +21,9 @@ public class ArtistAdapter extends GridViewAdapter {
 
     	mLineOneText = mCursor.getString(mCursor.getColumnIndexOrThrow(ArtistColumns.ARTIST));
         int albums_plural = mCursor.getInt(mCursor.getColumnIndexOrThrow(ArtistColumns.NUMBER_OF_ALBUMS));
+        int songs_plural = mCursor.getInt(mCursor.getColumnIndexOrThrow(ArtistColumns.NUMBER_OF_TRACKS));
         boolean unknown = mLineOneText == null || mLineOneText.equals(MediaStore.UNKNOWN_STRING);
-        mLineTwoText = MusicUtils.makeAlbumsLabel(mContext, albums_plural, 0, unknown);        
+        mLineTwoText = MusicUtils.makeAlbumsLabel(mContext, albums_plural, songs_plural, unknown);
         mGridType = TYPE_ARTIST;        
         mImageData = new String[]{mLineOneText};
         mPlayingId = MusicUtils.getCurrentArtistId();

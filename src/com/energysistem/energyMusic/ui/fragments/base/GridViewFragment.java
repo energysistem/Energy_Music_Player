@@ -186,5 +186,4 @@ OnItemClickListener {
         getActivity().unregisterReceiver(mMediaStatusReceiver);
         super.onStop();
     }
-
 }

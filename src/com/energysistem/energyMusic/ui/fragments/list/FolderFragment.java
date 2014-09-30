@@ -145,8 +145,8 @@ public class FolderFragment extends ListViewFragment  {
         menu.add(mFragmentGroupId, PLAY_SELECTION, 0, getResources().getString(R.string.play_all));
         String title = mCursor.getString(mCursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA));
         title = title.substring(0, title.lastIndexOf("/"));
-        mCurrentId = title;
-        title = title.substring(title.lastIndexOf("/")+1);;
+        mCurrentId = title.replace("'", "''");;
+        title = title.substring(title.lastIndexOf("/")+1);
         menu.setHeaderTitle(title);
     }
 

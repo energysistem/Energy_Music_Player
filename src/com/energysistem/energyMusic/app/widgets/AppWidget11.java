@@ -53,7 +53,7 @@ public class AppWidget11 extends AppWidgetProvider {
         final RemoteViews views = new RemoteViews(context.getPackageName(),
                 R.layout.onebyone_app_widget);
 
-        views.setImageViewResource(R.id.one_by_one_albumart, View.GONE);
+        //views.setImageViewResource(R.id.one_by_one_albumart, View.GONE);
 
         linkButtons(context, views, false /* not playing */);
         pushUpdate(context, appWidgetIds, views);
@@ -106,7 +106,7 @@ public class AppWidget11 extends AppWidgetProvider {
             views.setViewVisibility(R.id.one_by_one_albumart, View.VISIBLE);
             views.setImageViewBitmap(R.id.one_by_one_albumart, bitmap);
         } else {
-            views.setViewVisibility(R.id.one_by_one_albumart, View.INVISIBLE);
+            //views.setViewVisibility(R.id.one_by_one_albumart, View.INVISIBLE);
         }
         // Set correct contentDescription
         final boolean playing = service.isPlaying();

@@ -2,8 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/track_list_context_frame"
     android:layout_width="wrap_content"
-    android:layout_height="@dimen/listview_item_height"
+    android:layout_height="wrap_content"
     android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
     android:background="@drawable/holo_selector"
     android:clickable="true"
     android:paddingRight="@dimen/quick_context_padding_right" >
@@ -18,8 +19,8 @@
     <ImageView
         android:id="@+id/quick_context_tip"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
         android:layout_marginRight="@dimen/quick_context_margin_right"
         android:scaleType="centerInside"
         android:src="@drawable/apollo_holo_light_overflow" />

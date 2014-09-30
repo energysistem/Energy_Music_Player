@@ -14,7 +14,8 @@
         android:layout_width="@dimen/four_by_one_album_art_width"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        android:background="@drawable/no_art_small" />
 
     <LinearLayout
         android:id="@+id/four_by_one_album_appwidget"
@@ -59,12 +60,6 @@
         android:visibility="gone"
         android:contentDescription="@string/cd_previous" />
 
-    <ImageView
-        android:layout_width="0.2dp"
-        android:layout_height="match_parent"
-        android:background="@color/transparent_black"
-        tools:ignore="ContentDescription" />
-
     <ImageButton
         android:id="@+id/four_by_one_control_play"
         android:layout_width="0dp"
@@ -74,12 +69,6 @@
         android:scaleType="center"
         android:src="@drawable/apollo_holo_light_play"
         android:contentDescription="@string/cd_play" />
-
-    <ImageView
-        android:layout_width="0.2dp"
-        android:layout_height="match_parent"
-        android:background="@color/transparent_black"
-        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/four_by_one_control_next"

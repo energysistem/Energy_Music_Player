@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:com.energysistem.energyMusic="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_search"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="@string/cd_search"
-        android:icon="@drawable/apollo_holo_dark_search"/>
+        android:icon="@drawable/apollo_holo_dark_search"
+        />
+        <!--android:actionViewClass="android.widget.SearchView"-->
+
     <item android:id="@+id/action_settings"
         android:showAsAction="never"
         android:title="@string/settings"/>

@@ -49,10 +49,10 @@
     <dimen name="listview_drag_width">18dp</dimen>
 
     <!-- Quick Context Menu -->
-    <dimen name="quick_context_padding_right">4dp</dimen>
+    <dimen name="quick_context_padding_right">0dp</dimen>
     <dimen name="quick_context_line_height">30dp</dimen>
     <dimen name="quick_context_line_width">1dp</dimen>
-    <dimen name="quick_context_margin_right">5dp</dimen>
+    <dimen name="quick_context_margin_right">1dp</dimen>
 
     <!-- Nofication bar button -->
     <dimen name="status_bar_button_width_height">48dp</dimen>

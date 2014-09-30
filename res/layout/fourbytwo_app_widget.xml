@@ -7,7 +7,7 @@
     android:id="@+id/four_by_two"
     android:layout_width="match_parent"
     android:layout_height="@dimen/four_by_two_height"
-    android:background="@drawable/appwidget_bg"
+    android:background="@color/white"
     android:gravity="center"
     android:orientation="horizontal" >
 
@@ -15,64 +15,50 @@
         android:id="@+id/four_by_two_controls"
         android:layout_width="match_parent"
         android:layout_height="@dimen/four_by_two_control_height"
-        android:paddingTop="20dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:background="@color/blue_energy">
 
         <ImageButton
             android:id="@+id/four_by_two_control_prev"
             style="@style/FourByTwoMediaButton"
-            android:src="@drawable/apollo_holo_light_previous"
+            android:src="@drawable/apollo_holo_dark_prev"
             android:contentDescription="@string/cd_previous" />
 
         <ImageButton
             android:id="@+id/four_by_two_control_play"
             style="@style/FourByTwoMediaButton"
-            android:src="@drawable/apollo_holo_light_play"
+            android:src="@drawable/apollo_holo_dark_play"
             android:contentDescription="@string/cd_play" />
 
         <ImageButton
             android:id="@+id/four_by_two_control_next"
             style="@style/FourByTwoMediaButton"
-            android:src="@drawable/apollo_holo_light_next"
+            android:src="@drawable/apollo_holo_dark_next"
             android:contentDescription="@string/cd_next" />
 
         <ImageButton
             android:id="@+id/four_by_two_control_shuffle"
             style="@style/FourByTwoMediaButton"
-            android:src="@drawable/apollo_holo_light_shuffle_normal"
+            android:src="@drawable/apollo_holo_dark_shuffle_normal"
             android:contentDescription="@string/cd_shuffle" />
 
         <ImageButton
             android:id="@+id/four_by_two_control_repeat"
             style="@style/FourByTwoMediaButton"
-            android:src="@drawable/apollo_holo_light_repeat_normal"
+            android:src="@drawable/apollo_holo_dark_repeat_normal"
             android:contentDescription="@string/cd_repeat" />
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/four_by_two_controls_info_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/four_by_two_controls"
-        android:scaleType="fitXY"
-        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/four_by_two_albumart"
         android:layout_width="@dimen/four_by_two_album_art_width"
         android:layout_height="match_parent"
-        android:layout_above="@id/four_by_two_controls_info_divider"
+        android:layout_above="@id/four_by_two_controls"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/four_by_two_controls"
-        android:background="@color/holo_blue_dark"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        android:background="@drawable/no_art_small"/>
 
     <LinearLayout
         android:id="@+id/four_by_two_info"
@@ -81,6 +67,7 @@
         android:layout_above="@id/four_by_two_controls"
         android:layout_toRightOf="@+id/four_by_two_albumart"
         android:background="@drawable/holo_selector"
+        android:padding="5dp"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"

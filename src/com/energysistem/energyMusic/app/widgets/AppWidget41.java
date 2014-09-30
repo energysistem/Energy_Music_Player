@@ -139,7 +139,7 @@ public class AppWidget41 extends AppWidgetProvider {
             views.setImageViewBitmap(R.id.four_by_one_albumart, bitmap);
         } else {
             views.setViewVisibility(R.id.four_by_one_control_prev, View.VISIBLE);
-            views.setViewVisibility(R.id.four_by_one_albumart, View.GONE);
+            //views.setViewVisibility(R.id.four_by_one_albumart, View.GONE);
         }
 
         // Set correct drawable and contentDescription for pause state

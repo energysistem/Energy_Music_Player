@@ -140,19 +140,19 @@ public class AppWidget42 extends AppWidgetProvider {
             views.setViewVisibility(R.id.four_by_two_albumart, View.VISIBLE);
             views.setImageViewBitmap(R.id.four_by_two_albumart, bitmap);
         } else {
-            views.setViewVisibility(R.id.four_by_two_albumart, View.GONE);
+            //views.setViewVisibility(R.id.four_by_two_albumart, View.GONE);
         }
 
         // Set correct drawable and contentDescription for pause state
         final boolean playing = service.isPlaying();
         if (playing) {
             views.setImageViewResource(R.id.four_by_two_control_play,
-            		 (widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_light_pause:R.drawable.apollo_holo_dark_pause));
+            		 (widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_dark_pause:R.drawable.apollo_holo_dark_pause));
             views.setContentDescription(R.id.four_by_two_albumart,
                 service.getResources().getString(R.string.nowplaying));
         } else {
             views.setImageViewResource(R.id.four_by_two_control_play,
-            		(widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_light_play:R.drawable.apollo_holo_dark_play));
+            		(widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_dark_play:R.drawable.apollo_holo_dark_play));
             views.setContentDescription(R.id.four_by_two_albumart,
                 service.getResources().getString(R.string.app_name));
         }
@@ -161,15 +161,15 @@ public class AppWidget42 extends AppWidgetProvider {
         switch (service.getRepeatMode()) {
             case ApolloService.REPEAT_ALL:
                 views.setImageViewResource(R.id.four_by_two_control_repeat,
-                        R.drawable.apollo_holo_light_repeat_all);
+                        R.drawable.apollo_holo_dark_repeat_all);
                 break;
             case ApolloService.REPEAT_CURRENT:
                 views.setImageViewResource(R.id.four_by_two_control_repeat,
-                        R.drawable.apollo_holo_light_repeat_one);
+                        R.drawable.apollo_holo_dark_repeat_one);
                 break;
             default:
                 views.setImageViewResource(R.id.four_by_two_control_repeat,
-                		(widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_light_repeat_normal:R.drawable.apollo_holo_dark_repeat_normal));
+                		(widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_dark_repeat_normal:R.drawable.apollo_holo_dark_repeat_normal));
                 break;
         }
 
@@ -177,15 +177,15 @@ public class AppWidget42 extends AppWidgetProvider {
         switch (service.getShuffleMode()) {
             case ApolloService.SHUFFLE_NONE:
                 views.setImageViewResource(R.id.four_by_two_control_shuffle,
-                		(widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_light_shuffle_normal:R.drawable.apollo_holo_dark_shuffle_normal));
+                		(widget_type.equals(mContext.getResources().getString(R.string.widget_style_light))?R.drawable.apollo_holo_dark_shuffle_normal:R.drawable.apollo_holo_dark_shuffle_normal));
                 break;
             case ApolloService.SHUFFLE_AUTO:
                 views.setImageViewResource(R.id.four_by_two_control_shuffle,
-                        R.drawable.apollo_holo_light_shuffle_on);
+                        R.drawable.apollo_holo_dark_shuffle_on);
                 break;
             default:
                 views.setImageViewResource(R.id.four_by_two_control_shuffle,
-                        R.drawable.apollo_holo_light_shuffle_on);
+                        R.drawable.apollo_holo_dark_shuffle_on);
                 break;
         }
         // Link actions buttons to intents

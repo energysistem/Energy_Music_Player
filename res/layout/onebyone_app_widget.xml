@@ -7,6 +7,8 @@
         android:id="@+id/one_by_one_albumart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/cd_play" />
+        android:contentDescription="@string/cd_play"
+        android:scaleType="fitXY"
+        android:background="@drawable/no_art_small"/>
 
 </FrameLayout>

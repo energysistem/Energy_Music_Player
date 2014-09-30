@@ -15,7 +15,7 @@ public class ArtistsFragment extends GridViewFragment{
     	mAdapter = new ArtistAdapter(getActivity(), R.layout.gridview_items, null, 
     									new String[] {}, new int[] {}, 0); 
     	mProjection = new String []{
-                BaseColumns._ID, ArtistColumns.ARTIST, ArtistColumns.NUMBER_OF_ALBUMS
+                BaseColumns._ID, ArtistColumns.ARTIST, ArtistColumns.NUMBER_OF_ALBUMS, ArtistColumns.NUMBER_OF_TRACKS
         };
         mUri = Audio.Artists.EXTERNAL_CONTENT_URI;
         mSortOrder = Audio.Artists.DEFAULT_SORT_ORDER;
