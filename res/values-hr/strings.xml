@@ -122,6 +122,7 @@
     <string name="tab_artists_entry">IZVOĐAČI</string>
     <string name="tab_albums_entry">ALBUMI</string>
     <string name="tab_songs_entry">PJESME</string>
+    <string name="tab_folders_entry">ORIGAMISTI</string>
     <string name="tab_playlists_entry">POPISI</string>
     <string name="tab_genres_entry">ŽANROVI</string>
 

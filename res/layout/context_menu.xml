@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentRight="true"
-    android:layout_alignParentTop="true"
+    android:layout_centerVertical="true"
     android:background="@drawable/holo_selector"
     android:clickable="true"
     android:paddingRight="@dimen/quick_context_padding_right" >

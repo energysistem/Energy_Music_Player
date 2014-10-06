@@ -110,17 +110,11 @@
     <string name="overwrite">Overskriv</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">Recent</string>
-    <string name="tab_artists">Artists</string>
-    <string name="tab_albums">Albums</string>
-    <string name="tab_songs">Songs</string>
-    <string name="tab_playlists">Playlists</string>
-    <string name="tab_genres">Genres</string>
-
     <string name="tab_recent_entry">SENESTE</string>
     <string name="tab_artists_entry">KUNSTNERE</string>
     <string name="tab_albums_entry">ALBUMMER</string>
     <string name="tab_songs_entry">SANGE</string>
+    <string name="tab_folders_entry">MAPPER</string>
     <string name="tab_playlists_entry">AFSPILNINGSLISTER</string>
     <string name="tab_genres_entry">GENRER</string>
 

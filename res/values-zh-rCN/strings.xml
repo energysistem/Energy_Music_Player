@@ -110,13 +110,6 @@
     <string name="overwrite">覆盖</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">Recent</string>
-    <string name="tab_artists">Artists</string>
-    <string name="tab_albums">Albums</string>
-    <string name="tab_songs">Songs</string>
-    <string name="tab_playlists">Playlists</string>
-    <string name="tab_genres">Genres</string>
-
     <string name="tab_recent_entry">最近</string>
     <string name="tab_artists_entry">艺术家</string>
     <string name="tab_albums_entry">专辑</string>

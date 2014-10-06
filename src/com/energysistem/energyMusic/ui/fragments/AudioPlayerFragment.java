@@ -250,17 +250,17 @@ public class AudioPlayerFragment extends Fragment {
             int mode = MusicUtils.mService.getRepeatMode();
             if (mode == ApolloService.REPEAT_NONE) {
                 MusicUtils.mService.setRepeatMode(ApolloService.REPEAT_ALL);
-                ApolloUtils.showToast(R.string.repeat_all, mToast, getActivity());
+                //ApolloUtils.showToast(R.string.repeat_all, mToast, getActivity());
             } else if (mode == ApolloService.REPEAT_ALL) {
                 MusicUtils.mService.setRepeatMode(ApolloService.REPEAT_CURRENT);
                 if (MusicUtils.mService.getShuffleMode() != ApolloService.SHUFFLE_NONE) {
                     MusicUtils.mService.setShuffleMode(ApolloService.SHUFFLE_NONE);
                     setShuffleButtonImage();
                 }
-                ApolloUtils.showToast(R.string.repeat_one, mToast, getActivity());
+                //ApolloUtils.showToast(R.string.repeat_one, mToast, getActivity());
             } else {
                 MusicUtils.mService.setRepeatMode(ApolloService.REPEAT_NONE);
-                ApolloUtils.showToast(R.string.repeat_off, mToast, getActivity());
+                //ApolloUtils.showToast(R.string.repeat_off, mToast, getActivity());
             }
             setRepeatButtonImage();
         } catch (RemoteException ex) {
@@ -323,11 +323,11 @@ public class AudioPlayerFragment extends Fragment {
                     MusicUtils.mService.setRepeatMode(ApolloService.REPEAT_ALL);
                     setRepeatButtonImage();
                 }
-                ApolloUtils.showToast(R.string.shuffle_on, mToast, getActivity());
+                //ApolloUtils.showToast(R.string.shuffle_on, mToast, getActivity());
             } else if (shuffle == ApolloService.SHUFFLE_NORMAL
                     || shuffle == ApolloService.SHUFFLE_AUTO) {
                 MusicUtils.mService.setShuffleMode(ApolloService.SHUFFLE_NONE);
-                ApolloUtils.showToast(R.string.shuffle_off, mToast, getActivity());
+                //ApolloUtils.showToast(R.string.shuffle_off, mToast, getActivity());
             }
             setShuffleButtonImage();
         } catch (RemoteException ex) {

@@ -110,6 +110,7 @@
     <string name="tab_artists_entry">ARTIESTEN</string>
     <string name="tab_albums_entry">ALBUMS</string>
     <string name="tab_songs_entry">NUMMERS</string>
+    <string name="tab_folders_entry">MAPPEN</string>
     <string name="tab_playlists_entry">AFSPEELLIJSTEN</string>
     <string name="tab_genres_entry">GENRES</string>
 

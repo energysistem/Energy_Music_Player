@@ -121,6 +121,7 @@
     <string name="tab_artists_entry">ARTISTER</string>
     <string name="tab_albums_entry">ALBUM</string>
     <string name="tab_songs_entry">SANGER</string>
+    <string name="tab_folders_entry">MAPPER</string>
     <string name="tab_playlists_entry">SPILLELISTER</string>
     <string name="tab_genres_entry">SJANGRE</string>
 

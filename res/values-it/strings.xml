@@ -89,6 +89,7 @@
     <string name="tab_artists_entry">ARTISTI</string>
     <string name="tab_albums_entry">ALBUM</string>
     <string name="tab_songs_entry">TRACCE</string>
+    <string name="tab_folders_entry">CARTELLE</string>
     <string name="tab_playlists_entry">PLAYLIST</string>
     <string name="tab_genres_entry">GENERI</string>
     <string name="play_external_question_msg">Selezionare l\'azione da eseguire per: \n\n<b><xliff:g id="name">%s</xliff:g></b></string>

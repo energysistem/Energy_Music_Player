@@ -111,17 +111,13 @@
     <string name="overwrite">Überschreiben</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">Recent</string>
-    <string name="tab_artists">Artists</string>
-    <string name="tab_albums">Albums</string>
-    <string name="tab_songs">Songs</string>
-    <string name="tab_playlists">Playlists</string>
-    <string name="tab_genres">Genres</string>
-
     <string name="tab_recent_entry">NEU</string>
     <string name="tab_artists_entry">INTERPRETEN</string>
     <string name="tab_albums_entry">ALBEN</string>
     <string name="tab_songs_entry">TITEL</string>
+    <string name="tab_folders_entry">ORDNER</string>
+
+
     <string name="tab_playlists_entry">WIEDERGABELISTEN</string>
 
     <!-- Something went wrong -->

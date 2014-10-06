@@ -111,18 +111,11 @@
     <string name="overwrite">Korvaa</string>
 
     <!-- Tabs -->
-
-    <string name="tab_recent">Recent</string>
-    <string name="tab_artists">Artists</string>
-    <string name="tab_albums">Albums</string>
-    <string name="tab_songs">Songs</string>
-    <string name="tab_playlists">Playlists</string>
-    <string name="tab_genres">Genres</string>
-
     <string name="tab_recent_entry">VIIMEISIMMÄT</string>
     <string name="tab_artists_entry">ESITTÄJÄT</string>
     <string name="tab_albums_entry">ALBUMIT</string>
     <string name="tab_songs_entry">KAPPALEET</string>
+    <string name="tab_folders_entry">KANSIOT</string>
     <string name="tab_playlists_entry">SOITTOLISTAT</string>
     <string name="tab_genres_entry">TYYLILAJIT</string>
 

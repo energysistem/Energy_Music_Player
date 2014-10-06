@@ -15,6 +15,8 @@
 
     <color name="shuffle_grey">#ffdedede</color>
 
+    <color name="shadow_grey">#ffd3d3d3</color>
+
     <color name="background_grey">#fff1f1f1</color>
 
     <!-- Transparent -->
@@ -27,7 +29,7 @@
     <color name="white">#ffffffff</color>
 
     <!-- Blue Energy -->
-    <color name="blue_energy">#ff05c5ff</color>
+    <color name="blue_energy">#1ccee8</color>
 
     <color name="actionbar_text">#eeffffff</color>
 

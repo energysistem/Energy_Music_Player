@@ -7,7 +7,7 @@
         <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
         <item name="android:textViewStyle">@style/MyTextViewStyle</item>
         <item name="android:seekBarStyle">@style/SeekBarAppTheme</item>
-        <item name="android:windowBackground">@color/blue_energy</item>
+        <item name="android:windowBackground">@color/background_grey</item>
     </style>
 
     <style name="SplashActionBarTheme" parent="android:style/Theme.Holo.Light.NoActionBar">

@@ -66,17 +66,21 @@ import static com.energysistem.energyMusic.Constants.TABS_ENABLED;
  */
 public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConnection {
 
+    private final static String RESTART_ACTIVITY = "com.energysistem.energyMusic.restartActivity";
+
     private ServiceToken mToken;
     protected Dialog mSplashDialog;
 
     @Override
     protected void onCreate(Bundle icicle) {
         long tStart = 0;
+        boolean isActivityRestarted = getIntent().getBooleanExtra(RESTART_ACTIVITY, false);
 
-        if (icicle == null) {
+        if (!isActivityRestarted) {
             tStart = System.currentTimeMillis();
             showSplashScreen();
         }
+
         super.onCreate(icicle);
 
         super.setTheme(R.style.CustomActionBarTheme);
@@ -102,7 +106,7 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
         // Important!
         initPager();
 
-        if (icicle == null) {
+        if (!isActivityRestarted) {
             long tEnd = System.currentTimeMillis();
             long elapsedTime = tEnd - tStart;
             removeSplashScreen(elapsedTime);
@@ -316,6 +320,7 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
     	Intent i = getBaseContext().getPackageManager()
 	             .getLaunchIntentForPackage( getBaseContext().getPackageName() );
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.putExtra(RESTART_ACTIVITY, true);
 		startActivity(i);
     }   
 

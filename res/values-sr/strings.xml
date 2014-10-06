@@ -128,6 +128,7 @@
     <string name="tab_artists_entry">ИЗВОЂАЧИ</string>
     <string name="tab_albums_entry">АЛБУМИ</string>
     <string name="tab_songs_entry">ПЕСМЕ</string>
+    <string name="tab_folders_entry">ФОЛДЕРС</string>
     <string name="tab_playlists_entry">ЛИСТЕ</string>
     <string name="tab_genres_entry">ЖАНРОВИ</string>
 

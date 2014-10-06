@@ -111,17 +111,11 @@
     <string name="overwrite">上書き</string>
 
     <!-- Tabs -->
-    <string name="tab_recent">Recent</string>
-    <string name="tab_artists">Artists</string>
-    <string name="tab_albums">Albums</string>
-    <string name="tab_songs">Songs</string>
-    <string name="tab_playlists">Playlists</string>
-    <string name="tab_genres">Genres</string>
-
     <string name="tab_recent_entry">新着</string>
     <string name="tab_artists_entry">アーティスト</string>
     <string name="tab_albums_entry">アルバム</string>
     <string name="tab_songs_entry">曲</string>
+    <string name="tab_folders_entry">のフォルダ</string>
     <string name="tab_playlists_entry">プレイリスト</string>
     <string name="tab_genres_entry">ジャンル</string>
 

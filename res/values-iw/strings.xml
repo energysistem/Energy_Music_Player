@@ -69,6 +69,7 @@
     <string name="tab_artists_entry">אמנים</string>
     <string name="tab_albums_entry">אלבומים</string>
     <string name="tab_songs_entry">שירים</string>
+    <string name="tab_folders_entry">תיקיות</string>
     <string name="tab_playlists_entry">רשימות השמעה</string>
     <string name="tab_genres_entry">סגנונות</string>
     <string name="album_header">רשימת אלבומים</string>

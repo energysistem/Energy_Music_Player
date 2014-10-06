@@ -115,6 +115,7 @@
     <string name="tab_artists">Artists</string>
     <string name="tab_albums">Albums</string>
     <string name="tab_songs">Songs</string>
+    <string name="tab_folders">Folders</string>
     <string name="tab_playlists">Playlists</string>
     <string name="tab_genres">Genres</string>
 
@@ -122,6 +123,7 @@
     <string name="tab_artists_entry">ARTISTES</string>
     <string name="tab_albums_entry">ALBUMS</string>
     <string name="tab_songs_entry">TITRES</string>
+    <string name="tab_folders_entry">DOSSIERS</string>
     <string name="tab_playlists_entry">LISTES</string>
     <string name="tab_genres_entry">GENRES</string>
 

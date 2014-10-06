@@ -109,15 +109,6 @@
     <string name="save">Guardar</string>
     <string name="overwrite">Sobrescribir</string>
 
-    <!-- Tabs -->
-    <string name="tab_recent">Recent</string>
-    <string name="tab_artists">Artists</string>
-    <string name="tab_albums">Albums</string>
-    <string name="tab_songs">Songs</string>
-    <string name="tab_folders">Folders</string>
-    <string name="tab_playlists">Playlists</string>
-    <string name="tab_genres">Genres</string>
-
     <string name="tab_recent_entry">RECIENTES</string>
     <string name="tab_artists_entry">ARTISTAS</string>
     <string name="tab_albums_entry">ÁLBUMES</string>

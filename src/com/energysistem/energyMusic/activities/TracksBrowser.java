@@ -119,7 +119,7 @@ public class TracksBrowser extends SlidingUpPanelActivity implements ServiceConn
         // Important!
         whatBundle(icicle);
         // Update the colorstrip color
-        initColorstrip();
+        //initColorstrip();
         // Update the ActionBar
         initActionBar();
         // Update the half_and_half layout
@@ -395,7 +395,7 @@ public class TracksBrowser extends SlidingUpPanelActivity implements ServiceConn
             mInfo.type = TYPE_PLAYLIST;
             mInfo.data = new String[]{ path };
             lineOne = path.substring(path.lastIndexOf("/")+1);
-            imageView.setImageResource(R.drawable.folder);
+            imageView.setImageResource(R.drawable.no_art_normal);
             imageView.setBackground(null);
         }
         else{
