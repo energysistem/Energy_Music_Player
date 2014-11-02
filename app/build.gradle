@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.energysistem.energyMusic"
+        minSdkVersion 17
+        targetSdkVersion 21
+        versionCode 11
+        versionName "1.7"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            aidl.srcDirs = ['src/main/java']
+        }
+    }
+
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://github.com/Goddchen/mvn-repo/raw/master/'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.+'
+    compile 'com.android.support:support-v4:21.0.0'
+    compile 'com.sothree.slidinguppanel:library:+'
+    compile 'com.mobeta.android.dslv:drag-sort-listview:0.6.1'
+    compile 'com.googlecode.android-query:android-query:0.24.3'
+}
