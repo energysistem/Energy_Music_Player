@@ -7,6 +7,7 @@ package com.energysistem.energyMusic.activities;
 import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
@@ -18,7 +19,6 @@ import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
@@ -67,6 +67,10 @@ import static com.energysistem.energyMusic.Constants.TABS_ENABLED;
 public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConnection {
 
     private final static String RESTART_ACTIVITY = "com.energysistem.energyMusic.restartActivity";
+    private final static String SHARED_PREFERENCES_KEY = "com.energysistem.energyMusic.sharedPreferences";
+    private final static String FIRST_TIME_PREF_KEY = "com.energysistem.energyMusic.firstTime";
+
+    SharedPreferences sharedPref;
 
     private ServiceToken mToken;
     protected Dialog mSplashDialog;
@@ -76,7 +80,11 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
         long tStart = 0;
         boolean isActivityRestarted = getIntent().getBooleanExtra(RESTART_ACTIVITY, false);
 
-        if (!isActivityRestarted) {
+        sharedPref = getSharedPreferences(SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE);
+
+        boolean firstTime = sharedPref.getBoolean(FIRST_TIME_PREF_KEY, true);
+
+        if (!isActivityRestarted && firstTime) {
             tStart = System.currentTimeMillis();
             showSplashScreen();
         }
@@ -392,12 +400,12 @@ public class MusicLibrary extends SlidingUpPanelActivity implements ServiceConne
      */
     protected void showSplashScreen() {
 
-
         mSplashDialog = new Dialog(this, R.style.SplashScreen);
         mSplashDialog.setContentView(R.layout.splashscreen);
         mSplashDialog.setCancelable(false);
         mSplashDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
         mSplashDialog.show();
+        sharedPref.edit().putBoolean(FIRST_TIME_PREF_KEY, false).apply();
 
     }
 }
